@@ -1,0 +1,28 @@
+<div class="hidden-xs">
+    <tabset [justified]="true" type="tabs">
+        <!--tab *ngFor="let week of modyule.weeks"
+            [heading]="week.name"
+            [active]="week.active"
+            (select)="week.active = true"
+            (deselect)="week.active = false"-->
+        <tab *ngFor="let assessmentItem of ((assessmentObservable | async)?.assessmentItems)"
+            [heading]="assessmentItem.name"
+            [active]="assessmentItem.active"
+            (select)="assessmentItem.active = true"
+            (deselect)="assessmentItem.active = false">
+            <p>{{assessmentItem.description}}</p>
+            <resource-component *ngIf="assessmentItem.resourcesUrl" [resourcesUrl]="assessmentItem.resourcesUrl"></resource-component>
+        </tab>
+    </tabset>
+</div>
+<div class="visible-xs">
+    <div *ngFor="let assessmentItem of ((assessmentObservable | async)?.assessmentItems)" class="panel panel-default">
+        <div class="panel-heading">
+            <div class="h2 text-center"> {{assessmentItem.name}}</div>
+        </div>
+        <div class="panel-body">
+            <p>{{assessmentItem.description}}</p>
+            <resource-component *ngIf="assessmentItem.resourcesUrl" [resourcesUrl]="assessmentItem.resourcesUrl"></resource-component>
+        </div>
+    </div>
+</div>

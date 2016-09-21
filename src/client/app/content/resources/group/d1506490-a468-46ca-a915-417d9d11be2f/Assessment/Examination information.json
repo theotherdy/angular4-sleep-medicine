@@ -1,0 +1,71 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1473866945325,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1473866945326,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Examination information",
+  "priority": "4",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination information\/",
+  "resourceChildren": [
+    {
+      "created": 1473866960285,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "application\/pdf",
+      "modified": 1473866960411,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Moruzzi 1972 the sleep-waking cycle.pdf",
+      "priority": "268435457",
+      "properties": {
+        "CHEF:copyrightchoice": "Please select",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination information\/Moruzzi 1972 the sleep-waking cycle.pdf",
+      "resourceChildren": [],
+      "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination information\/Moruzzi 1972 the sleep-waking cycle.pdf",
+      "size": "16815342",
+      "type": "org.sakaiproject.content.types.fileUpload",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination%20information\/Moruzzi%201972%20the%20sleep-waking%20cycle.pdf"
+    },
+    {
+      "created": 1473866962019,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "The conservation of sleep across all animal species suggests that sleep serves a vital function. We here report that sleep has a critical function in ensuring metabolic homeostasis. Using real-time assessments of tetramethylammonium diffusion and two-photon imaging in live mice, we show that natural sleep or anesthesia are associated with a 60% increase in the interstitial space, resulting in a striking increase in convective exchange of cerebrospinal fluid with interstitial\r\nfluid. In turn, convective fluxes of interstitial fluid increased the rate of b-amyloid clearance during sleep. Thus, the restorative function of sleep may be a consequence of the enhanced removal of potentially neurotoxic waste products that accumulate in the awake central nervous system.",
+      "hidden": false,
+      "mimeType": "application\/pdf",
+      "modified": 1473866962143,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Xie 2013 Sleep drives metabolic clear out.pdf",
+      "priority": "268435458",
+      "properties": {
+        "CHEF:copyrightalert": "true",
+        "CHEF:copyrightchoice": "Please select",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination information\/xie 2013 Sleep drives metabolic clear out.pdf",
+      "resourceChildren": [],
+      "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination information\/xie 2013 Sleep drives metabolic clear out.pdf",
+      "size": "1938489",
+      "type": "org.sakaiproject.content.types.fileUpload",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination%20information\/xie%202013%20Sleep%20drives%20metabolic%20clear%20out.pdf"
+    }
+  ],
+  "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination information\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Examination%20information\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

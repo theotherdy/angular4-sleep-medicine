@@ -1,0 +1,49 @@
+<div class="row hidden-xs">
+    <div class="col-sm-12 text-center h4">
+        <fa [name]="'calendar'"></fa> End of module tasks
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="thumbnail">
+            <div class="image hidden-xs"><fa [name]="'question'" [size]=5></fa></div>
+            <div class="caption">
+                <div>
+                    <h3>MCQs</h3>
+                    <p>{{(modyuleEndObservable | async)?.mcqsDescription}}</p>
+                    <div class="list-group">
+                        <div *ngFor="let mcq of ((modyuleEndObservable | async)?.mcqs)" class="list-group-item">
+                        <!--div *ngFor="let lecture of ((lecturesObservable | async)?.lectures | lectureType: 'main')" class="list-group-item"-->
+                            <!--a href="{{lecture.url}}" target="_blank" *ngFor="let lecture of ((lecturesObservable | async)?.lectures)" class="list-group-item"-->
+                            <a href="{{mcq.url}}" target="_blank" >
+                            <!--a href="{{lecture.url}}" target="_blank" *ngFor="let lecture of (week.lectures)" class="list-group-item"-->
+                            <!--ref="{{lecture?.url}}" target="_blank" *ngFor="let lecture of (week?.lectures | lectureType: 'main')" class="list-group-item"-->
+                                <h4 class="list-group-item-heading"><fa [name]="'check-circle-o'"></fa> {{mcq.name}}</h4>
+                                <p class="list-group-item-text" [innerHTML]="mcq.description"></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="thumbnail">
+            <div class="image hidden-xs"><fa [name]="'comments-o'" [size]=5></fa></div>
+            <div class="caption">
+                <div>
+                    <h3>Feedback</h3>
+                    <p>{{(modyuleEndObservable | async)?.feedbackDescription}}</p>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <a href="{{(modyuleEndObservable | async)?.feedback?.url}}" target="_blank" >
+                                <h4 class="list-group-item-heading"><fa [name]="'comment-o'"></fa> {{(modyuleEndObservable | async)?.feedback?.name}}</h4>
+                                <p class="list-group-item-text" [innerHTML]="(modyuleEndObservable | async)?.feedback?.description"></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

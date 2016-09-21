@@ -1,0 +1,154 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1473755352501,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1473755352503,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Lectures",
+  "priority": "4",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/",
+  "resourceChildren": [
+    {
+      "created": 1473863230091,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "[Prof D Guest Lecturer]",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1473863230092,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Another sleep related lecture",
+      "priority": "3",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another sleep related lecture\/",
+      "resourceChildren": [
+        {
+          "created": 1473863259555,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": null,
+          "modified": 1473863259556,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Resources",
+          "priority": "3",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another sleep related lecture\/Resources\/",
+          "resourceChildren": [],
+          "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another sleep related lecture\/Resources\/",
+          "size": null,
+          "type": "org.sakaiproject.content.types.folder",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another%20sleep%20related%20lecture\/Resources\/"
+        },
+        {
+          "created": 1473863246402,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/url",
+          "modified": 1473863246406,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Lecture link",
+          "priority": "268435458",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another sleep related lecture\/http:__Lecture lin20160914152549.URL",
+          "resourceChildren": [],
+          "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another sleep related lecture\/http:__Lecture lin20160914152549.URL",
+          "size": "95",
+          "type": "org.sakaiproject.content.types.urlResource",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another%20sleep%20related%20lecture\/http%3A__Lecture%20lin20160914152549.URL"
+        }
+      ],
+      "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another sleep related lecture\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/Another%20sleep%20related%20lecture\/"
+    },
+    {
+      "created": 1473863056354,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "[Prof Colin Espie]",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1473863056356,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "What is Sleep",
+      "priority": "2",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What is Sleep\/",
+      "resourceChildren": [
+        {
+          "created": 1473863071158,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": null,
+          "modified": 1473863071159,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Resources",
+          "priority": "2",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What is Sleep\/Resources\/",
+          "resourceChildren": [],
+          "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What is Sleep\/Resources\/",
+          "size": null,
+          "type": "org.sakaiproject.content.types.folder",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What%20is%20Sleep\/Resources\/"
+        },
+        {
+          "created": 1473863149262,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/url",
+          "modified": 1473863181253,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Lecture link",
+          "priority": "268435458",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What is Sleep\/http:__Lecture lin20160914152549.URL",
+          "resourceChildren": [],
+          "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What is Sleep\/http:__Lecture lin20160914152549.URL",
+          "size": "95",
+          "type": "org.sakaiproject.content.types.urlResource",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What%20is%20Sleep\/http%3A__Lecture%20lin20160914152549.URL"
+        }
+      ],
+      "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What is Sleep\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/What%20is%20Sleep\/"
+    }
+  ],
+  "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Lectures\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

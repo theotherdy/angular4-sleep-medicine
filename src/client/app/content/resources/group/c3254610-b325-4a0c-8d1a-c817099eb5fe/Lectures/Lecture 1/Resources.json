@@ -1,0 +1,54 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1473777110573,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1473777110575,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Resources",
+  "priority": "5",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/",
+  "resourceChildren": [
+    {
+      "created": 1473776132143,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "text\/plain",
+      "modified": 1473776946005,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Reading list",
+      "priority": "268435457",
+      "properties": {
+        "DAV:term": "",
+        "CITATIONS:managinglibrary": "-1",
+        "DAV:coursename": "",
+        "DAV:department": "",
+        "DAV:paper": "",
+        "DAV:academicyear": "",
+        "sakai:reference-root": "\/citation",
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/Seminar",
+      "resourceChildren": [],
+      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/Seminar",
+      "size": "36",
+      "type": "org.sakaiproject.citation.impl.CitationList",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/Resources\/Seminar"
+    }
+  ],
+  "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/Resources\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

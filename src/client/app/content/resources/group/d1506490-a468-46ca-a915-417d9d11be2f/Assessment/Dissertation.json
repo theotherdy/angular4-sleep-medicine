@@ -1,0 +1,47 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1473866902808,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "And info about dissertation submission",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1473866902809,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Dissertation",
+  "priority": "3",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Dissertation\/",
+  "resourceChildren": [
+    {
+      "created": 1473866912782,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": "text\/url",
+      "modified": 1473866912786,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Submission link",
+      "priority": "268435457",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Dissertation\/https:__portal.con20160914162719.URL",
+      "resourceChildren": [],
+      "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Dissertation\/https:__portal.con20160914162719.URL",
+      "size": "30",
+      "type": "org.sakaiproject.content.types.urlResource",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Dissertation\/https%3A__portal.con20160914162719.URL"
+    }
+  ],
+  "resourceId": "\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Dissertation\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/d1506490-a468-46ca-a915-417d9d11be2f\/Assessment\/Dissertation\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}

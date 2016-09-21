@@ -1,0 +1,92 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sleep Medicine</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a  href="#section-learning">LEARNING</a></li>
+                <li><a  href="#section-research">RESEARCH</a></li>
+                <li><a  href="#section-announcements">ANNOUNCEMENTS</a></li>
+                <li><a  href="#section-assessment">ASSESSMENT</a></li>
+                <li><a  href="#section-info">INFO</a></li>
+                <li><a  href="#section-timetable">TIMETABLE</a></li>
+                <li><a  href="#section-forum">FORUM</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div><a name="section-learning"></a>&nbsp;</div>
+<div class="under-nav-bar">&nbsp;</div>
+<section>
+    <modyules-component></modyules-component>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" name="section-research" href="#">Research</a>
+            </div>
+        </div>
+    </nav>
+</section>
+<section class="">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" name="section-announcements" href="#">Announcements</a>
+            </div>
+        </div>
+    </nav>
+</section>
+<section class="">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" name="section-assessment" href="#">Assessment</a>
+            </div>
+        </div>
+    </nav>
+    <assessment-component [assessmentUrl] = "assessmentUrl"></assessment-component>
+</section>
+<section class="">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" name="section-info" href="#">Course information</a>
+            </div>
+        </div>
+    </nav>
+    <resource-component [resourcesUrl] = "resourcesUrl"></resource-component>
+</section>
+<section class="">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" name="section-timetable" href="#">Timetable (will just be linked to)</a>
+            </div>
+        </div>
+    </nav>
+</section>
+<section class="">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" name="section-forum" href="#">Forum</a>
+            </div>
+        </div>
+    </nav>
+</section>
+<section class="">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" name="section-contact" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+</section>

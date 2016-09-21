@@ -1,0 +1,316 @@
+{"entityPrefix": "content", "content_collection": [
+{
+  "created": 1474022757917,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "description": "",
+  "hidden": false,
+  "mimeType": null,
+  "modified": 1474022757919,
+  "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "name": "Lectures",
+  "priority": "6",
+  "properties": {
+    "SAKAI:conditionalrelease": "false",
+    "SAKAI:conditionalNotificationId": ""
+  },
+  "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/",
+  "resourceChildren": [
+    {
+      "created": 1474022961624,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "Mod 1, Week 2 [Vlad Vyazovskly]",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1474023001897,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Sleep stages 1",
+      "priority": "2",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/",
+      "resourceChildren": [
+        {
+          "created": 1474023038785,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": null,
+          "modified": 1474023038787,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Resources",
+          "priority": "2",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Resources\/",
+          "resourceChildren": [
+            {
+              "created": 1474023086716,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": "text\/plain",
+              "modified": 1474023087004,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "Lecture 1 reading list",
+              "priority": "268435457",
+              "properties": "MAX level reached (7):{DAV:term=, CITATIONS:managinglibrary=-1, DAV:coursename=, DAV:department=, DAV:paper=, DAV:academicyear=, sakai:reference-root=\/citation, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/citation\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Resources\/Seminar",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Resources\/Seminar",
+              "size": "36",
+              "type": "org.sakaiproject.citation.impl.CitationList",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/Resources\/Seminar"
+            },
+            {
+              "created": 1474023706334,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": "application\/pdf",
+              "modified": 1474023706343,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "LPConsultationBooklet.pdf",
+              "priority": "268435458",
+              "properties": "MAX level reached (7):{CHEF:copyrightchoice=Please select, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Resources\/LPConsultationBooklet.pdf",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Resources\/LPConsultationBooklet.pdf",
+              "size": "854689",
+              "type": "org.sakaiproject.content.types.fileUpload",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/Resources\/LPConsultationBooklet.pdf"
+            }
+          ],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Resources\/",
+          "size": null,
+          "type": "org.sakaiproject.content.types.folder",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/Resources\/"
+        },
+        {
+          "created": 1474023666792,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/url",
+          "modified": 1474023666800,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Feedback link",
+          "priority": "268435461",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/https:__weblearn.o20160916120106.URL",
+          "resourceChildren": [],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/https:__weblearn.o20160916120106.URL",
+          "size": "54",
+          "type": "org.sakaiproject.content.types.urlResource",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/https%3A__weblearn.o20160916120106.URL"
+        },
+        {
+          "created": 1474023283312,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/html",
+          "modified": 1474023283321,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Learning outcomes.html",
+          "priority": "268435459",
+          "properties": {
+            "CHEF:copyrightchoice": "Please select",
+            "encoding": "UTF-8",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Learning outcomes.html",
+          "resourceChildren": [],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Learning outcomes.html",
+          "size": "618",
+          "type": "org.sakaiproject.content.types.HtmlDocumentType",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/Learning%20outcomes.html"
+        },
+        {
+          "created": 1474023356741,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/url",
+          "modified": 1474023356749,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Lecture link",
+          "priority": "268435460",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/https:__weblearn.o20160916115556.URL",
+          "resourceChildren": [],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/https:__weblearn.o20160916115556.URL",
+          "size": "95",
+          "type": "org.sakaiproject.content.types.urlResource",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/https%3A__weblearn.o20160916115556.URL"
+        }
+      ],
+      "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/"
+    },
+    {
+      "created": 1474022972710,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "Mod 1, Week 2 [Vlad Vyazovskly]",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1474023024384,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Sleep stages 2",
+      "priority": "3",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/",
+      "resourceChildren": [
+        {
+          "created": 1474023048568,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": null,
+          "modified": 1474023048570,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Resources",
+          "priority": "2",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Resources\/",
+          "resourceChildren": [
+            {
+              "created": 1474023096498,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": null,
+              "hidden": false,
+              "mimeType": "text\/plain",
+              "modified": 1474023096759,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "Lecture 2 reading list",
+              "priority": "268435458",
+              "properties": "MAX level reached (7):{CITATIONS:managinglibrary=HCLBL, DAV:term=, DAV:coursename=, DAV:department=, DAV:paper=, DAV:academicyear=, sakai:reference-root=\/citation}",
+              "reference": "\/citation\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Resources\/Lecture 2 reading list",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Resources\/Lecture 2 reading list",
+              "size": "36",
+              "type": "org.sakaiproject.citation.impl.CitationList",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%202\/Resources\/Lecture%202%20reading%20list"
+            },
+            {
+              "created": 1474023718109,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": "application\/pdf",
+              "modified": 1474023718170,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "pp_eton_np_designation_application.pdf",
+              "priority": "268435458",
+              "properties": "MAX level reached (7):{CHEF:copyrightchoice=Please select, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Resources\/pp_eton_np_designation_application.pdf",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Resources\/pp_eton_np_designation_application.pdf",
+              "size": "821024",
+              "type": "org.sakaiproject.content.types.fileUpload",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%202\/Resources\/pp_eton_np_designation_application.pdf"
+            }
+          ],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Resources\/",
+          "size": null,
+          "type": "org.sakaiproject.content.types.folder",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%202\/Resources\/"
+        },
+        {
+          "created": 1474023689974,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/url",
+          "modified": 1474023689983,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Feedback link",
+          "priority": "268435461",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/https:__weblearn.o20160916120129.URL",
+          "resourceChildren": [],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/https:__weblearn.o20160916120129.URL",
+          "size": "54",
+          "type": "org.sakaiproject.content.types.urlResource",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%202\/https%3A__weblearn.o20160916120129.URL"
+        },
+        {
+          "created": 1474023424879,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/html",
+          "modified": 1474023424888,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Learning outcomes.html",
+          "priority": "268435460",
+          "properties": {
+            "CHEF:copyrightchoice": "Please select",
+            "encoding": "UTF-8",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Learning outcomes.html",
+          "resourceChildren": [],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/Learning outcomes.html",
+          "size": "618",
+          "type": "org.sakaiproject.content.types.HtmlDocumentType",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%202\/Learning%20outcomes.html"
+        },
+        {
+          "created": 1474023378961,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/url",
+          "modified": 1474023378969,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Lecture link",
+          "priority": "268435459",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/https:__weblearn.o20160916115618.URL",
+          "resourceChildren": [],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/https:__weblearn.o20160916115618.URL",
+          "size": "95",
+          "type": "org.sakaiproject.content.types.urlResource",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%202\/https%3A__weblearn.o20160916115618.URL"
+        }
+      ],
+      "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 2\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%202\/"
+    }
+  ],
+  "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/",
+  "size": null,
+  "type": "org.sakaiproject.content.types.folder",
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/",
+  "entityReference": "\/content",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/content"
+}
+]}
