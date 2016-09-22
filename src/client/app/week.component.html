@@ -25,7 +25,7 @@
 <div class="visible-xs">
     <div *ngFor="let week of (weeksObservable | async)" class="panel panel-default">
         <div class="panel-heading">
-            <div class="h2 text-center"> {{week.name}}<br/><span class="h4"><fa [name]="'calendar'"></fa> {{week.startDate | date:'d MMM'}} to {{week.endDate | date:'d MMM yy'}}</span></div>
+            <div class="h2 text-center"> {{week.name}}<br/><span class="h4"><i class="fa fa-calendar"></i><!--fa [name]="'calendar'"></fa--> {{week.startDate | date:'d MMM'}} to {{week.endDate | date:'d MMM yy'}}</span></div>
         </div>
         <div class="panel-body">
             <week-detail-component [week]="week"></week-detail-component>

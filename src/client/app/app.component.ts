@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 //import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
-import { ModyuleComponent } from './modyule.component';
-import { ResourceComponent } from './resource.component';
-import { AssessmentComponent } from './assessment.component';
+//import { ModyuleComponent } from './modyule.component';
+//import { ResourceComponent } from './resource.component';
+//import { AssessmentComponent } from './assessment.component';
 
 import myGlobals = require('./globals');
 
@@ -31,7 +31,7 @@ import myGlobals = require('./globals');
         `,*/
     styleUrls:  ['app.component.css'],
     templateUrl: 'app.component.html',
-    directives: [AssessmentComponent, ModyuleComponent, ResourceComponent]
+    //directives: [AssessmentComponent, ModyuleComponent, ResourceComponent]
     //directives: [ROUTER_DIRECTIVES],
     //providers: [
     //  ROUTER_PROVIDERS

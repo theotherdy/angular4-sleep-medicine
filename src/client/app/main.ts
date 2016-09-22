@@ -1,20 +1,28 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { enableProdMode } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
+//import { APP_BASE_HREF } from '@angular/common';
+//import { disableDeprecatedForms, provideForms } from '@angular/forms';
+//import { enableProdMode } from '@angular/core';
+//import { bootstrap } from '@angular/platform-browser-dynamic';
 
-import { HTTP_PROVIDERS } from '@angular/http';
+//import { HTTP_PROVIDERS } from '@angular/http';
 
 //import { APP_ROUTER_PROVIDERS } from './app.routes';
-import { AppComponent } from './app.component';
+//import { AppComponent } from './app.component';
 
-if ('<%= ENV %>' === 'prod') { enableProdMode(); }
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule }              from './app.module';
+
+
+//if ('<%= ENV %>' === 'prod') { enableProdMode(); }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
 
 /**
  * Bootstraps the application and makes the ROUTER_PROVIDERS and the APP_BASE_HREF available to it.
  * @see https://angular.io/docs/ts/latest/api/platform-browser-dynamic/index/bootstrap-function.html
  */
-bootstrap(AppComponent, [
+/*bootstrap(AppComponent, [
   disableDeprecatedForms(),
   provideForms(),
   HTTP_PROVIDERS, //make http providers available application-wide
@@ -23,7 +31,7 @@ bootstrap(AppComponent, [
     provide: APP_BASE_HREF,
     useValue: '<%= APP_BASE %>'
   }
-]);
+]);*/
 
 // In order to start the Service Worker located at "./worker.js"
 // uncomment this line. More about Service Workers here

@@ -126,10 +126,10 @@
     "core-js": "^2.4.0",
     "es6-module-loader": "^0.17.8",
     "intl": "^1.2.4",
-    "moment": "^2.14.1",
-    "ng2-bootstrap": "^1.0.17",
+    "moment": "^2.15.1",
+    "ng2-bootstrap": "^1.1.5",
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.27",
-    "zone.js": "^0.6.12"
+    "zone.js": "^0.6.23"
   }
 }

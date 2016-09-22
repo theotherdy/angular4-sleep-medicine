@@ -6,7 +6,7 @@ import { DROPDOWN_DIRECTIVES, CollapseDirective, AlertComponent } from 'ng2-boot
 
 import { Modyule } from './modyule';
 import { ModyuleService } from './modyule.service';
-import { WeekComponent } from './week.component';
+//import { WeekComponent } from './week.component';
 
 import myGlobals = require('./globals');
 
@@ -14,7 +14,7 @@ import myGlobals = require('./globals');
     moduleId: module.id,
     selector: 'modyules-component',
     templateUrl: 'modyule.component.html',
-    directives: [WeekComponent,DROPDOWN_DIRECTIVES,CollapseDirective,AlertComponent],
+    //directives: [WeekComponent,DROPDOWN_DIRECTIVES,CollapseDirective,AlertComponent],
     providers: [ModyuleService]
 })
 

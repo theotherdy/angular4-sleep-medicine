@@ -8,7 +8,7 @@ import { FaComponent } from 'angular2-fontawesome/components';
     selector: 'tree-view',
     templateUrl: 'tree-view.component.html',
     styleUrls:  ['tree-view.component.css'],
-    directives: [TreeViewComponent,FaComponent]
+    //directives: [TreeViewComponent,FaComponent]
 })
 //Note: based on: http://www.syntaxsuccess.com/angular-2-samples/#/demo/treeview
 export class TreeViewComponent {

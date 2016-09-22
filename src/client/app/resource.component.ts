@@ -7,16 +7,16 @@ import { Resource }     from './resource';
 import { ResourceService }     from './resource.service';
 import { TreeViewComponent }     from './tree-view.component';
 
-import { LectureTypePipe } from './lecture-type.pipe';
-import { DescriptionFormatterPipe } from './description-formatter.pipe';
+//import { LectureTypePipe } from './lecture-type.pipe';
+//import { DescriptionFormatterPipe } from './description-formatter.pipe';
 
 
 @Component({
     moduleId: module.id,
     selector: 'resource-component',
     templateUrl: 'resource.component.html',
-    directives: [TreeViewComponent],
-    pipes: [LectureTypePipe, DescriptionFormatterPipe],
+    //directives: [TreeViewComponent],
+    //pipes: [LectureTypePipe, DescriptionFormatterPipe],
     providers: [ResourceService]
 })
 

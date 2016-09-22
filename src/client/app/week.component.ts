@@ -2,21 +2,21 @@ import { Component, Input, ChangeDetectionStrategy, OnChanges, SimpleChange} fro
 
 import { FaComponent } from 'angular2-fontawesome/components';
 
-import {CORE_DIRECTIVES} from '@angular/common';
+//import {CORE_DIRECTIVES} from '@angular/common';
 import { TAB_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 import { Observable }     from 'rxjs/Observable';
 
 import { Modyule } from './modyule';
 import { Week } from './week';
 import { WeekService } from './week.service';
-import { WeekDetailComponent } from './week-detail.component';
-import { ModyuleEndComponent } from './modyule-end.component';
+//import { WeekDetailComponent } from './week-detail.component';
+//import { ModyuleEndComponent } from './modyule-end.component';
 
 @Component({
     moduleId: module.id,
     selector: 'weeks-component',
     templateUrl: 'week.component.html',
-    directives: [ModyuleEndComponent,WeekDetailComponent,TAB_DIRECTIVES, CORE_DIRECTIVES,FaComponent],
+    //directives: [ModyuleEndComponent,WeekDetailComponent,TAB_DIRECTIVES, CORE_DIRECTIVES,FaComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls:  ['week.component.css'],
     providers: [WeekService]

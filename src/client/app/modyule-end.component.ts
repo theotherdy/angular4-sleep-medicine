@@ -7,8 +7,8 @@ import { CollapseDirective } from 'ng2-bootstrap/ng2-bootstrap';
 //import {CORE_DIRECTIVES} from '@angular/common';
 import { Observable }     from 'rxjs/Observable';
 
-import { LectureTypePipe } from './lecture-type.pipe';
-import { DescriptionFormatterPipe } from './description-formatter.pipe';
+//import { LectureTypePipe } from './lecture-type.pipe';
+//import { DescriptionFormatterPipe } from './description-formatter.pipe';
 //import { Lecture } from './lecture';
 import { Modyule } from './modyule';
 import { ModyuleService } from './modyule.service';
@@ -17,9 +17,9 @@ import { ModyuleService } from './modyule.service';
     moduleId: module.id,
     selector: 'modyule-end-component',
     templateUrl: 'modyule-end.component.html',
-    directives: [FaComponent,CollapseDirective],
+    //directives: [FaComponent,CollapseDirective],
     styleUrls:  ['modyule-end.component.css'],
-    pipes: [LectureTypePipe, DescriptionFormatterPipe],
+    //pipes: [LectureTypePipe, DescriptionFormatterPipe],
     providers: [ModyuleService]
 })
 

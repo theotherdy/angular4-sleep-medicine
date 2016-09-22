@@ -1,16 +1,24 @@
 <ul class="list-group">
     <li *ngFor="let resource of resources" class="list-group-item truncate">
         <a *ngIf="resource.fileType !== 'folder'" href="{{ resource.url }}">
-            <fa *ngIf="resource.fileType === 'reading'" [name]="'book'"></fa>
+            <i *ngIf="resource.fileType === 'reading'" class="fa fa-book"></i>
+            <i *ngIf="resource.fileType === 'pdf'" class="fa fa-file-pdf-o"></i>
+            <i *ngIf="resource.fileType === 'xls'" class="fa fa-file-excel-o"></i>
+            <i *ngIf="resource.fileType === 'doc'" class="fa fa-word-o"></i>
+            <i *ngIf="resource.fileType === 'file'" class="fa fa-file-o"></i>
+
+            <!--fa *ngIf="resource.fileType === 'reading'" [name]="'book'"></fa>
             <fa *ngIf="resource.fileType === 'pdf'" [name]="'file-pdf-o'"></fa>
             <fa *ngIf="resource.fileType === 'xls'" [name]="'file-excel-o'"></fa>
             <fa *ngIf="resource.fileType === 'doc'" [name]="'file-word-o'"></fa>
-            <fa *ngIf="resource.fileType === 'file'" [name]="'file-o'"></fa>
+            <fa *ngIf="resource.fileType === 'file'" [name]="'file-o'"></fa-->
             {{ resource.name }}
         </a>
         <span *ngIf="resource.fileType === 'folder'" (click)="resource.toggle()" >
-            <fa *ngIf="resource.expanded" [name]="'folder-open-o'"></fa>
-            <fa *ngIf="!resource.expanded" [name]="'folder-o'"></fa>
+            <i *ngIf="resource.expanded" class="fa fa-folder-open-o"></i>
+            <i *ngIf="!resource.expanded" class="fa fa-folder-o"></i>
+            <!--fa *ngIf="resource.expanded" [name]="'folder-open-o'"></fa>
+            <fa *ngIf="!resource.expanded" [name]="'folder-o'"></fa-->
             {{ resource.name }}
         </span>
         <div>{{resource.description}}</div>
