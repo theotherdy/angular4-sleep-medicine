@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import { Router } from '@angular/router-deprecated';
 //import { RouteParams } from '@angular/router-deprecated';
 
-import { DROPDOWN_DIRECTIVES, CollapseDirective, AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
+//import { DROPDOWN_DIRECTIVES, CollapseDirective, AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { Modyule } from './modyule';
 import { ModyuleService } from './modyule.service';

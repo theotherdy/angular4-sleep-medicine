@@ -16,134 +16,6 @@
   "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/",
   "resourceChildren": [
     {
-      "created": 1473776132056,
-      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-      "description": "Mod 1 Week 1 [Simon Kyle]",
-      "hidden": false,
-      "mimeType": null,
-      "modified": 1473776132056,
-      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-      "name": "Induction",
-      "priority": "5",
-      "properties": {
-        "SAKAI:conditionalrelease": "false",
-        "SAKAI:conditionalNotificationId": ""
-      },
-      "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/",
-      "resourceChildren": [
-        {
-          "created": 1473777110573,
-          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "description": "",
-          "hidden": false,
-          "mimeType": null,
-          "modified": 1473777110575,
-          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "name": "Resources",
-          "priority": "5",
-          "properties": {
-            "SAKAI:conditionalrelease": "false",
-            "SAKAI:conditionalNotificationId": ""
-          },
-          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/",
-          "resourceChildren": [
-            {
-              "created": 1473776132143,
-              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-              "description": "",
-              "hidden": false,
-              "mimeType": "text\/plain",
-              "modified": 1473776946005,
-              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-              "name": "Reading list",
-              "priority": "268435457",
-              "properties": "MAX level reached (7):{DAV:term=, CITATIONS:managinglibrary=-1, DAV:coursename=, DAV:department=, DAV:paper=, DAV:academicyear=, sakai:reference-root=\/citation, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
-              "reference": "\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/Seminar",
-              "resourceChildren": [],
-              "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/Seminar",
-              "size": "36",
-              "type": "org.sakaiproject.citation.impl.CitationList",
-              "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/Resources\/Seminar"
-            }
-          ],
-          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/Resources\/",
-          "size": null,
-          "type": "org.sakaiproject.content.types.folder",
-          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/Resources\/"
-        },
-        {
-          "created": 1473866554273,
-          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "description": "",
-          "hidden": false,
-          "mimeType": "text\/url",
-          "modified": 1473866554279,
-          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "name": "Feedback link",
-          "priority": "268435458",
-          "properties": {
-            "SAKAI:conditionalrelease": "false",
-            "SAKAI:conditionalNotificationId": ""
-          },
-          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/https:__weblearn.o20160914162234.URL",
-          "resourceChildren": [],
-          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/https:__weblearn.o20160914162234.URL",
-          "size": "54",
-          "type": "org.sakaiproject.content.types.urlResource",
-          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/https%3A__weblearn.o20160914162234.URL"
-        },
-        {
-          "created": 1473776132119,
-          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "description": "",
-          "hidden": false,
-          "mimeType": "text\/html",
-          "modified": 1473776132122,
-          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "name": "Learning outcomes.html",
-          "priority": "268435458",
-          "properties": {
-            "SAKAI:add_html": "auto",
-            "CHEF:copyrightchoice": "Please select",
-            "encoding": "UTF-8",
-            "SAKAI:conditionalrelease": "false",
-            "SAKAI:conditionalNotificationId": ""
-          },
-          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/learning_outcomes.html",
-          "resourceChildren": [],
-          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/learning_outcomes.html",
-          "size": "497",
-          "type": "org.sakaiproject.content.types.HtmlDocumentType",
-          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/learning_outcomes.html"
-        },
-        {
-          "created": 1473776132091,
-          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "description": "",
-          "hidden": false,
-          "mimeType": "text\/url",
-          "modified": 1473776132093,
-          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "name": "Lecture link",
-          "priority": "268435459",
-          "properties": {
-            "SAKAI:conditionalrelease": "false",
-            "SAKAI:conditionalNotificationId": ""
-          },
-          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/https:__weblearn.o20160913145240.URL",
-          "resourceChildren": [],
-          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/https:__weblearn.o20160913145240.URL",
-          "size": "95",
-          "type": "org.sakaiproject.content.types.urlResource",
-          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/https%3A__weblearn.o20160913145240.URL"
-        }
-      ],
-      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture 1\/",
-      "size": null,
-      "type": "org.sakaiproject.content.types.folder",
-      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Lecture%201\/"
-    },
-    {
       "created": 1473776403714,
       "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
       "description": "Mod 1, Week 1 [Russell Foster]",
@@ -160,12 +32,12 @@
       "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/",
       "resourceChildren": [
         {
-          "created": 1473777065826,
+          "created": 1474548252052,
           "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
           "description": "",
           "hidden": false,
           "mimeType": null,
-          "modified": 1473777078591,
+          "modified": 1474548252052,
           "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
           "name": "Resources",
           "priority": "5",
@@ -173,31 +45,31 @@
             "SAKAI:conditionalrelease": "false",
             "SAKAI:conditionalNotificationId": ""
           },
-          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resurces\/",
+          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resources\/",
           "resourceChildren": [
             {
-              "created": 1473776668791,
+              "created": 1474548252076,
               "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
               "description": "",
               "hidden": false,
               "mimeType": "text\/plain",
-              "modified": 1473777028599,
+              "modified": 1474548252083,
               "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
               "name": "Reading list",
-              "priority": "268435458",
-              "properties": "MAX level reached (7):{DAV:term=, CITATIONS:managinglibrary=HCLBL, DAV:coursename=, DAV:department=, DAV:paper=, DAV:academicyear=, sakai:reference-root=\/citation, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
-              "reference": "\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resurces\/Lecture 2 reading list",
+              "priority": "268435457",
+              "properties": "MAX level reached (7):{DAV:term=, CITATIONS:managinglibrary=-1, DAV:coursename=, DAV:department=, DAV:paper=, DAV:academicyear=, sakai:reference-root=\/citation, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resources\/Seminar",
               "resourceChildren": [],
-              "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resurces\/Lecture 2 reading list",
+              "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resources\/Seminar",
               "size": "36",
               "type": "org.sakaiproject.citation.impl.CitationList",
-              "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep%20Overview\/Resurces\/Lecture%202%20reading%20list"
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/citation\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep%20Overview\/Resources\/Seminar"
             }
           ],
-          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resurces\/",
+          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/Resources\/",
           "size": null,
           "type": "org.sakaiproject.content.types.folder",
-          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep%20Overview\/Resurces\/"
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep%20Overview\/Resources\/"
         },
         {
           "created": 1473866656026,
@@ -221,14 +93,14 @@
           "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep%20Overview\/https%3A__weblearn.o20160914162415.URL"
         },
         {
-          "created": 1473776482777,
+          "created": 1474548202705,
           "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
           "description": "",
           "hidden": false,
           "mimeType": "text\/html",
-          "modified": 1473776868235,
+          "modified": 1474548202730,
           "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "name": "Learning outcomes.html",
+          "name": "learning outcomes.html",
           "priority": "268435458",
           "properties": {
             "SAKAI:add_html": "auto",
@@ -237,12 +109,12 @@
             "SAKAI:conditionalrelease": "false",
             "SAKAI:conditionalNotificationId": ""
           },
-          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/learning_outcomes.html",
+          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/learning outcomes.html",
           "resourceChildren": [],
-          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/learning_outcomes.html",
+          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep Overview\/learning outcomes.html",
           "size": "497",
           "type": "org.sakaiproject.content.types.HtmlDocumentType",
-          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep%20Overview\/learning_outcomes.html"
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Lectures\/Sleep%20Overview\/learning%20outcomes.html"
         },
         {
           "created": 1473776483275,
@@ -250,8 +122,8 @@
           "description": "",
           "hidden": false,
           "mimeType": "text\/url",
-          "modified": 1473776483279,
-          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "modified": 1474459355231,
+          "modifiedBy": "010d0715-cd24-43a3-9c9d-ebd83441bd8b",
           "name": "Lecture link",
           "priority": "268435459",
           "properties": {

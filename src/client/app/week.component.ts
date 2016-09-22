@@ -3,7 +3,7 @@ import { Component, Input, ChangeDetectionStrategy, OnChanges, SimpleChange} fro
 import { FaComponent } from 'angular2-fontawesome/components';
 
 //import {CORE_DIRECTIVES} from '@angular/common';
-import { TAB_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
+//import { TAB_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 import { Observable }     from 'rxjs/Observable';
 
 import { Modyule } from './modyule';

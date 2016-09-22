@@ -215,7 +215,9 @@ export class WeekService {
                     } else if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource'
                         && lectureDetail.name.toLowerCase()==='lecture link') { //it's a url
                         lecture.url = lectureDetail.url;
-                    } else if(lectureDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType') { //it's a url
+                    } else if((lectureDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType'
+                            || lectureDetail.type === 'org.sakaiproject.content.types.fileUpload')
+                            && lectureDetail.name.toLowerCase().indexOf('outcome') !== -1) { //it's a url
                         lecture.learningOutcomesUrl = lectureDetail.resourceId;
                     } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder'
                         && lectureDetail.name.toLowerCase()==='resources') {
@@ -251,7 +253,9 @@ export class WeekService {
                         seminarInstance.description = seminarDetail.description;
                         seminarInstance.name = seminarDetail.name;
                         seminar.seminarInstances.push(seminarInstance);
-                    } else if(seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType') { //it's a url
+                    } else if((seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType'
+                            || seminarDetail.type === 'org.sakaiproject.content.types.fileUpload')
+                            && seminarDetail.name.toLowerCase().indexOf('outcome') !== -1) { //it's a url
                         seminar.learningOutcomesUrl = seminarDetail.resourceId;
                     } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder'
                                 && seminarDetail.name.toLowerCase()==='resources') {

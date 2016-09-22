@@ -19,7 +19,7 @@
                             </a>
                             <a href="{{lecture.feedback.url}}" target="_blank" ><i class="fa fa-comment-o"></i><!--fa [name]="'comment-o'"></fa--> {{lecture.feedback.name}}</a>
                             <accordion [closeOthers]="true">
-                                <accordion-group *ngIf="lecture.learningOutcomes" heading="Learning objectives">
+                                <accordion-group *ngIf="lecture.learningOutcomes" heading="Learning outcomes">
                                     <div class="learning-objectives" [innerHTML]="lecture.learningOutcomes"></div>
                                 </accordion-group>
                                 <accordion-group *ngIf="lecture.resourcesUrl" heading="Resources">
@@ -37,7 +37,7 @@
             <div class="image hidden-xs scni-blue"><i class="fa fa-users fa-5x"></i><!--fa [name]="'users'" [size]=5></fa--></div>
             <div class="caption">
                 <div>
-                    <h3>GROUP DISCUSSION</h3>
+                    <h3>DISCUSSION GROUP</h3>
                     <div class="list-group">
                         <div *ngFor="let seminar of ((lecturesObservable | async)?.seminars)" class="list-group-item">
                             <h4 class="list-group-item-heading"><i class="fa fa-sign-in"></i><!--fa [name]="'sign-in'"></fa--> {{seminar.name}}</h4>
@@ -52,7 +52,7 @@
                                         </div>
                                     </div>
                                 </accordion-group>
-                                <accordion-group *ngIf="seminar.learningOutcomes" heading="Learning objectives">
+                                <accordion-group *ngIf="seminar.learningOutcomes" heading="Learning outcomes">
                                     <div class="learning-objectives" [innerHTML]="seminar.learningOutcomes"></div>
                                 </accordion-group>
                                 <accordion-group *ngIf="seminar.resourcesUrl" heading="Resources">
