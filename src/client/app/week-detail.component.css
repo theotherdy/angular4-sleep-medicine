@@ -17,3 +17,11 @@ li.resources-list {
 .scni-blue {
   color: #001b54;
 }
+
+p.learningOutcomes {
+  text-align: left;
+}
+
+accordion {
+  text-align: left !important;
+}

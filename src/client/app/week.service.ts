@@ -100,7 +100,7 @@ export class WeekService {
             .catch(this.handleError);
         }
 
-    getLectureLearningOutcomes (week:Week): Observable<Week> {
+    /*getLectureLearningOutcomes (week:Week): Observable<Week> {
         let calls: any[]  = [];
 
         for (let lecture of week.lectures) {
@@ -137,15 +137,43 @@ export class WeekService {
         });
 
         return subject;
+    }*/
+
+    getHtmlResource (htmlResourceUrl: string): Observable<string> {
+        let htmlResourceUrlToFetch = htmlResourceUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
+        htmlResourceUrlToFetch = myGlobals.baseUrlforLOs[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + htmlResourceUrlToFetch;
+        return this.http.get(htmlResourceUrlToFetch)
+            .map(this.processHtmlResource)
+            .catch(this.handleError);
     }
 
-    getSeminarLearningOutcomes (week:Week): Observable<Week> {
+    private processHtmlResource (res: any) {
+        //extract contents of body tag (if present) from .html
+        let body = res._body;
+        let htmlToReturn: string;
+        let bEnd: number;
+        let bStart: number;
+        bStart = body.indexOf('<body');
+        bEnd = body.indexOf('</body');
+        if(bStart !== -1 && bEnd !== -1) {
+            htmlToReturn = body.slice(bStart, bEnd);
+        } else {
+            htmlToReturn = body;
+        }
+        return htmlToReturn;
+    }
+
+
+    /*getSeminarLearningOutcomes (week:Week): Observable<Week> {
         let calls: any[]  = [];
+
+        let noOfUrls = 0;
 
         for (let seminar of week.seminars) {
             if(seminar.learningOutcomesUrl !== undefined && seminar.learningOutcomes===undefined) {
                 let seminarLOUrl = seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, '');
                 seminarLOUrl = myGlobals.baseUrlforLOs[myGlobals.runtimeEnvironment]+myGlobals.accessUrl + seminarLOUrl;
+                noOfUrls++;
                 calls.push(  //learning outcomes
                     this.http.get(seminarLOUrl)//.cache()
                     );
@@ -154,30 +182,33 @@ export class WeekService {
 
         var subject = new Subject<Week>();  //see: http://stackoverflow.com/a/38668416/2235210 for why Subject
 
-        Observable.forkJoin(calls).subscribe((res: any) => {
-            for (let response of res){
-                let body = response._body;
-                let foundSeminar = week.seminars.find(seminar=> {
-                    let LOUrl = encodeURI(seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, ''));
-                    return response.url.indexOf(LOUrl)!==-1;
-                });
-                //extract contents of body tag (if present) from .html
-                let bEnd: number;
-                let bStart: number;
-                bStart = body.indexOf('<body');
-                bEnd = body.indexOf('</body');
-                if(bStart !== -1 && bEnd !== -1) {
-                    foundSeminar.learningOutcomes = body.slice(bStart, bEnd);
-                } else {
-                    foundSeminar.learningOutcomes = body;
+        if(noOfUrls>0) {
+            Observable.forkJoin(calls).subscribe((res: any) => {
+                for (let response of res){
+                    let body = response._body;
+                    let foundSeminar = week.seminars.find(seminar=> {
+                        let LOUrl = encodeURI(seminar.learningOutcomesUrl.replace(myGlobals.unneededPartOfUrlForLOCalls, ''));
+                        return response.url.indexOf(LOUrl)!==-1;
+                    });
+                    //extract contents of body tag (if present) from .html
+                    let bEnd: number;
+                    let bStart: number;
+                    bStart = body.indexOf('<body');
+                    bEnd = body.indexOf('</body');
+                    if(bStart !== -1 && bEnd !== -1) {
+                        foundSeminar.learningOutcomes = body.slice(bStart, bEnd);
+                    } else {
+                        foundSeminar.learningOutcomes = body;
+                    }
                 }
-            }
-            subject.next(week);
-        });
-
-        return subject;
-
+                subject.next(week);
+            });
+            return subject;
+        } else {
+            return Observable.from([]);
         }
+    }*/
+
 
     private initialiseWeeks(res: Response) {
         let body = res.json();
@@ -247,7 +278,13 @@ export class WeekService {
                 seminar.description = seminarData.description;
                 seminar.seminarInstances = new Array<SeminarInstance>();
                 for (let seminarDetail of seminarData.resourceChildren) {
-                    if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a seminar instance
+                    if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource'
+                        && seminarDetail.name.toLowerCase()==='feedback link') { //it's a url
+                        let feedback: Feedback =  new Feedback;
+                        feedback.url = seminarDetail.url;
+                        feedback.name = seminarDetail.name;
+                        seminar.feedback = feedback;
+                    } else if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a seminar instance
                         let seminarInstance: SeminarInstance =  new SeminarInstance;
                         seminarInstance.url = seminarDetail.url;
                         seminarInstance.description = seminarDetail.description;
@@ -264,6 +301,9 @@ export class WeekService {
                         let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl;
                         resourceUrl = resourceUrl + trimmedResourceId + '.json';
                         seminar.resourcesUrl = resourceUrl;
+                    } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder'
+                                && seminarDetail.name.toLowerCase()==='instructions') {
+                        seminar.instructionsUrl = seminarDetail.resourceChildren[0].url;
                     }
                 }
             }

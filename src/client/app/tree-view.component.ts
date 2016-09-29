@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Resource} from './resource';
 
-import { FaComponent } from 'angular2-fontawesome/components';
+//import { FaComponent } from 'angular2-fontawesome/components';
 
 @Component({
     moduleId: module.id,

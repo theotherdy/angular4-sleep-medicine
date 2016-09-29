@@ -17,12 +17,23 @@
                                 <p class="list-group-item-text" [innerHTML]="lecture.description | descriptionFormatter"></p>
                                 <strong><p class="list-group-item-text" [innerHTML]="lecture.description | descriptionFormatter: 'lecturer'"></p></strong>
                             </a>
-                            <a href="{{lecture.feedback.url}}" target="_blank" ><i class="fa fa-comment-o"></i><!--fa [name]="'comment-o'"></fa--> {{lecture.feedback.name}}</a>
+                            <div *ngIf="lecture.feedback?.url" class="row"><div class="col-md-12">&nbsp;</div></div><!--spacer only needed-->
+                            <a *ngIf="lecture.feedback?.url" href="{{lecture.feedback?.url}}" target="_blank" ><i class="fa fa-comment-o"></i><!--fa [name]="'comment-o'"></fa--> {{lecture.feedback?.name}}</a>
+                            <div class="row"><div class="col-md-12">&nbsp;</div></div><!--spacer-->
                             <accordion [closeOthers]="true">
-                                <accordion-group *ngIf="lecture.learningOutcomes" heading="Learning outcomes">
-                                    <div class="learning-objectives" [innerHTML]="lecture.learningOutcomes"></div>
+                                <accordion-group #lecturelo *ngIf="lecture.learningOutcomesUrl">
+                                    <div accordion-heading>
+                                        Learning outcomes <i class="fa pull-right" [ngClass]="{'fa-caret-up': lecturelo?.isOpen, 'fa-caret-down': !lecturelo?.isOpen}"></i>
+                                    </div>
+                                    <html-resource-component [htmlResourceUrl]="lecture.learningOutcomesUrl"></html-resource-component>
                                 </accordion-group>
-                                <accordion-group *ngIf="lecture.resourcesUrl" heading="Resources">
+                                <!--accordion-group *ngIf="lecture.learningOutcomes" heading="Learning outcomes">
+                                    <div class="learning-objectives" [innerHTML]="lecture.learningOutcomes"></div>
+                                </accordion-group-->
+                                <accordion-group #lecturelr *ngIf="lecture.resourcesUrl">
+                                    <div accordion-heading>
+                                        Resources <i class="fa pull-right" [ngClass]="{'fa-caret-up': lecturelr?.isOpen, 'fa-caret-down': !lecturelr?.isOpen}"></i>
+                                    </div>
                                     <resource-component [resourcesUrl] = "lecture.resourcesUrl"></resource-component>
                                 </accordion-group>
                             </accordion>
@@ -43,8 +54,21 @@
                             <h4 class="list-group-item-heading"><i class="fa fa-sign-in"></i><!--fa [name]="'sign-in'"></fa--> {{seminar.name}}</h4>
                             <p class="list-group-item-text" [innerHTML]="seminar.description | descriptionFormatter"></p>
                             <strong><p class="list-group-item-text" [innerHTML]="seminar.description | descriptionFormatter: 'lecturer'"></p></strong>
+                            <div class="row"><div class="col-md-12">&nbsp;</div></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a *ngIf="seminar.instructionsUrl" href="{{seminar.instructionsUrl}}" target="_blank" ><i class="fa fa-list-ol"></i> Instructions</a><br/>
+                                </div>
+                                <div class="col-md-6">
+                                    <a *ngIf="seminar.feedback?.url" href="{{seminar.feedback?.url}}" target="_blank" ><i class="fa fa-comment-o"></i><!--fa [name]="'comment-o'"></fa--> {{seminar.feedback?.name}}</a>
+                                </div>
+                            </div>
+                            <div class="row"><div class="col-md-12">&nbsp;</div></div>
                             <accordion [closeOthers]="true">
-                                <accordion-group heading="Sessions">
+                                <accordion-group #seminarls>
+                                    <div accordion-heading>
+                                        Sessions <i class="fa pull-right" [ngClass]="{'fa-caret-up': seminarls?.isOpen, 'fa-caret-down': !seminarls?.isOpen}"></i>
+                                    </div>
                                     <div class="list-group">
                                         <div *ngFor="let seminarInstance of seminar.seminarInstances" class="list-group-item">
                                             <a href="{{seminarInstance.url}}"><i class="fa fa-clock-o"></i><!--fa [name]="'clock-o'"></fa--> {{seminarInstance.name}}</a>
@@ -52,10 +76,16 @@
                                         </div>
                                     </div>
                                 </accordion-group>
-                                <accordion-group *ngIf="seminar.learningOutcomes" heading="Learning outcomes">
-                                    <div class="learning-objectives" [innerHTML]="seminar.learningOutcomes"></div>
+                                <accordion-group #seminarlo *ngIf="seminar.learningOutcomesUrl">
+                                    <div accordion-heading>
+                                        Learning outcomes <i class="fa pull-right" [ngClass]="{'fa-caret-up': seminarlo?.isOpen, 'fa-caret-down': !seminarlo?.isOpen}"></i>
+                                    </div>
+                                    <html-resource-component [htmlResourceUrl]="seminar.learningOutcomesUrl"></html-resource-component>
                                 </accordion-group>
-                                <accordion-group *ngIf="seminar.resourcesUrl" heading="Resources">
+                                <accordion-group #seminarlr *ngIf="seminar.resourcesUrl">
+                                    <div accordion-heading>
+                                        Resources <i class="fa pull-right" [ngClass]="{'fa-caret-up': seminarlr?.isOpen, 'fa-caret-down': !seminarlr?.isOpen}"></i>
+                                    </div>
                                     <resource-component [resourcesUrl] = "seminar.resourcesUrl"></resource-component>
                                 </accordion-group>
                             </accordion>

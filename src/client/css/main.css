@@ -5,3 +5,7 @@ a {
 a.hover {
   text-decoration: none !important;
 }
+
+.list-group {
+  margin-bottom: 0px;
+}

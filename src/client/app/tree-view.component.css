@@ -4,3 +4,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.notruncate {
+  white-space: normal;
+  overflow: visible;
+}

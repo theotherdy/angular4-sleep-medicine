@@ -36,7 +36,7 @@ export class AssessmentService {
             let trimmedResourceId = child.resourceId.substring(0, child.resourceId.length - 1);
             trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, ''); //remove group
             let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl;
-            resourceUrl = resourceUrl + trimmedResourceId + '.json';
+            resourceUrl = resourceUrl + trimmedResourceId + '.json?depth=3';
             assessmentItem.resourcesUrl = resourceUrl;
             assessmentToReturn.assessmentItems.push(assessmentItem);
         }

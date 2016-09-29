@@ -1,6 +1,9 @@
 <ul class="list-group">
     <li *ngFor="let resource of resources" class="list-group-item truncate">
-        <a *ngIf="resource.fileType !== 'folder'" href="{{ resource.url }}">
+        <div class="notruncate" *ngIf="resource.contentUrl">
+            <html-resource-component [htmlResourceUrl]="resource.contentUrl"></html-resource-component>
+        </div>
+        <a *ngIf="resource.fileType !== 'folder' && resource.fileType !== 'content'" href="{{ resource.url }}">
             <i *ngIf="resource.fileType === 'reading'" class="fa fa-book"></i>
             <i *ngIf="resource.fileType === 'pdf'" class="fa fa-file-pdf-o"></i>
             <i *ngIf="resource.fileType === 'xls'" class="fa fa-file-excel-o"></i>
@@ -19,7 +22,7 @@
             <i *ngIf="!resource.expanded" class="fa fa-folder-o"></i>
             <!--fa *ngIf="resource.expanded" [name]="'folder-open-o'"></fa>
             <fa *ngIf="!resource.expanded" [name]="'folder-o'"></fa-->
-            {{ resource.name }}
+            <a>{{ resource.name }}</a>
         </span>
         <div>{{resource.description}}</div>
         <div *ngIf="resource.expanded">

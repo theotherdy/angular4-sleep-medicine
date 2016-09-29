@@ -14,6 +14,7 @@ import myGlobals = require('./globals');
     moduleId: module.id,
     selector: 'modyules-component',
     templateUrl: 'modyule.component.html',
+    styleUrls:  ['modyule.component.css'],
     //directives: [WeekComponent,DROPDOWN_DIRECTIVES,CollapseDirective,AlertComponent],
     providers: [ModyuleService]
 })

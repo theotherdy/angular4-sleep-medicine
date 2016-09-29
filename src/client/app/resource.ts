@@ -5,6 +5,7 @@ export class Resource {
     url: string;
     fileType: string;
     expanded: boolean = false;
+    contentUrl: string;
     children: Resource[];
 
     toggle() {

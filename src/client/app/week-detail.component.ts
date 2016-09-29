@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { FaComponent } from 'angular2-fontawesome/components';
+//import { FaComponent } from 'angular2-fontawesome/components';
 
 //import { CollapseDirective } from 'ng2-bootstrap/ng2-bootstrap';
 //import { ACCORDION_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
@@ -49,23 +49,27 @@ export class WeekDetailComponent implements OnInit {
             .map(week => {
                 this.week.seminars = week.seminars;
                 return this.week;
-            })
-            .switchMap(week => this.weekService.getLectureLearningOutcomes(this.week))
+            });
+            /*.switchMap(week => this.weekService.getLectureLearningOutcomes(this.week))
             .map(week => {
                 this.week.lectures = week.lectures;
                 return this.week;
-            })
-            .switchMap(week => this.weekService.getSeminarLearningOutcomes(this.week))
+            }).switchMap(week => this.weekService.getSeminarLearningOutcomes(this.week))
             .map(week => {
-                this.week.seminars = week.seminars;
+                for (let returnedSeminar of week.seminars) {
+                    //if we have learning outcomes, then find the matching seminar and copy across
+                    if(returnedSeminar.learningOutcomes !== undefined && returnedSeminar.learningOutcomes !=='') {
+                        //find matching seminar
+                        for (let existingSeminar of this.week.seminars) {
+                            if(existingSeminar.id == returnedSeminar.id) {
+                                existingSeminar.learningOutcomes = returnedSeminar.learningOutcomes;
+                            }
+                        }
+                    }
+                }
+                //this.week.seminars = week.seminars;
                 return this.week;
-            });
+            });*/
         console.log(this.lecturesObservable);
-            /*.subscribe(
-                week => {
-                    this.week.lectures = week.lectures;
-                    },
-                error =>  this.errorMessage = <any>error
-            );*/
     }
 }

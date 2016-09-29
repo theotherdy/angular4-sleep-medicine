@@ -52,6 +52,11 @@ export class ResourceService {
                 tempResource.fileType = 'xls';
             } else if (resource.url.indexOf('doc')!==-1) {
                 tempResource.fileType = 'doc';
+            } else if((resource.type === 'org.sakaiproject.content.types.HtmlDocumentType'
+                    || resource.type === 'org.sakaiproject.content.types.fileUpload')
+                    && resource.name.toLowerCase().indexOf('content') !== -1) {
+                tempResource.contentUrl = resource.resourceId;
+                tempResource.fileType = 'content';
             } else {
                 tempResource.fileType = 'file';
             }

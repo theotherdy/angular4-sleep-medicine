@@ -8,6 +8,7 @@ export class Lecture {
     description: string;
     type: string; //main or supplementary
     url: string;
+    active:boolean=false;
     learningOutcomesUrl: string;
     learningOutcomes: string;
     collapsed: boolean = true; //learning objectives initially collapses

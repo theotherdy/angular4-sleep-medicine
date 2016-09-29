@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, OnChanges, SimpleChange} from '@angular/core';
 
-import { FaComponent } from 'angular2-fontawesome/components';
+//import { FaComponent } from 'angular2-fontawesome/components';
 
 //import {CORE_DIRECTIVES} from '@angular/common';
 //import { TAB_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';

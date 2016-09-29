@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { FaComponent } from 'angular2-fontawesome/components';
+//import { FaComponent } from 'angular2-fontawesome/components';
 
-import { CollapseDirective } from 'ng2-bootstrap/ng2-bootstrap';
+//import { CollapseDirective } from 'ng2-bootstrap/ng2-bootstrap';
 
 //import {CORE_DIRECTIVES} from '@angular/common';
 import { Observable }     from 'rxjs/Observable';

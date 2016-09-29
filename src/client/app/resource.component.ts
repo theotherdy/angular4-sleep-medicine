@@ -5,7 +5,7 @@ import { Observable }     from 'rxjs/Observable';
 
 import { Resource }     from './resource';
 import { ResourceService }     from './resource.service';
-import { TreeViewComponent }     from './tree-view.component';
+//import { TreeViewComponent }     from './tree-view.component';
 
 //import { LectureTypePipe } from './lecture-type.pipe';
 //import { DescriptionFormatterPipe } from './description-formatter.pipe';
