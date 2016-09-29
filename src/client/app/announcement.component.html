@@ -1,0 +1,15 @@
+<ul class="list-group">
+    <li *ngFor="let announcement of (announcementsObservable | async)" class="list-group-item truncate">
+        <span (click)="announcement.toggle()" >
+            <a>
+                <strong>{{ announcement.name }}</strong>
+                <small class="text-muted">{{announcement.createdOn | date:'d MMM yy'}} by {{ announcement.createdBy }}</small>
+                <i *ngIf="announcement.expanded" class="fa fa-caret-up pull-right"></i>
+                <i *ngIf="!announcement.expanded" class="fa fa-caret-down pull-right"></i>
+            </a>
+        </span>
+        <div class="notruncate" *ngIf="announcement.expanded">
+            {{announcement.description}}
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,63 @@
+{"entityPrefix": "announcement", "announcement_collection": [
+{
+  "announcementId": "0d94b581-099d-4ead-a5a6-973b1ca48e65",
+  "attachments": [],
+  "body": "An announcement for Diploma and MSc students",
+  "channel": "main",
+  "createdByDisplayName": "Damion Young",
+  "createdOn": 1474965087283,
+  "id": "d1506490-a468-46ca-a915-417d9d11be2f:main:0d94b581-099d-4ead-a5a6-973b1ca48e65",
+  "siteId": "d1506490-a468-46ca-a915-417d9d11be2f",
+  "siteTitle": "Sleep Medicine",
+  "title": "One for Diploma and MSc",
+  "entityReference": "\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:0d94b581-099d-4ead-a5a6-973b1ca48e65",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:0d94b581-099d-4ead-a5a6-973b1ca48e65",
+  "entityId": "d1506490-a468-46ca-a915-417d9d11be2f:main:0d94b581-099d-4ead-a5a6-973b1ca48e65",
+  "entityTitle": "One for Diploma and MSc"
+},{
+  "announcementId": "b0e3e4b5-dd07-4834-be59-7f1b820e9b01",
+  "attachments": [],
+  "body": "An announcement for MSc students",
+  "channel": "main",
+  "createdByDisplayName": "Damion Young",
+  "createdOn": 1474964863692,
+  "id": "d1506490-a468-46ca-a915-417d9d11be2f:main:b0e3e4b5-dd07-4834-be59-7f1b820e9b01",
+  "siteId": "d1506490-a468-46ca-a915-417d9d11be2f",
+  "siteTitle": "Sleep Medicine",
+  "title": "One for MSc",
+  "entityReference": "\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:b0e3e4b5-dd07-4834-be59-7f1b820e9b01",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:b0e3e4b5-dd07-4834-be59-7f1b820e9b01",
+  "entityId": "d1506490-a468-46ca-a915-417d9d11be2f:main:b0e3e4b5-dd07-4834-be59-7f1b820e9b01",
+  "entityTitle": "One for MSc"
+},{
+  "announcementId": "3fc180ce-77c8-4876-8411-12ed266f3ee6",
+  "attachments": [],
+  "body": "An announcement for Diploma students",
+  "channel": "main",
+  "createdByDisplayName": "Damion Young",
+  "createdOn": 1474964824916,
+  "id": "d1506490-a468-46ca-a915-417d9d11be2f:main:3fc180ce-77c8-4876-8411-12ed266f3ee6",
+  "siteId": "d1506490-a468-46ca-a915-417d9d11be2f",
+  "siteTitle": "Sleep Medicine",
+  "title": "One for Diploma",
+  "entityReference": "\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:3fc180ce-77c8-4876-8411-12ed266f3ee6",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:3fc180ce-77c8-4876-8411-12ed266f3ee6",
+  "entityId": "d1506490-a468-46ca-a915-417d9d11be2f:main:3fc180ce-77c8-4876-8411-12ed266f3ee6",
+  "entityTitle": "One for Diploma"
+},{
+  "announcementId": "25214fcb-8560-40f9-8e41-94b632e326de",
+  "attachments": [],
+  "body": "An announcement for CPD",
+  "channel": "main",
+  "createdByDisplayName": "Damion Young",
+  "createdOn": 1474964770402,
+  "id": "d1506490-a468-46ca-a915-417d9d11be2f:main:25214fcb-8560-40f9-8e41-94b632e326de",
+  "siteId": "d1506490-a468-46ca-a915-417d9d11be2f",
+  "siteTitle": "Sleep Medicine",
+  "title": "One for CPD",
+  "entityReference": "\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:25214fcb-8560-40f9-8e41-94b632e326de",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/announcement\/d1506490-a468-46ca-a915-417d9d11be2f:main:25214fcb-8560-40f9-8e41-94b632e326de",
+  "entityId": "d1506490-a468-46ca-a915-417d9d11be2f:main:25214fcb-8560-40f9-8e41-94b632e326de",
+  "entityTitle": "One for CPD"
+}
+]}

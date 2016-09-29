@@ -1,0 +1,14 @@
+<ul class="list-group">
+    <li *ngFor="let message of messages" class="list-group-item truncate">
+        <div>
+            <strong>{{ message.name }}</strong>
+            <small class="text-muted">{{message.createdOn | date:'d MMM yy'}} by {{ message.createdBy }}</small>
+        </div>
+        <div>
+            <p [innerHTML]="message.description"></p>
+        </div>
+        <div *ngIf="message.replies">
+            <message-component [messages]="message.replies"></message-component>
+        </div>
+    </li>
+</ul>

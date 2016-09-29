@@ -1,0 +1,32 @@
+{
+  "createdTime": null,
+  "displayId": "mdiv0044",
+  "displayName": "Damion Young",
+  "eid": "16225",
+  "email": "damion.young@medsci.ox.ac.uk",
+  "firstName": "Damion",
+  "id": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "lastModified": 1474712474403,
+  "lastName": "Young",
+  "modifiedTime": null,
+  "owner": "\/user\/",
+  "password": null,
+  "props": {
+    "oakStatus": "senmem",
+    "edu.amc.sakai.user.JLDAPDirectoryProvider-displayId": "mdiv0044",
+    "primaryOrgUnit": "medsci",
+    "eduPersonPrimaryOrgUnitDN": "oakUnitCode=medsci,ou=units,dc=oak,dc=ox,dc=ac,dc=uk",
+    "givenName": "Damion",
+    "units": null,
+    "udp.dn": "oakPrimaryPersonID=16225,ou=people,dc=oak,dc=ox,dc=ac,dc=uk",
+    "aid": "mdiv0044"
+  },
+  "reference": "\/user\/d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "sortName": "Young, Damion",
+  "type": null,
+  "url": "https:\/\/weblearn.ox.ac.uk\/access\/userd00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "entityReference": "\/user\/d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/user\/d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "entityId": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "entityTitle": "Damion Young"
+}

@@ -1,0 +1,17 @@
+<div class="list-group">
+    <div *ngFor="let thread of ((topicObservable | async)?.threads)" class="list-group-item truncate">
+        <p>
+            <span (click)="thread.toggle()" >
+                <a>
+                    <span *ngIf="thread.unreadMessages > 0" class="badge">{{thread.unreadMessages}}</span>
+                    <strong>{{ thread.name }}</strong>
+                    <i *ngIf="thread.expanded" class="fa fa-caret-up pull-right"></i>
+                    <i *ngIf="!thread.expanded" class="fa fa-caret-down pull-right"></i>
+                </a>
+            </span>
+        </p>
+        <div class="notruncate" *ngIf="thread.expanded">
+            <thread-component [thread]="thread"></thread-component>
+        </div>
+    </div>
+</div>

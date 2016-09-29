@@ -1,0 +1,17 @@
+<div class="list-group">
+    <div *ngFor="let topic of ((forumObservable | async)?.topics)" class="list-group-item truncate">
+        <p>
+            <span (click)="topic.toggle()" >
+                <a>
+                    <span *ngIf="topic.unreadMessages > 0" class="badge">{{topic.unreadMessages}}</span>
+                    <strong>{{ topic.name }}</strong>
+                    <i *ngIf="topic.expanded" class="fa fa-caret-up pull-right"></i>
+                    <i *ngIf="!topic.expanded" class="fa fa-caret-down pull-right"></i>
+                </a>
+            </span>
+        </p>
+        <div class="notruncate" *ngIf="topic.expanded">
+            <topic-component [topic]="topic"></topic-component>
+        </div>
+    </div>
+</div>

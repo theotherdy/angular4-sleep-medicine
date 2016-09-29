@@ -1,0 +1,27 @@
+{"entityPrefix": "forums", "forums_collection": [
+{
+  "assocGradebookItemName": null,
+  "attachments": [],
+  "closeDate": null,
+  "createdDate": 1474986788,
+  "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "extendedDescription": "",
+  "id": 4020,
+  "isAvailabilityRestricted": false,
+  "isDraft": false,
+  "isLocked": false,
+  "isModerated": false,
+  "isPostFirst": false,
+  "modifiedDate": 1474986904,
+  "modifier": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "openDate": null,
+  "readMessages": 4,
+  "shortDescription": "",
+  "title": "Sleep Medicine",
+  "totalMessages": 4,
+  "entityReference": "\/forums\/4020",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/forums\/4020",
+  "entityId": "4020",
+  "entityTitle": "Sleep Medicine"
+}
+]}

@@ -1,0 +1,18 @@
+{
+  "id": "d00ca345-4e31-485c-00e9-0fc880da2dc0::site:d1506490-a468-46ca-a915-417d9d11be2f",
+  "lastLoginTime": 1474875627302,
+  "locationReference": "\/site\/d1506490-a468-46ca-a915-417d9d11be2f",
+  "memberRole": "maintain",
+  "userDisplayId": "mdiv0044",
+  "userDisplayName": "Damion Young",
+  "userEid": "16225",
+  "userEmail": "damion.young@medsci.ox.ac.uk",
+  "userId": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+  "userSortName": "Young, Damion",
+  "active": true,
+  "provided": false,
+  "entityReference": "\/membership\/d00ca345-4e31-485c-00e9-0fc880da2dc0::site:d1506490-a468-46ca-a915-417d9d11be2f",
+  "entityURL": "https:\/\/weblearn.ox.ac.uk\/direct\/membership\/d00ca345-4e31-485c-00e9-0fc880da2dc0::site:d1506490-a468-46ca-a915-417d9d11be2f",
+  "entityId": "d00ca345-4e31-485c-00e9-0fc880da2dc0::site:d1506490-a468-46ca-a915-417d9d11be2f",
+  "entityTitle": "Damion Young"
+}
