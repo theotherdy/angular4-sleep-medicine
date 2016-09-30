@@ -5,7 +5,7 @@ import {Message} from './message';
     moduleId: module.id,
     selector: 'message-component',
     templateUrl: 'message.component.html',
-    //styleUrls:  ['message.component.css'],
+    styleUrls:  ['message.component.css'],
     //directives: [TreeViewComponent,FaComponent]
 })
 

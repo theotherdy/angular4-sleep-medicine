@@ -44,7 +44,8 @@ export class ForumService {
         this.myForumId = topic.forumId;
         this.myTopicId = topic.id;
         let threadUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
-        threadUrl = threadUrl + myGlobals.forumDirectUrl + this.mySiteId + '/forum/' + this.myForumId + '/topic/' + this.myTopicId + '.json';
+        threadUrl = threadUrl + myGlobals.forumDirectUrl + this.mySiteId + '/forum/' + this.myForumId;
+        threadUrl = threadUrl + '/topic/' + this.myTopicId + '.json';
         return this.http.get(threadUrl)
             .map(this.processThreads)
             .catch(this.handleError);
@@ -138,7 +139,7 @@ export class ForumService {
         return messagesToReturn;
     }
 
-    processMessageAndReplies(messageData:any){
+    private processMessageAndReplies(messageData:any) {
         let messageToReturn = new Message;
         messageToReturn.id = messageData.id;
         messageToReturn.name = messageData.title;

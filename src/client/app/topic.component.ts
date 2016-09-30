@@ -12,7 +12,7 @@ import { ForumService } from './forum.service';
     selector: 'topic-component',
     templateUrl: 'topic.component.html',
     //directives: [ResourceComponent,ModyuleResourceComponent,FaComponent,ACCORDION_DIRECTIVES,CollapseDirective],
-    //styleUrls:  ['topic.component.css'],
+    styleUrls:  ['topic.component.css'],
     //pipes: [LectureTypePipe, DescriptionFormatterPipe],
     providers: [ForumService]
 })

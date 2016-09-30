@@ -12,7 +12,7 @@ import { ForumService } from './forum.service';
     selector: 'thread-component',
     templateUrl: 'thread.component.html',
     //directives: [ResourceComponent,ModyuleResourceComponent,FaComponent,ACCORDION_DIRECTIVES,CollapseDirective],
-    //styleUrls:  ['topic.component.css'],
+    styleUrls:  ['thread.component.css'],
     //pipes: [LectureTypePipe, DescriptionFormatterPipe],
     providers: [ForumService]
 })
@@ -38,7 +38,7 @@ export class ThreadComponent implements OnInit {
                 //message.sort(this.compareByMessageDates);
                 //this.topic.threads = threads;
                 console.log(messages);
-                return messages;                
+                return messages;
             });
     }
 

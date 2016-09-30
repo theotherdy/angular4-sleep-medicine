@@ -42,110 +42,97 @@ export class AppComponent implements OnInit {
                 })
             .switchMap(user => this.userService.getRole(user))
             .map(role => {
-                    //console.log(modyules);
                     this.user.role = role;
 
-                    let rhColumn = window.parent.document.getElementById('col2of2');
-                    let lhColumn = window.parent.document.getElementById('col1of2');
-                    let content = window.parent.document.getElementById('content');
+                    //get references to elements needed for both maintain and access users
+                    let rhColumn:any = window.parent.document.getElementById('col2of2');
+                    let lhColumn:any = window.parent.document.getElementById('col1of2');
+                    let content:any = window.parent.document.getElementById('content');
+            		let mrphsSiteHierarchy:any = window.parent.document.getElementsByClassName('Mrphs-siteHierarchy')[0];
+            		let mrphsMainHeader:any = window.parent.document.getElementsByClassName('Mrphs-mainHeader')[0];
+            		let mrphsToolTitleNav:any = window.parent.document.getElementsByClassName('Mrphs-toolTitleNav')[0];
+            		let mrphsFooter:any = window.parent.document.getElementsByClassName('Mrphs-footer')[0];
+            		let portletBody:any = window.parent.document.getElementsByClassName('portletBody')[0];
+                    let parentIFrame:any = window.parent.document.getElementsByTagName("IFRAME")[0];
+            		let newIFrameHeight:any;
 
-                    //var parentIFrame = parent.document.getElementsByTagName("IFRAME")[0];
-
-                    //if (parentIFrame) {
-                             //parentIFrame.style.height = '300px';
-                    //}
-
-                    if(content) {
-                        content.style.padding = '0';
+                    if (parentIFrame) {
+                        //see http://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window/11744120#11744120
+            			let w:any = window.parent;
+            			let d:any = window.parent.document;
+            			let e:any = d.documentElement;
+            			let g:any = d.getElementsByTagName('body')[0];
+            			newIFrameHeight = w.innerHeight|| e.clientHeight|| g.clientHeight;
+            		}
+                    if (content) {
+                      content.style.padding = '0';
                     }
-                    if(rhColumn) {
-                        rhColumn.style.display = 'none';
+                    if (rhColumn) {
+                      rhColumn.style.display = 'none';
                     }
-                    if(lhColumn) {
-                        lhColumn.style.width = '100%';
-                        lhColumn.style.paddingRight = '0';
-                        lhColumn.style.marginLeft = '0';
+                    if (lhColumn) {
+                      lhColumn.style.width = '100%';
+                      lhColumn.style.paddingRight = '0';
+                      lhColumn.style.marginLeft = '0';
+                    }
+            		if (portletBody) {
+                      portletBody.style.marginTop = '0px';
+                      portletBody.style.padding = '0px';
                     }
                     if (this.user.role !== 'maintain') {
-                        let mrphsToolTitleNav:any = window.parent.document.getElementsByClassName('Mrphs-toolTitleNav')[0];
-		                let toolMenuWrap = window.parent.document.getElementById('toolMenuWrap');
-                        let skipNav = window.parent.document.getElementById('skipNav');
-                        let selectSiteModal = window.parent.document.getElementById('selectSiteModal');
-                        let parentBody = window.parent.document.body;
-                        let viewAllSitesBtn: any = window.parent.document.getElementsByClassName('view-all-sites-btn')[0];
-                        let mrphsSiteHierarchy: any = window.parent.document.getElementsByClassName('Mrphs-siteHierarchy')[0];
-                        let portletBody: any = window.parent.document.getElementsByClassName('portletBody')[0];
-
-                        if(content) {
+                        let toolMenuWrap:any = window.parent.document.getElementById('toolMenuWrap');
+                        let skipNav:any = window.parent.document.getElementById('skipNav');
+                        let selectSiteModal:any = window.parent.document.getElementById('selectSiteModal');
+                        let parentBody:any = window.parent.document.body;
+                        let viewAllSitesBtn:any = window.parent.document.getElementsByClassName('view-all-sites-btn')[0];
+                        if (content) {
                             content.style.marginTop = '0';
                         }
-
-                        //parentBody.style.height;
-
                         if (mrphsToolTitleNav) {
                             mrphsToolTitleNav.style.display = 'none';
-                          }
-                		if (toolMenuWrap) {
+                        }
+                        if (toolMenuWrap) {
                             toolMenuWrap.style.display = 'none';
-                          }
-                        if(skipNav) {
+                        }
+                        if (skipNav) {
                             skipNav.style.display = 'none';
                         }
-                        if(portletBody) {
-                            portletBody.style.marginTop = '0';
-                            portletBody.style.padding = '2';
-                        }
-                        if(viewAllSitesBtn) {
+                        if (viewAllSitesBtn) {
                             viewAllSitesBtn.style.display = 'inline-block';
                         }
-                        if(mrphsSiteHierarchy) {
+                        if (mrphsSiteHierarchy) {
                             mrphsSiteHierarchy.style.display = 'none';
                         }
-                        if(parseInt(parentBody.style.width) < 784 && selectSiteModal) {
-                			selectSiteModal.style.marginTop = '-34px';
-                		}
-                    }
-                })
-            .subscribe(
-
-            );
-            /*.switchMap(modyules => this.modyuleService.getModyulesDetails(modyules))
-            .map(modyules => {
-                    //console.log(modyules);
-                    return modyules;
-                })
-            .subscribe(
-                modyules => {
-                    //@todo - deal with research modyules seaparately otherwise if two are concurrent, not sure which one will be returned
-                    //first sort returned modyules into name order
-                    if (modyules.length > 0) {
-                        this.noModyulesFound = false;
-                    }
-
-                    modyules.sort(this.compareByModyuleDate);
-
-                    this.modyules = modyules;
-
-                    let tempCurrentModyule: Modyule = modyules[0];  //now they're sorted, this should be the first one
-                    let currentDate: Date = new Date();
-                    for (let modyule of modyules) {
-                        if(currentDate > modyule.startDate && modyule.startDate > tempCurrentModyule.startDate) {
-                            tempCurrentModyule = modyule;
+                        if (mrphsFooter) {
+                            mrphsFooter.style.display = 'none';
                         }
-                    //this is the currentModyule
-                    myGlobals.currentModyule = tempCurrentModyule;
-                    this.selectedModyule = tempCurrentModyule;
+                        if (parseInt(parentBody.style.width) < 784 && selectSiteModal) {
+                            selectSiteModal.style.marginTop = '-34px';
+                        }
+                        //now work out iframe height for access users
+                        if (parentIFrame) {
+                            newIFrameHeight = (newIFrameHeight-mrphsMainHeader.clientHeight);
+                        }
+                    } else {
+                        //now work out iframe height for maintain users
+                        if (parentIFrame) {
+                            newIFrameHeight = newIFrameHeight-mrphsMainHeader.clientHeight-mrphsSiteHierarchy.clientHeight-mrphsToolTitleNav.clientHeight;
+                        }
                     }
-                },
-                error =>  this.errorMessage = <any>error
-            );*/
-        let rhColumn = window.parent.document.getElementById('col2of2');
-        let lhColumn = window.parent.document.getElementById('col1of2');
-        if(rhColumn) {
-            rhColumn.style.display = 'none';
-        }
-        if(lhColumn) {
-            lhColumn.style.width = '100%';
-        }
+                    //size iFrame
+                    if (parentIFrame) {
+                        parentIFrame.style.height = newIFrameHeight+'px';
+                    }
+                })
+            .subscribe();
+
+        //let rhColumn = window.parent.document.getElementById('col2of2');
+        //let lhColumn = window.parent.document.getElementById('col1of2');
+        //if(rhColumn) {
+        //    rhColumn.style.display = 'none';
+        //}
+        //if(lhColumn) {
+        //    lhColumn.style.width = '100%';
+        //}
     }
 }
