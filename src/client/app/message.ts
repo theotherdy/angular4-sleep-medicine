@@ -14,6 +14,7 @@ export class Message {
     totalMessages: number;
     unreadMessages: number;
     read: boolean;
+    directUrl: string;
 
     siteId: string;
     forumId: string;

@@ -22,7 +22,15 @@ export class AppComponent implements OnInit {
     userCurrentUrl = this.ebBase + myGlobals.userCurrentUrl;
     siteId = myGlobals.homeSiteId;
 
+    //urls for images
     logoUrl = myGlobals.logoUrl[myGlobals.runtimeEnvironment];
+    colinEspieUrl = myGlobals.colinEspieUrl[myGlobals.runtimeEnvironment];
+    christopherJamesHarveyUrl = myGlobals.christopherJamesHarveyUrl[myGlobals.runtimeEnvironment];
+    marionGreenleavesUrl = myGlobals.marionGreenleavesUrl[myGlobals.runtimeEnvironment];
+    nicolaBarclayUrl = myGlobals.nicolaBarclayUrl[myGlobals.runtimeEnvironment];
+    russellFosterUrl = myGlobals.russellFosterUrl[myGlobals.runtimeEnvironment];
+    simonKyleUrl = myGlobals.simonKyleUrl[myGlobals.runtimeEnvironment];
+    sumathiSekaranUrl = myGlobals.sumathiSekaranUrl[myGlobals.runtimeEnvironment];
 
     user: User;
 
@@ -37,12 +45,28 @@ export class AppComponent implements OnInit {
             .map(user => {
                     //console.log(modyules);
                     this.user = user;
-                    console.log(this.user);
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'CPD'))
+            .map(user => {
+                    this.user.isCPD = user.isCPD;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'Dip'))
+            .map(user => {
+                    this.user.isDip = user.isDip;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'MSc'))
+            .map(user => {
+                    this.user.isMSc = user.isMSc;
                     return this.user;
                 })
             .switchMap(user => this.userService.getRole(user))
             .map(role => {
                     this.user.role = role;
+
+                    console.log(this.user);
 
                     //get references to elements needed for both maintain and access users
                     let rhColumn:any = window.parent.document.getElementById('col2of2');
@@ -53,11 +77,20 @@ export class AppComponent implements OnInit {
             		let mrphsToolTitleNav:any = window.parent.document.getElementsByClassName('Mrphs-toolTitleNav')[0];
             		let mrphsFooter:any = window.parent.document.getElementsByClassName('Mrphs-footer')[0];
             		let portletBody:any = window.parent.document.getElementsByClassName('portletBody')[0];
-                    let parentIFrame:any = window.parent.document.getElementsByTagName("IFRAME")[0];
-            		let newIFrameHeight:any;
+
+                    let parentIFrame:any;
+                    let iFrames:any = window.parent.document.getElementsByTagName('IFRAME');
+                    for (let iFrame of iFrames) {
+                        if(iFrame.id !== 'map') {
+                            parentIFrame = iFrame;
+                        }
+                    }
+
+                    //let parentIFrame:any = window.parent.document.getElementsByTagName('IFRAME')[0];
+                    let newIFrameHeight:any;
 
                     if (parentIFrame) {
-                        //see http://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window/11744120#11744120
+                        //see http://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window
             			let w:any = window.parent;
             			let d:any = window.parent.document;
             			let e:any = d.documentElement;
@@ -116,7 +149,8 @@ export class AppComponent implements OnInit {
                     } else {
                         //now work out iframe height for maintain users
                         if (parentIFrame) {
-                            newIFrameHeight = newIFrameHeight-mrphsMainHeader.clientHeight-mrphsSiteHierarchy.clientHeight-mrphsToolTitleNav.clientHeight;
+                            newIFrameHeight = newIFrameHeight-mrphsMainHeader.clientHeight-mrphsSiteHierarchy.clientHeight;
+                            newIFrameHeight = newIFrameHeight-mrphsToolTitleNav.clientHeight;
                         }
                     }
                     //size iFrame
@@ -134,5 +168,63 @@ export class AppComponent implements OnInit {
         //if(lhColumn) {
         //    lhColumn.style.width = '100%';
         //}
+    }
+
+    navClicked(event:any) {
+        event.preventDefault();
+        let target = event.target || event.srcElement || event.currentTarget;
+        let hrefFull = target.attributes.href.nodeValue;
+        let href = hrefFull.substring(1); //remove #
+        //let el = document.getElementById(href);
+        //let rect = el.getBoundingClientRect();
+        this.smoothScroll(href, 60);
+    }
+
+    currentYPosition() {
+        // Firefox, Chrome, Opera, Safari
+        if (self.pageYOffset) return self.pageYOffset;
+        // Internet Explorer 6 - standards mode
+        if (document.documentElement && document.documentElement.scrollTop)
+            return document.documentElement.scrollTop;
+        // Internet Explorer 6, 7 and 8
+        if (document.body.scrollTop) return document.body.scrollTop;
+        return 0;
+    }
+
+    elmYPosition(eID:string) {
+        var elm = document.getElementById(eID);
+        var y = elm.offsetTop;
+        var node:any = elm;
+        while (node.offsetParent && node.offsetParent !== document.body) {
+            node = node.offsetParent;
+            y += node.offsetTop;
+        } return y;
+    }
+
+    smoothScroll(eID: string, offset: number) {
+        var startY = this.currentYPosition();
+        var stopY = this.elmYPosition(eID)-offset;
+        var distance = stopY > startY ? stopY - startY : startY - stopY;
+        if (distance < 20) {
+            scrollTo(0, stopY);
+            return true;
+        }
+        var speed = Math.round(distance / 50);
+        if (speed >= 15) speed = 15;
+        var step = Math.round(distance / 25);
+        var leapY = stopY > startY ? startY + step : startY - step;
+        var timer = 0;
+        if (stopY > startY) {
+            for ( var i=startY; i<stopY; i+=step ) {
+                setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
+                leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+            }
+            return true;
+        }
+        for ( var i=startY; i>stopY; i-=step ) {
+            setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
+            leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+        }
+        return false;
     }
 }

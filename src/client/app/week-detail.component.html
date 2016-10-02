@@ -1,6 +1,6 @@
 <div class="row hidden-xs">
     <div class="col-sm-12 text-center h4">
-        <i class="fa fa-calendar"></i><!--fa [name]="'calendar'"></fa--> {{week.startDate | date:'d MMM'}} to {{week.endDate | date:'d MMM yy'}}
+        <a target="_blank" href="https://weblearn.ox.ac.uk/access/content/group/d1506490-a468-46ca-a915-417d9d11be2f/Course%20Information/Important%20Dates/Timetable/Year%20One%20Timetable.pdf"><i class="fa fa-calendar"></i></a><!--fa [name]="'calendar'"></fa--> {{week.startDate | date:'d MMM'}} to {{week.endDate | date:'d MMM yy'}}
     </div>
 </div>
 <div class="row">
@@ -18,7 +18,7 @@
                                 <strong><p class="list-group-item-text" [innerHTML]="lecture.description | descriptionFormatter: 'lecturer'"></p></strong>
                             </a>
                             <div *ngIf="lecture.feedback?.url" class="row"><div class="col-md-12">&nbsp;</div></div><!--spacer only needed-->
-                            <a *ngIf="lecture.feedback?.url" href="{{lecture.feedback?.url}}" target="_blank" ><i class="fa fa-comment-o"></i><!--fa [name]="'comment-o'"></fa--> {{lecture.feedback?.name}}</a>
+                            <a *ngIf="lecture.feedback?.url" href="{{lecture.feedback?.url}}" target="_blank" ><i class="fa fa-reply"></i><!--fa [name]="'comment-o'"></fa--> {{lecture.feedback?.name}}</a>
                             <div class="row"><div class="col-md-12">&nbsp;</div></div><!--spacer-->
                             <accordion [closeOthers]="true">
                                 <accordion-group #lecturelo *ngIf="lecture.learningOutcomesUrl">
@@ -56,11 +56,16 @@
                             <strong><p class="list-group-item-text" [innerHTML]="seminar.description | descriptionFormatter: 'lecturer'"></p></strong>
                             <div class="row"><div class="col-md-12">&nbsp;</div></div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <a *ngIf="seminar.instructionsUrl" href="{{seminar.instructionsUrl}}" target="_blank" ><i class="fa fa-list-ol"></i> Instructions</a><br/>
+                                <div class="col-md-12">
+                                    <a class="btn btn-warning btn-lg btn-block" *ngIf="seminar.instructionsUrl" href="{{seminar.instructionsUrl}}" target="_blank" ><i class="fa fa-list-ol"></i> Instructions</a><br/>
                                 </div>
-                                <div class="col-md-6">
-                                    <a *ngIf="seminar.feedback?.url" href="{{seminar.feedback?.url}}" target="_blank" ><i class="fa fa-comment-o"></i><!--fa [name]="'comment-o'"></fa--> {{seminar.feedback?.name}}</a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a *ngIf="seminar.feedback?.url" href="{{seminar.feedback?.url}}" target="_blank" >
+                                        <i class="fa fa-reply"></i>
+                                        {{seminar.feedback?.name}}
+                                    </a>
                                 </div>
                             </div>
                             <div class="row"><div class="col-md-12">&nbsp;</div></div>

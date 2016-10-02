@@ -125,6 +125,10 @@ export class ForumService {
             threadToReturn.siteId = this.mySiteId;
             threadToReturn.forumId = this.myForumId;
             threadToReturn.topicId = this.myTopicId;
+            let directUrl:string = myGlobals.baseUrlforForums + 'dd7e4210-9e50-4652-ba62-3ca89ba98ce4'; //top-level forum
+            directUrl = directUrl + '/discussionForum/message/dfViewThreadDirect.jsf?messageId=' + threadData.messageId;
+            directUrl = directUrl + '&topicId='+ this.myTopicId + '&forumId=' + this.myForumId;
+            threadToReturn.directUrl = directUrl;
             threadsToReturn.push(threadToReturn);
         }
         return threadsToReturn;

@@ -5,4 +5,7 @@ export class User {
     lastName: string;
     oxfordUsername: string;
     role:string;
+    isCPD: boolean;
+    isDip: boolean;
+    isMSc: boolean;
 }

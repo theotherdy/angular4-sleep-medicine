@@ -7,11 +7,24 @@ import { Modyule } from './modyule';
  */
 export let homeSiteId: string = 'd1506490-a468-46ca-a915-417d9d11be2f';
 
+//export let groupId: Array<string> = [];
+
+//groupId needs to be defined like this because it has string indices for the array
+interface IDictionary {
+     [index: string]: string;
+}
+export let groupId = {} as IDictionary;
+
+groupId['CPD'] = '3e67b502-154a-4949-936b-584a02864f48';
+groupId['Dip'] = 'e2504d23-7a30-4c51-a148-a9f373d5679f';
+groupId['MSc'] = '8513fad8-656f-4265-9573-f00b8a781d02';
+
 export let runtimeEnvironment: number = 0;
 export let currentModyule: Modyule =  null;
 //export let entityBrokerBaseUrl: string = 'app/'; //in WL "https://weblearn.ox.ac.uk/direct/"
 export let entityBrokerBaseUrl: Array<string> = ['app/', 'https://weblearn.ox.ac.uk/direct/'];
 export let baseUrlforLOs: Array<string> = ['app/', 'https://weblearn.ox.ac.uk/'];
+export let baseUrlforForums: string = 'https://weblearn.ox.ac.uk/portal/tool/';
 //export let entityBrokerBaseUrlForLocalOnly: string = 'http://localhost:3000/'; //search and remove on live
 //export let unneededPartOfUrlForHierarchyCalls: string = 'https://weblearn.ox.ac.uk/portal/hierarchy';
 export let unneededPartOfUrlForHierarchyCalls: Array<string> = [];
@@ -29,9 +42,40 @@ export let urlToSpecifyPortal: Array<string> = ['portal-hierarchy', 'portal-hier
 //export let suffixForTestingOnly: string = '.json'; //in WL = ''  ie no suffix
 export let suffixForTestingOnly: Array<string> = ['.json', ''];
 
-let wlImageName = 'Standard_SCNi_Logo_Reverse.png';
-let wlImageUrl = 'https://weblearn.ox.ac.uk/access/content/group/'+homeSiteId+'/portal/assets/img/' + wlImageName;
-export let logoUrl: Array<string> = ['assets/img/' + wlImageName, wlImageUrl];
+let wlImageUrl = 'https://weblearn.ox.ac.uk/access/content/group/'+homeSiteId+'/portal/assets/img/';
+
+let logoImageName = 'Standard_SCNi_Logo_Reverse.png';
+let logoImageUrl = 'Standard_SCNi_Logo_Reverse.png';
+
+let colinEspieImageName = 'colin_espie.jpeg';
+let colinEspieImageUrl = wlImageUrl + colinEspieImageName;
+
+let christopherJamesHarveyImageName = 'christopher-james_harvey.jpeg';
+let christopherJamesHarveyImageUrl = wlImageUrl + christopherJamesHarveyImageName;
+
+let marionGreenleavesImageName = 'marion_greenleaves.jpeg';
+let marionGreenleavesImageUrl = wlImageUrl + marionGreenleavesImageName;
+
+let nicolaBarclayImageName = 'nicola_barclay.jpeg';
+let nicolaBarclayImageUrl = wlImageUrl + nicolaBarclayImageName;
+
+let russellFosterImageName = 'russell_foster.jpeg';
+let russellFosterImageUrl = wlImageUrl + russellFosterImageName;
+
+let simonKyleImageName = 'simon_kyle.jpeg';
+let simonKyleImageUrl = wlImageUrl + simonKyleImageName;
+
+let sumathiSekaranImageName = 'sumathi_sekaran.jpeg';
+let sumathiSekaranImageUrl = wlImageUrl + sumathiSekaranImageName;
+
+export let logoUrl: Array<string> = ['assets/img/' + logoImageName, logoImageUrl];
+export let colinEspieUrl: Array<string> = ['assets/img/' + colinEspieImageName, colinEspieImageUrl];
+export let christopherJamesHarveyUrl: Array<string> = ['assets/img/' + christopherJamesHarveyImageName, christopherJamesHarveyImageUrl];
+export let marionGreenleavesUrl: Array<string> = ['assets/img/' + marionGreenleavesImageName, marionGreenleavesImageUrl];
+export let nicolaBarclayUrl: Array<string> = ['assets/img/' + nicolaBarclayImageName, nicolaBarclayImageUrl];
+export let russellFosterUrl: Array<string> = ['assets/img/' + russellFosterImageName, russellFosterImageUrl];
+export let simonKyleUrl: Array<string> = ['assets/img/' + simonKyleImageName, simonKyleImageUrl];
+export let sumathiSekaranUrl: Array<string> = ['assets/img/' + sumathiSekaranImageName, sumathiSekaranImageUrl];
 
 export let lessonsUrl: string = 'lessons/site/'; //same in WL
 export let lessonUrl: string = 'lessons/lesson/'; //same in WL

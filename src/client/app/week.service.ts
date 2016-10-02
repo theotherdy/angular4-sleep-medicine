@@ -303,7 +303,9 @@ export class WeekService {
                         seminar.resourcesUrl = resourceUrl;
                     } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder'
                                 && seminarDetail.name.toLowerCase()==='instructions') {
-                        seminar.instructionsUrl = seminarDetail.resourceChildren[0].url;
+                        if(seminarDetail.resourceChildren.length>0) {
+                            seminar.instructionsUrl = seminarDetail.resourceChildren[0].url;
+                        }
                     }
                 }
             }

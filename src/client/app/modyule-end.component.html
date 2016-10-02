@@ -30,7 +30,7 @@
     </div>
     <div class="col-sm-6">
         <div class="thumbnail">
-            <div class="image hidden-xs"><i class="fa fa-comments-o fa-5x"></i><!--fa [name]="'comments-o'" [size]=5></fa--></div>
+            <div class="image hidden-xs"><i class="fa fa-reply-all fa-5x"></i><!--fa [name]="'comments-o'" [size]=5></fa--></div>
             <div class="caption">
                 <div>
                     <h3>Feedback</h3>
@@ -38,7 +38,7 @@
                     <div class="list-group">
                         <div class="list-group-item">
                             <a href="{{(modyuleEndObservable | async)?.feedback?.url}}" target="_blank" >
-                                <h4 class="list-group-item-heading"><i class="fa fa-comment-o"></i><!--fa [name]="'comment-o'"></fa--> {{(modyuleEndObservable | async)?.feedback?.name}}</h4>
+                                <h4 class="list-group-item-heading"><i class="fa fa-reply"></i><!--fa [name]="'comment-o'"></fa--> {{(modyuleEndObservable | async)?.feedback?.name}}</h4>
                                 <p class="list-group-item-text" [innerHTML]="(modyuleEndObservable | async)?.feedback?.description"></p>
                             </a>
                         </div>

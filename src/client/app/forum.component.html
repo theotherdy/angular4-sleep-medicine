@@ -3,8 +3,9 @@
         <p>
             <span (click)="topic.toggle()" >
                 <a>
-                    <span *ngIf="topic.unreadMessages > 0" class="badge">{{topic.unreadMessages}}</span>
+                    <i class="fa fa-comments-o"></i>
                     <strong>{{ topic.name }}</strong>
+                    <span *ngIf="topic.unreadMessages > 0" class="label label-warning label-as-badge">{{topic.unreadMessages}}</span>
                     <i *ngIf="topic.expanded" class="fa fa-caret-up pull-right"></i>
                     <i *ngIf="!topic.expanded" class="fa fa-caret-down pull-right"></i>
                 </a>

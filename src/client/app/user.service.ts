@@ -13,6 +13,9 @@ import myGlobals = require('./globals');
 @Injectable()
 export class UserService {
 
+    user: User;
+    groupName: string;
+
     constructor (private http: Http) {}
 
     getUser (userCurrentUrl: string): Observable<User> {
@@ -26,6 +29,16 @@ export class UserService {
         let roleUrl:string  = ebBasePlus + myGlobals.membershipUrl[myGlobals.runtimeEnvironment] + myGlobals.homeSiteId + '.json';
         return this.http.get(roleUrl)
             .map(this.processRole)
+            .catch(this.handleError);
+    }
+
+    getGroup (user: User, groupName: string): Observable<User> {
+        this.user = user;
+        this.groupName = groupName;
+        let groupUrl:string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + 'membership/group/';
+        groupUrl = groupUrl + myGlobals.groupId[groupName] + '.json';
+        return this.http.get(groupUrl)
+            .map(this.processGroup)
             .catch(this.handleError);
     }
 
@@ -45,6 +58,27 @@ export class UserService {
         let roleToReturn: string;  //exepecting observable so can't return Resource
         roleToReturn = body.memberRole;
         return roleToReturn;
+    }
+
+    private processGroup = (res: Response) => { //have to use instance syntax to allow this.processResource
+        let body = res.json();
+        //let isMemberOfGroup: boolean;  //exepecting observable so can't return Resource
+        for (let membership of body.membership_collection) {
+            if (this.user.id === membership.userId ) {
+                switch (this.groupName) {
+                    case 'CPD' :
+                        this.user.isCPD = true;
+                        break;
+                    case 'Dip' :
+                        this.user.isDip = true;
+                        break;
+                    case 'MSc' :
+                        this.user.isMSc = true;
+                        break;
+                }
+            }
+        }
+        return this.user;
     }
 
     private handleError (error: any) {
