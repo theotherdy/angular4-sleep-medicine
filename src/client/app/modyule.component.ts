@@ -20,6 +20,8 @@ import myGlobals = require('./globals');
 })
 
 export class ModyuleComponent implements OnInit {
+    //@Input() isExtraSmall:boolean;
+
     modyules: Modyule[];
     selectedModyule: Modyule;
     error: any;

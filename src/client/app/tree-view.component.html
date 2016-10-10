@@ -3,7 +3,7 @@
         <div class="notruncate" *ngIf="resource.contentUrl">
             <html-resource-component [htmlResourceUrl]="resource.contentUrl"></html-resource-component>
         </div>
-        <a *ngIf="resource.fileType !== 'folder' && resource.fileType !== 'content'" href="{{ resource.url }}">
+        <a *ngIf="resource.fileType !== 'folder' && resource.fileType !== 'content'" href="{{ resource.url }}" target="_blank">
             <i *ngIf="resource.fileType === 'reading'" class="fa fa-book"></i>
             <i *ngIf="resource.fileType === 'pdf'" class="fa fa-file-pdf-o"></i>
             <i *ngIf="resource.fileType === 'xls'" class="fa fa-file-excel-o"></i>

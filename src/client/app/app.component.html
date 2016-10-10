@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-sleep-medicine">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -9,14 +9,19 @@
             </button>
             <a class="navbar-brand" href="#"><img src="{{logoUrl}}"></a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed">
             <ul class="nav navbar-nav">
                 <li><a href="#section-learning" (click)="navClicked($event)" >Learning</a></li>
                 <li *ngIf="user?.isMSc"><a href="#section-research" (click)="navClicked($event)">Research</a></li>
                 <li><a href="#section-announcements" (click)="navClicked($event)">Announcements</a></li>
                 <li><a href="#section-assessment" (click)="navClicked($event)">Assessment</a></li>
                 <li><a href="#section-info" (click)="navClicked($event)">Info</a></li>
-                <li><a href="#section-forum" (click)="navClicked($event)">Forum</a></li>
+                <li>
+                    <a href="#section-forum" (click)="navClicked($event)">
+                        Forum
+                        <span *ngIf="forumCompRef?.forum?.unreadMessages > 0" class="label label-warning label-as-badge">{{forumCompRef?.forum?.unreadMessages}}</span>
+                    </a>
+                </li>
                 <li><a href="#section-about" (click)="navClicked($event)">About</a></li>
                 <li><a target="_blank" href="https://weblearn.ox.ac.uk/access/content/group/d1506490-a468-46ca-a915-417d9d11be2f/Course%20Information/Important%20Dates/Timetable/Year%20One%20Timetable.pdf"><i class="fa fa-calendar"></i></a></li>
             </ul>
@@ -27,10 +32,11 @@
     <div><a id="section-learning" name="section-learning"></a></div>
     <section>
         <modyules-component></modyules-component>
+        <a id="section-research" name="section-research" href="#"></a>
         <nav  *ngIf="user?.isMSc" class="navbar navbar-default navbar-sleep-medicine-knocked-back">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" id="section-research" name="section-research" href="#">Research</a>
+                    <span class="navbar-brand">Research</span>
                 </div>
             </div>
         </nav>
@@ -38,10 +44,11 @@
     <div class = "row">
         <div class="col-md-6">
             <section class="">
+                <a id="section-announcements" name="section-announcements" href="#"></a>
                 <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" id="section-announcements" name="section-announcements" href="#">Announcements</a>
+                            <span class="navbar-brand">Announcements</span>
                         </div>
                     </div>
                 </nav>
@@ -51,14 +58,15 @@
         </div>
         <div class="col-md-6">
             <section class="">
+                <a id="section-forum" name="section-forum" href="#"></a>
                 <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" id="section-forum" name="section-forum" href="#">Forum</a>
+                            <span class="navbar-brand">Forum</span>
                         </div>
                     </div>
                 </nav>
-                <forum-component [siteId] = "siteId"></forum-component>
+                <forum-component #forumCompRef [siteId] = "siteId"></forum-component>
             </section>
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
         </div>
@@ -66,10 +74,11 @@
     <div class = "row">
         <div class="col-md-6">
             <section class="">
+                <a id="section-assessment" name="section-assessment" href="#"></a>
                 <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" id="section-assessment" name="section-assessment" href="#">Assessment</a>
+                            <span class="navbar-brand">Assessment</span>
                         </div>
                     </div>
                 </nav>
@@ -79,10 +88,11 @@
         </div>
         <div class="col-md-6">
             <section class="">
+                <a id="section-info" name="section-info" href="#"></a>
                 <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" id="section-info" name="section-info" href="#">Course information</a>
+                            <span class="navbar-brand">Course information</span>
                         </div>
                     </div>
                 </nav>
@@ -91,7 +101,7 @@
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
         </div>
     </div>
-    <section class="">
+    <!--section class="">
         <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -99,12 +109,13 @@
                 </div>
             </div>
         </nav>
-    </section>
+    </section-->
     <section class="">
+        <a id="section-about" name="section-about" href="#"></a>
         <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" id="section-about" name="section-contact" href="#">About</a>
+                    <span class="navbar-brand">About</span>
                 </div>
             </div>
         </nav>
@@ -179,13 +190,23 @@
                     </div>
                 </div>
             </div>
+            <!--div class="col-sm-3">
+                <div class="thumbnail">
+                    <img src="{{damionYoungUrl}}" alt="Damion Young" class="img-circle">
+                    <div class="caption">
+                        <h3>Damion Young</h3>
+                        <p>Course Technologist and leads Medical Sciences Division Learning Technologies</p>
+                        <p><a href="https://www.medsci.ox.ac.uk/support-services/people/damion-young" target="_blank" class="btn btn-warning" role="button"><i class="fa fa-external-link"></i> More</a></p>
+                    </div>
+                </div>
+            </div-->
         </div>
     </section>
 </div>
 <div class="container-fluid footer">
     <div class="row">
         <div class="col-sm-4">
-            <iframe id="map" width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-1.2538093328475954%2C51.75880091715592%2C-1.2502688169479372%2C51.76049098521182&amp;layer=mapnik&amp;marker=51.75964595909129%2C-1.2520390748977661" style="border: 1px solid black"></iframe>
+            <iframe id="map" width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2538093328475954%2C51.75880091715592%2C-1.2502688169479372%2C51.76049098521182&amp;layer=mapnik&amp;marker=51.75964595909129%2C-1.2520390748977661" style="border: 1px solid black"></iframe>
         </div>
         <div class="col-sm-8 contact">
             <h1>Get in touch</h1>
@@ -198,4 +219,9 @@
             <p><i class="fa fa-phone"></i> +44 (0)1865 282756</p>
         </div>
     </div>
+</div>
+<div class="container-fluid sub-footer">
+    <img src="{{oxfordUrl}}" alt="University of Oxford" class="pull-right bottom-logo">
+    <img src="{{oxNeuroUrl}}" alt="Oxford Neuroscience" class="pull-right bottom-logo">
+    <img src="{{scniUrl}}" alt="Sleep and Circadian Neuroscience Institute" class="pull-right bottom-logo">
 </div>

@@ -1,3 +1,7 @@
 .label-as-badge {
-    border-radius: 1em;
+  border-radius: 1em;
+}
+
+.start-conversation{
+  height: 50px;    
 }

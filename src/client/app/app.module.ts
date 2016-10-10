@@ -20,10 +20,13 @@ import { TopicComponent } from './topic.component';
 import { ThreadComponent } from './thread.component';
 import { MessageComponent } from './message.component';
 
+//import { CollapseDirective } from 'ng2-bootstrap/ng2-bootstrap';
+
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { AccordionModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 //import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
 
@@ -53,6 +56,8 @@ import { DescriptionFormatterPipe } from './description-formatter.pipe';
         ThreadComponent,
         MessageComponent,
 
+        //CollapseDirective,
+
         LectureTypePipe,
         DescriptionFormatterPipe
     ],
@@ -66,6 +71,7 @@ import { DescriptionFormatterPipe } from './description-formatter.pipe';
         TabsModule,
         AccordionModule,
         DropdownModule,
+        CollapseModule
         //Ng2PageScrollModule
     ],
     providers: [

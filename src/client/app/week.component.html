@@ -1,11 +1,6 @@
 <!--div class="hidden-xs" (click)="$event.preventDefault()"-->
 <div class="hidden-xs">
     <tabset [justified]="true" type="tabs">
-        <!--tab *ngFor="let week of modyule.weeks"
-            [heading]="week.name"
-            [active]="week.active"
-            (select)="week.active = true"
-            (deselect)="week.active = false"-->
         <tab *ngFor="let week of (weeksObservable | async)"
             [heading]="week.name"
             [active]="week.active"
@@ -24,11 +19,38 @@
 </div>
 <div class="visible-xs">
     <div *ngFor="let week of (weeksObservable | async)" class="panel panel-default">
+        <a class="navbar-brand" id="{{week.name}}" name="{{week.name}}" href="#"></a>
         <div class="panel-heading">
-            <div class="h2 text-center"> {{week.name}}<br/><span class="h4"><i class="fa fa-calendar"></i><!--fa [name]="'calendar'"></fa--> {{week.startDate | date:'d MMM'}} to {{week.endDate | date:'d MMM yy'}}</span></div>
+            <div class="h3 text-center h3-mobile-week">
+                 {{week.name}}
+                <span class="h5">
+                    <a target="_blank" href="https://weblearn.ox.ac.uk/access/content/group/d1506490-a468-46ca-a915-417d9d11be2f/Course%20Information/Important%20Dates/Timetable/Year%20One%20Timetable.pdf"><i class="fa fa-calendar"></i></a>
+                     {{week.startDate | date:'d MMM'}} to {{week.endDate | date:'d MMM yy'}}</span>
+                <button class="btn btn-sm btn-default pull-right" dropdown (on-toggle)="toggled($event)">
+                    <a href id="simple-dropdown" dropdownToggle>
+                    Go to week <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+                        <li *ngFor="let weekDropDown of (weeksObservable | async)">
+                            <a href="#{{weekDropDown.name}}" class="btn btn-link dropdown-item" type="button" (click)="weekClicked($event)">{{weekDropDown.name}}</a>
+                            <!--modyule-detail-component [modyule]="modyule"></modyule-detail-component-->
+                        </li>
+                    </ul>
+                </button>
+            </div>
         </div>
         <div class="panel-body">
             <week-detail-component [week]="week"></week-detail-component>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="h3 text-center h3-mobile-week">
+                Supplementary
+            </div>
+        </div>
+        <div class="panel-body">
+            <modyule-resource-component [modyule]="modyule"></modyule-resource-component>
         </div>
     </div>
 </div>

@@ -70,16 +70,17 @@
                             </div>
                             <div class="row"><div class="col-md-12">&nbsp;</div></div>
                             <accordion [closeOthers]="true">
-                                <accordion-group #seminarls>
+                                <accordion-group #seminarls *ngIf="seminar.sessionsUrl">
                                     <div accordion-heading>
                                         Sessions <i class="fa pull-right" [ngClass]="{'fa-caret-up': seminarls?.isOpen, 'fa-caret-down': !seminarls?.isOpen}"></i>
                                     </div>
-                                    <div class="list-group">
+                                    <html-resource-component [htmlResourceUrl]="seminar.sessionsUrl"></html-resource-component>
+                                    <!--div class="list-group">
                                         <div *ngFor="let seminarInstance of seminar.seminarInstances" class="list-group-item">
-                                            <a href="{{seminarInstance.url}}"><i class="fa fa-clock-o"></i><!--fa [name]="'clock-o'"></fa--> {{seminarInstance.name}}</a>
+                                            <a href="{{seminarInstance.url}}"><i class="fa fa-clock-o"></i> {{seminarInstance.name}}</a>
                                             <strong><p class="list-group-item-text" [innerHTML]="seminarInstance.description | descriptionFormatter: 'lecturer'"></p></strong>
                                         </div>
-                                    </div>
+                                    </div-->
                                 </accordion-group>
                                 <accordion-group #seminarlo *ngIf="seminar.learningOutcomesUrl">
                                     <div accordion-heading>
@@ -122,7 +123,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 hidden-xs">
         <div class="thumbnail">
             <div class="image hidden-xs scni-blue"><i class="fa fa-forward fa-5x"></i><!--fa [name]="'forward'" [size]=5></fa--></div>
             <div class="caption">

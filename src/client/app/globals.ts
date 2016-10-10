@@ -45,7 +45,16 @@ export let suffixForTestingOnly: Array<string> = ['.json', ''];
 let wlImageUrl = 'https://weblearn.ox.ac.uk/access/content/group/'+homeSiteId+'/portal/assets/img/';
 
 let logoImageName = 'Standard_SCNi_Logo_Reverse.png';
-let logoImageUrl = 'Standard_SCNi_Logo_Reverse.png';
+let logoImageUrl = wlImageUrl + logoImageName;
+
+let scniImageName = 'scni.png';
+let scniImageUrl = wlImageUrl + scniImageName;
+
+let oxNeuroImageName = 'ndcn.png';
+let oxNeuroImageUrl = wlImageUrl + oxNeuroImageName;
+
+let oxfordImageName = 'ox_brand1_pos.gif';
+let oxfordImageUrl = wlImageUrl + oxfordImageName;
 
 let colinEspieImageName = 'colin_espie.jpeg';
 let colinEspieImageUrl = wlImageUrl + colinEspieImageName;
@@ -68,7 +77,13 @@ let simonKyleImageUrl = wlImageUrl + simonKyleImageName;
 let sumathiSekaranImageName = 'sumathi_sekaran.jpeg';
 let sumathiSekaranImageUrl = wlImageUrl + sumathiSekaranImageName;
 
+let damionYoungImageName = 'damion_young.png';
+let damionYoungImageUrl = wlImageUrl + damionYoungImageName;
+
 export let logoUrl: Array<string> = ['assets/img/' + logoImageName, logoImageUrl];
+export let scniUrl: Array<string> = ['assets/img/' + scniImageName, scniImageUrl];
+export let oxNeuroUrl: Array<string> = ['assets/img/' + oxNeuroImageName, oxNeuroImageUrl];
+export let oxfordUrl: Array<string> = ['assets/img/' + oxfordImageName, oxfordImageUrl];
 export let colinEspieUrl: Array<string> = ['assets/img/' + colinEspieImageName, colinEspieImageUrl];
 export let christopherJamesHarveyUrl: Array<string> = ['assets/img/' + christopherJamesHarveyImageName, christopherJamesHarveyImageUrl];
 export let marionGreenleavesUrl: Array<string> = ['assets/img/' + marionGreenleavesImageName, marionGreenleavesImageUrl];
@@ -76,6 +91,7 @@ export let nicolaBarclayUrl: Array<string> = ['assets/img/' + nicolaBarclayImage
 export let russellFosterUrl: Array<string> = ['assets/img/' + russellFosterImageName, russellFosterImageUrl];
 export let simonKyleUrl: Array<string> = ['assets/img/' + simonKyleImageName, simonKyleImageUrl];
 export let sumathiSekaranUrl: Array<string> = ['assets/img/' + sumathiSekaranImageName, sumathiSekaranImageUrl];
+export let damionYoungUrl: Array<string> = ['assets/img/' + damionYoungImageName, damionYoungImageUrl];
 
 export let lessonsUrl: string = 'lessons/site/'; //same in WL
 export let lessonUrl: string = 'lessons/lesson/'; //same in WL

@@ -19,7 +19,7 @@
                             <a href="{{mcq.url}}" target="_blank" >
                             <!--a href="{{lecture.url}}" target="_blank" *ngFor="let lecture of (week.lectures)" class="list-group-item"-->
                             <!--ref="{{lecture?.url}}" target="_blank" *ngFor="let lecture of (week?.lectures | lectureType: 'main')" class="list-group-item"-->
-                                <h4 class="list-group-item-heading"><!--fa [name]="'check-circle-o'"></fa--><i class="fa fa-circle-o"></i> {{mcq.name}}</h4>
+                                <h4 class="list-group-item-heading"><!--fa [name]="'check-circle-o'"></fa--><i class="fa fa-check-square-o"></i> {{mcq.name}}</h4>
                                 <p class="list-group-item-text" [innerHTML]="mcq.description"></p>
                             </a>
                         </div>

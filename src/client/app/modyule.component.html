@@ -3,10 +3,11 @@
     <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back  under-nav-bar">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a *ngIf="selectedModyule" class="navbar-brand" href="#">{{selectedModyule.name}}</a>
+            <div class="pull-left">
+                <span *ngIf="selectedModyule" class="navbar-brand">Learning: {{selectedModyule.name}}</span>
+                <!--a *ngIf="selectedModyule" class="navbar-brand" href="#">Learning: {{selectedModyule.name}}</a-->
             </div>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav pull-right">
                 <li dropdown (on-toggle)="toggled($event)">
                     <a href id="simple-dropdown" dropdownToggle>
                     Other modules <span class="caret"></span>

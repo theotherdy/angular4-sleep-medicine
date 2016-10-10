@@ -1,7 +1,6 @@
 <div class="list-group">
     <div *ngFor="let topic of ((forumObservable | async)?.topics)" class="list-group-item truncate">
-        <p>
-            <span (click)="topic.toggle()" >
+        <div (click)="topic.toggle()" >
                 <a>
                     <i class="fa fa-comments-o"></i>
                     <strong>{{ topic.name }}</strong>
@@ -9,10 +8,14 @@
                     <i *ngIf="topic.expanded" class="fa fa-caret-up pull-right"></i>
                     <i *ngIf="!topic.expanded" class="fa fa-caret-down pull-right"></i>
                 </a>
-            </span>
-        </p>
+        </div>
         <div class="notruncate" *ngIf="topic.expanded">
             <topic-component [topic]="topic"></topic-component>
+            <div class="start-conversation">
+                <a href="{{topic.directUrl}}" target="_blank" class="btn btn-default pull-right">
+                    <i class="fa fa-plus"></i> Start conversation
+                </a>
+            <div>
         </div>
     </div>
 </div>

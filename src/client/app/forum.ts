@@ -11,6 +11,7 @@ export class Forum {
     description: string; //shortDescription
     readMessages: number;
     totalMessages: number;
+    unreadMessages: number;
     siteId: string;
 
     topics: Topic[];

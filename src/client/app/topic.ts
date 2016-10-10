@@ -19,6 +19,8 @@ export class Topic {
     siteId: string;
     forumId: string;
 
+    directUrl: string;
+
     expanded: boolean = false; //for ui toggle
 
     threads: Message[];

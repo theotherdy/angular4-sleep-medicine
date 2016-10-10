@@ -78,6 +78,7 @@ export class ForumService {
         forumToReturn.description = body.forums_collection[0].shortDescription;
         forumToReturn.readMessages = body.forums_collection[0].readMessages;
         forumToReturn.totalMessages = body.forums_collection[0].totalMessages;
+        forumToReturn.unreadMessages = forumToReturn.totalMessages - forumToReturn.readMessages;
 
         //console.log(res); // log to console instead
         //let beginningOfSiteId = res.url.indexOf(myGlobals.forumDirectUrl) + myGlobals.forumDirectUrl.length - 1;
@@ -102,6 +103,10 @@ export class ForumService {
             topicToReturn.modifiedOn = new Date(topicData.modifiedDate * 1000);
             topicToReturn.siteId = this.mySiteId;
             topicToReturn.forumId = this.myForumId;
+            let directUrl:string = myGlobals.baseUrlforForums + 'dd7e4210-9e50-4652-ba62-3ca89ba98ce4'; //top-level forum
+            directUrl = directUrl + '/discussionForum/message/dfAllMessagesDirect.jsf?';
+            directUrl = directUrl + '&topicId='+ topicData.id;
+            topicToReturn.directUrl = directUrl;
             topicsToReturn.push(topicToReturn);
         }
         return topicsToReturn;

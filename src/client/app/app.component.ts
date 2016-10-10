@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+//import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+
+import { Component, OnInit, enableProdMode } from '@angular/core';
+//import { Component, OnInit, NgZone } from '@angular/core';
+
+enableProdMode();
 
 import { UserService }     from './user.service';
 import { User }     from './user';
@@ -24,6 +29,9 @@ export class AppComponent implements OnInit {
 
     //urls for images
     logoUrl = myGlobals.logoUrl[myGlobals.runtimeEnvironment];
+    scniUrl = myGlobals.scniUrl[myGlobals.runtimeEnvironment];
+    oxNeuroUrl = myGlobals.oxNeuroUrl[myGlobals.runtimeEnvironment];
+    oxfordUrl = myGlobals.oxfordUrl[myGlobals.runtimeEnvironment];
     colinEspieUrl = myGlobals.colinEspieUrl[myGlobals.runtimeEnvironment];
     christopherJamesHarveyUrl = myGlobals.christopherJamesHarveyUrl[myGlobals.runtimeEnvironment];
     marionGreenleavesUrl = myGlobals.marionGreenleavesUrl[myGlobals.runtimeEnvironment];
@@ -31,13 +39,28 @@ export class AppComponent implements OnInit {
     russellFosterUrl = myGlobals.russellFosterUrl[myGlobals.runtimeEnvironment];
     simonKyleUrl = myGlobals.simonKyleUrl[myGlobals.runtimeEnvironment];
     sumathiSekaranUrl = myGlobals.sumathiSekaranUrl[myGlobals.runtimeEnvironment];
+    damionYoungUrl = myGlobals.damionYoungUrl[myGlobals.runtimeEnvironment];
+
+    public isCollapsed: boolean = true;
 
     user: User;
+
+    //isExtraSmall:boolean = false;
+
+    //myNgZone:NgZone;
+
+    //ref: ChangeDetectorRef;
 
     constructor(
         //private router: Router,
         //private routeParams: RouteParams,
-        private userService: UserService) {
+        //private changeDetectorRef: ChangeDetectorRef)
+        private userService: UserService,
+        //private ngZone:NgZone
+        ) {
+            //this.ref = changeDetectorRef;
+            //this.myNgZone = ngZone;
+
         }
 
     ngOnInit() {
@@ -82,7 +105,8 @@ export class AppComponent implements OnInit {
                     let iFrames:any = window.parent.document.getElementsByTagName('IFRAME');
                     for (let iFrame of iFrames) {
                         if(iFrame.id !== 'map') {
-                            parentIFrame = iFrame;
+                            parentIFrame = iFrame;  //poor way to get this iFrame
+                            break;
                         }
                     }
 
@@ -96,7 +120,7 @@ export class AppComponent implements OnInit {
             			let e:any = d.documentElement;
             			let g:any = d.getElementsByTagName('body')[0];
             			newIFrameHeight = w.innerHeight|| e.clientHeight|| g.clientHeight;
-            		}
+                    }
                     if (content) {
                       content.style.padding = '0';
                     }
@@ -105,6 +129,7 @@ export class AppComponent implements OnInit {
                     }
                     if (lhColumn) {
                       lhColumn.style.width = '100%';
+                      //this.ref.detectChanges();
                       lhColumn.style.paddingRight = '0';
                       lhColumn.style.marginLeft = '0';
                     }
@@ -157,6 +182,21 @@ export class AppComponent implements OnInit {
                     if (parentIFrame) {
                         parentIFrame.style.height = newIFrameHeight+'px';
                     }
+
+                    /*this.myNgZone.run(() => {
+                        let w:any = window.parent;
+                        let d:any = window.parent.document;
+                        let e:any = d.documentElement;
+                        let g:any = d.getElementsByTagName('body')[0];
+                        let windowWidth = w.innerWidth|| e.clientWidth|| g.clientWidth;
+                        //this.windowWidth = window.innerWidth;
+                        if(windowWidth < 768) {
+                            this.isExtraSmall = true;
+                        } else {
+                            this.isExtraSmall = false;
+                        }
+                        //ref.detectChanges();
+                    });*/
                 })
             .subscribe();
 
@@ -169,6 +209,10 @@ export class AppComponent implements OnInit {
         //    lhColumn.style.width = '100%';
         //}
     }
+
+    /*
+    * Note smooth scrolling handler below same as in week.component.ts - combine
+    */
 
     navClicked(event:any) {
         event.preventDefault();
