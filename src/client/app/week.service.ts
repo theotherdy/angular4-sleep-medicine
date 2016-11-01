@@ -57,12 +57,22 @@ export class WeekService {
                 // with the correct response from forkJoin (could come back in any order), by looking at the
                 // requested url from the response object
                 let foundWeek = weeks.find(week=> {
-                    return response.url.indexOf(week.siteId)!==-1;
+                    if(response.url) {
+						return response.url.indexOf(week.siteId)!==-1;
+					} else {
+						return response._body.indexOf(week.siteId)!==-1; //IE 11 doesn't seem to return response.url - it's null
+					}
                 });
                 let bodyAsJson = JSON.parse(response._body);
                 //foundWeek.name = bodyAsJson.lessons_collection[0].lessonTitle;
                 //foundWeek.lessonUrl = bodyAsJson.lessons_collection[0].contentsURL;
                 foundWeek.name = bodyAsJson.content_collection[0].name;
+
+                let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
+                    return folder.name.toLowerCase() === 'start date';
+                });
+                foundWeek.startDate = new Date(startFolder.description);
+
                 //foundWeek.siteUrl = bodyAsJson.content_collection[0].url;
                 //foundWeek.siteId = bodyAsJson.content_collection[0].resourceId;
                 }
@@ -116,7 +126,8 @@ export class WeekService {
         let body = res.json();
         let weeksToReturn: any[] = []; //: Week[] = []; //seems to need to be any!
         for (let site of body.subsites){
-            if(site.siteUrl.indexOf('mod')!==-1) {  //ie only add subsites with 'mod' in the name
+            if(site.siteUrl.indexOf('mod')!==-1 || site.siteUrl.indexOf('res')!==-1) {
+                //ie only add subsites with 'mod' or 'res' in the name
                 let tempWeek = new Week;
                 tempWeek.siteId = site.siteId;
                 tempWeek.siteUrl = site.siteUrl;
@@ -187,12 +198,12 @@ export class WeekService {
                         feedback.name = seminarDetail.name;
                         seminar.feedback = feedback;
                     //** removed until we can create direct links to seminars
-                    //} else if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a seminar instance
-                        //let seminarInstance: SeminarInstance =  new SeminarInstance;
-                        //seminarInstance.url = seminarDetail.url;
-                        //seminarInstance.description = seminarDetail.description;
-                        //seminarInstance.name = seminarDetail.name;
-                        //seminar.seminarInstances.push(seminarInstance);
+                    } else if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource') { //it's a seminar instance
+                        let seminarInstance: SeminarInstance =  new SeminarInstance;
+                        seminarInstance.url = seminarDetail.url;
+                        seminarInstance.description = seminarDetail.description;
+                        seminarInstance.name = seminarDetail.name;
+                        seminar.seminarInstances.push(seminarInstance);
                     //** replacing seminar instances with content.html
                     } else if((seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType'
                                 || seminarDetail.type === 'org.sakaiproject.content.types.fileUpload')

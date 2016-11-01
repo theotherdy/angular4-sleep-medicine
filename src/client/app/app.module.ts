@@ -28,6 +28,8 @@ import { AccordionModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
 
+import { ResponsiveModule } from 'ng2-responsive';
+
 //import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
 
 import { AssessmentService }     from './assessment.service';
@@ -71,8 +73,10 @@ import { DescriptionFormatterPipe } from './description-formatter.pipe';
         TabsModule,
         AccordionModule,
         DropdownModule,
-        CollapseModule
+        CollapseModule,
         //Ng2PageScrollModule
+
+        ResponsiveModule
     ],
     providers: [
         AssessmentService,

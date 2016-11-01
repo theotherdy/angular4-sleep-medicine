@@ -12,6 +12,7 @@ export class Modyule {  //'Module' is reserved keyword
     currentModyule: boolean;
     lessonUrl: string;
     resourcesUrl: string;  //could be used to point to files in Resources
+    modyuleType: string; //either learning or research
 
     endOfModuleTitle: string = 'End of module';
     endOfModuleTabActive: boolean = false;

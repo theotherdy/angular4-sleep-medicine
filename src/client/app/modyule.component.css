@@ -14,3 +14,7 @@
 nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
   background-color: #002147;
 }
+
+span.uc-first{
+    text-transform:capitalize;
+}

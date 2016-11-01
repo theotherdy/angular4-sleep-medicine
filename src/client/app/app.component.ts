@@ -41,6 +41,9 @@ export class AppComponent implements OnInit {
     sumathiSekaranUrl = myGlobals.sumathiSekaranUrl[myGlobals.runtimeEnvironment];
     damionYoungUrl = myGlobals.damionYoungUrl[myGlobals.runtimeEnvironment];
 
+    modyuleTypeResearch = 'research';
+    modyuleTypeLearning = 'learning';
+
     public isCollapsed: boolean = true;
 
     user: User;

@@ -350,7 +350,8 @@ export class SeedConfig {
     ],
     paths: {
       [`${this.TMP_DIR}/*`]: `${this.TMP_DIR}/*`,
-      '*': 'node_modules/*'
+      '*': 'node_modules/*',
+      //'ng2-responsive/*.js':'node_modules/ng2-responsive/*'
     },
     packages: {
       '@angular/common': {
@@ -387,7 +388,11 @@ export class SeedConfig {
       },
       'rxjs': {
         defaultExtension: 'js'
-      }
+    },
+    'ng2-responsive': {
+        main: 'index.js',
+        defaultExtension: 'js'
+    }
     }
   };
 

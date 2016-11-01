@@ -70,17 +70,23 @@
                             </div>
                             <div class="row"><div class="col-md-12">&nbsp;</div></div>
                             <accordion [closeOthers]="true">
-                                <accordion-group #seminarls *ngIf="seminar.sessionsUrl">
+                                <!--accordion-group #seminarls *ngIf="seminar.sessionsUrl">
                                     <div accordion-heading>
                                         Sessions <i class="fa pull-right" [ngClass]="{'fa-caret-up': seminarls?.isOpen, 'fa-caret-down': !seminarls?.isOpen}"></i>
                                     </div>
                                     <html-resource-component [htmlResourceUrl]="seminar.sessionsUrl"></html-resource-component>
-                                    <!--div class="list-group">
+                                </accordion-group-->
+                                <accordion-group #seminarls *ngIf="seminar.seminarInstances || seminar.sessionsUrl">
+                                    <div accordion-heading>
+                                        Sessions <i class="fa pull-right" [ngClass]="{'fa-caret-up': seminarls?.isOpen, 'fa-caret-down': !seminarls?.isOpen}"></i>
+                                    </div>
+                                    <div class="list-group">
                                         <div *ngFor="let seminarInstance of seminar.seminarInstances" class="list-group-item">
                                             <a href="{{seminarInstance.url}}"><i class="fa fa-clock-o"></i> {{seminarInstance.name}}</a>
                                             <strong><p class="list-group-item-text" [innerHTML]="seminarInstance.description | descriptionFormatter: 'lecturer'"></p></strong>
                                         </div>
-                                    </div-->
+                                    </div>
+                                    <html-resource-component [htmlResourceUrl]="seminar.sessionsUrl" *ngIf="seminar.sessionsUrl"></html-resource-component>
                                 </accordion-group>
                                 <accordion-group #seminarlo *ngIf="seminar.learningOutcomesUrl">
                                     <div accordion-heading>

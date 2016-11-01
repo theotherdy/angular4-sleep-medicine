@@ -1,5 +1,5 @@
 <!--div class="hidden-xs" (click)="$event.preventDefault()"-->
-<div class="hidden-xs">
+<div *showItBootstrap="['xl','lg','md','sm']"> <!--class="hidden-xs"-->
     <tabset [justified]="true" type="tabs">
         <tab *ngFor="let week of (weeksObservable | async)"
             [heading]="week.name"
@@ -17,7 +17,7 @@
         </tab>
     </tabset>
 </div>
-<div class="visible-xs">
+<div *showItBootstrap="['xs']"> <!--class="visible-xs"-->
     <div *ngFor="let week of (weeksObservable | async)" class="panel panel-default">
         <a class="navbar-brand" id="{{week.name}}" name="{{week.name}}" href="#"></a>
         <div class="panel-heading">

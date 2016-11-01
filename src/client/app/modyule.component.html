@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="pull-left">
-                <span *ngIf="selectedModyule" class="navbar-brand">Learning: {{selectedModyule.name}}</span>
+                <span *ngIf="selectedModyule" class="navbar-brand"><span class="uc-first">{{modyuleType}}</span>: {{selectedModyule.name}}</span>
                 <!--a *ngIf="selectedModyule" class="navbar-brand" href="#">Learning: {{selectedModyule.name}}</a-->
             </div>
             <ul class="nav navbar-nav pull-right">

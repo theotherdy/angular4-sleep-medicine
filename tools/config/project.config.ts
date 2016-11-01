@@ -22,6 +22,7 @@ export class ProjectConfig extends SeedConfig {
     this.NPM_DEPENDENCIES = [
         ...this.NPM_DEPENDENCIES,
        {src: 'ng2-bootstrap/*.js', inject: 'libs'},
+       //{src: 'ng2-responsive/*.js', inject: 'libs'},
        //{src: 'ng2-page-scroll/*.js', inject: 'libs'},
        {src: 'angular2-fontawesome/*.js', inject: 'libs'},
        {src: 'moment/moment.js', inject: 'libs'},

@@ -19,13 +19,15 @@ import myGlobals = require('./globals');
 export class ModyuleService {
 
     private modyulesUrl: string;
+    private modyuleType: string;
 
     constructor (private http: Http) {}
 
-    getModyules (): Observable<Modyule[]> {
+    getModyules (modyuleType: string): Observable<Modyule[]> {
         this.modyulesUrl = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
         this.modyulesUrl = this.modyulesUrl + myGlobals.urlToSpecifyPortal[myGlobals.runtimeEnvironment];
         this.modyulesUrl = this.modyulesUrl + myGlobals.baseSitePath + myGlobals.suffixForTestingOnly[myGlobals.runtimeEnvironment];
+        this.modyuleType = modyuleType;
         return this.http.get(this.modyulesUrl)
             .cache()
             .map(this.initialiseModyules)
@@ -57,17 +59,21 @@ export class ModyuleService {
                 //with the correct response from forkJoin (could come back in any order), by looking at the requested url
                 //from the response object
                 let foundModyule = modyules.find(modyule=> {
-                    return response.url.indexOf(modyule.siteId)!==-1;
+                    if(response.url) {
+                        return response.url.indexOf(modyule.siteId)!==-1;
+                    } else {
+                        return response._body.indexOf(modyule.siteId)!==-1;   //IE 11 doesn't seem to return response.url - it's null
+                    }
                 });
                 let bodyAsJson = JSON.parse(response._body);
-                if (response.url.indexOf(myGlobals.contentUrl)!==-1) { //getting resources){
+                //if (response.url.indexOf(myGlobals.contentUrl)!==-1) { //getting resources){
                     //find folder caled Start date and get the date from its description
                     let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
                         return folder.name.toLowerCase() === 'start date';
                     });
                     foundModyule.startDate = new Date(startFolder.description);
                     foundModyule.name = bodyAsJson.content_collection[0].name;
-                }
+                //}
             }
             subject.next(modyules);
         });
@@ -98,14 +104,21 @@ export class ModyuleService {
                 .catch(this.handleError);
             }
 
-    private initialiseModyules(res: Response) {
+    private initialiseModyules = (res: Response) => {  //form of function allows access to this.modyuleType
         let body = res.json();
         let modyulesToReturn: any[] = [];//: Modyule[] = [];
+        let subSiteNameContains: string = 'dont find me';
+        if (this.modyuleType === 'learning') {
+            subSiteNameContains = 'mod';
+        } else if (this.modyuleType === 'research') {
+            subSiteNameContains = 'research';
+        }
         for (let site of body.subsites) {
-            if(site.siteUrl.indexOf('mod')!==-1) {  //ie only add subsites with 'mod' in the name
+            if(site.siteUrl.indexOf(subSiteNameContains)!==-1) {  //ie only add subsites with 'mod' in the name
                 let tempModyule = new Modyule;
                 tempModyule.siteId = site.siteId;
                 tempModyule.siteUrl = site.siteUrl;
+                tempModyule.modyuleType = this.modyuleType;
                 modyulesToReturn.push(tempModyule);
             }
         }

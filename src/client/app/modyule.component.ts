@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 //import { Router } from '@angular/router-deprecated';
 //import { RouteParams } from '@angular/router-deprecated';
 
@@ -21,6 +21,8 @@ import myGlobals = require('./globals');
 
 export class ModyuleComponent implements OnInit {
     //@Input() isExtraSmall:boolean;
+
+    @Input() modyuleType: string;
 
     modyules: Modyule[];
     selectedModyule: Modyule;
@@ -46,7 +48,7 @@ export class ModyuleComponent implements OnInit {
         //So, the idea is to call getModyules, get a list of Modyules back then use switchMap to pass
         //those through to the etails bit that will add names!
 
-        this.modyuleService.getModyules()
+        this.modyuleService.getModyules(this.modyuleType)
             .map(modyules => {
                     //console.log(modyules);
                     return modyules;
@@ -63,6 +65,8 @@ export class ModyuleComponent implements OnInit {
                     if (modyules.length > 0) {
                         this.noModyulesFound = false;
                     }
+
+                    console.log(this.noModyulesFound);
 
                     modyules.sort(this.compareByModyuleDate);
 

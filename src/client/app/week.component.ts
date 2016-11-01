@@ -157,35 +157,63 @@ export class WeekComponent implements OnChanges, OnInit {
                 weeks => {
                     //first sort them into name order
                     let activeWeekSet = false;
-                    weeks.sort(this.compareByWeekName);
+                    //weeks.sort(this.compareByWeekName);
+                    weeks.sort(this.compareByStartDate);
                     this.modyule.weeks = weeks;
-                    let startDateOfThisWeek = new Date(this.modyule.startDate.getTime());  //get date value not reference to original
+                    //let startDateOfThisWeek = new Date(this.modyule.startDate.getTime());  //get date value not reference to original
+
+                    let possibleActiveWeek: String;
+
                     for(var week of this.modyule.weeks){
+                        let startDateOfThisWeek = new Date(week.startDate.getTime());
                         let startDateOfNextWeek: Date = new Date(startDateOfThisWeek.getTime());
                         startDateOfNextWeek.setDate(startDateOfNextWeek.getDate() + 7);
-                        week.startDate = new Date(startDateOfThisWeek.getTime());
+                        //week.startDate = new Date(startDateOfThisWeek.getTime());
                         week.endDate = new Date(startDateOfNextWeek.getTime());
                         console.log(startDateOfThisWeek,startDateOfNextWeek);
                         let currentDate: Date = new Date();
-                        if(currentDate >= startDateOfThisWeek && currentDate <= startDateOfNextWeek) {
-                            //this is the current Week
-                            week.active = true;
-                            activeWeekSet = true;
+                        if(currentDate >= startDateOfThisWeek) {
+                            if(currentDate <= startDateOfNextWeek) {
+                                //this is the current Week, where curent date inside week dates
+                                week.active = true;
+                                activeWeekSet = true;
+                            } else {
+                                //this could be the week which is current (with gaps between weeeks)
+                                //because weeks sorted, this will be the last which starts before currentDate - assign below
+                                possibleActiveWeek = week.name;
+                            }
                         }
-                        startDateOfThisWeek = startDateOfNextWeek;
+                        //startDateOfThisWeek = startDateOfNextWeek;
                         week.modyule = this.modyule;
                     }
                     if(!activeWeekSet) {
-                        this.modyule.weeks[0].active = true;
+                        //let's find our possibleActiveWeek
+                        if(possibleActiveWeek) {
+                            let foundWeek = this.modyule.weeks.find((week:any)=> {
+                                return week.name === possibleActiveWeek;
+                            });
+                            if(foundWeek) {
+                                foundWeek.active = true;
+                            } else {
+                                this.modyule.weeks[0].active = true;
+                            }
+                        } else {
+                            this.modyule.weeks[0].active = true;
+                        }
                     }
                 return weeks;
                 }
             );
     }
 
-    private compareByWeekName(weekA: Week,weekB: Week): number {
+    /*private compareByWeekName(weekA: Week,weekB: Week): number {
         //sort function to naturally sort strings: http://stackoverflow.com/a/38641281/2235210
         return weekA.name.localeCompare(weekB.name, undefined, {numeric: true, sensitivity: 'base'});
+    }*/
+
+    private compareByStartDate(weekA: Week,weekB: Week): number {
+        //sort function to naturally sort strings: http://stackoverflow.com/a/38641281/2235210
+        return weekA.startDate.getTime() - weekB.startDate.getTime();
     }
 
     /*

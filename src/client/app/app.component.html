@@ -31,8 +31,14 @@
 <div class="container-fluid">
     <div><a id="section-learning" name="section-learning"></a></div>
     <section>
-        <modyules-component></modyules-component>
-        <a id="section-research" name="section-research" href="#"></a>
+        <modyules-component [modyuleType]="modyuleTypeLearning" ></modyules-component>
+    </section>
+
+    <section *ngIf="user?.isMSc">
+        <a id="section-research" name="section-research"></a>
+        <modyules-component [modyuleType]="modyuleTypeResearch" ></modyules-component>
+    </section>
+        <!--a id="section-research" name="section-research" href="#"></a>
         <nav  *ngIf="user?.isMSc" class="navbar navbar-default navbar-sleep-medicine-knocked-back">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -40,7 +46,7 @@
                 </div>
             </div>
         </nav>
-    </section>
+    </section-->
     <div class = "row">
         <div class="col-md-6">
             <section class="">
