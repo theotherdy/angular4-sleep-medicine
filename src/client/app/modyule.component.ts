@@ -66,7 +66,7 @@ export class ModyuleComponent implements OnInit {
                         this.noModyulesFound = false;
                     }
 
-                    console.log(this.noModyulesFound);
+                    //console.log(this.noModyulesFound);
 
                     modyules.sort(this.compareByModyuleDate);
 

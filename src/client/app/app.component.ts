@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
             .map(role => {
                     this.user.role = role;
 
-                    console.log(this.user);
+                    //console.log(this.user);
 
                     //get references to elements needed for both maintain and access users
                     let rhColumn:any = window.parent.document.getElementById('col2of2');
@@ -219,6 +219,7 @@ export class AppComponent implements OnInit {
 
     navClicked(event:any) {
         event.preventDefault();
+        this.isCollapsed=true;
         let target = event.target || event.srcElement || event.currentTarget;
         let hrefFull = target.attributes.href.nodeValue;
         let href = hrefFull.substring(1); //remove #
@@ -260,7 +261,7 @@ export class AppComponent implements OnInit {
         if (speed >= 15) speed = 15;
         var step = Math.round(distance / 25);
         var leapY = stopY > startY ? startY + step : startY - step;
-        var timer = 0;
+        var timer = 20;
         if (stopY > startY) {
             for ( var i=startY; i<stopY; i+=step ) {
                 setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);

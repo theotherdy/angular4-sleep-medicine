@@ -46,6 +46,6 @@ export class HtmlResourceComponent implements OnInit {
             .map(htmlResource => {
                 return htmlResource;
                 });
-        console.log(this.htmlResourceObservable);
+        //console.log(this.htmlResourceObservable);
     }
 }

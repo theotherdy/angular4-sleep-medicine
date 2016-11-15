@@ -70,6 +70,6 @@ export class WeekDetailComponent implements OnInit {
                 //this.week.seminars = week.seminars;
                 return this.week;
             });*/
-        console.log(this.lecturesObservable);
+        //console.log(this.lecturesObservable);
     }
 }

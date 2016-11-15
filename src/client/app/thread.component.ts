@@ -37,7 +37,7 @@ export class ThreadComponent implements OnInit {
             .map(messages => {
                 //message.sort(this.compareByMessageDates);
                 //this.topic.threads = threads;
-                console.log(messages);
+                //console.log(messages);
                 return messages;
             });
     }

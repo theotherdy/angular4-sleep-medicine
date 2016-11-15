@@ -147,7 +147,7 @@ export class WeekComponent implements OnChanges, OnInit {
         //go and get week data for this modyule
         this.weeksObservable = this.weekService.getWeeks(newModyule.siteUrl)
             .map(weeks => {
-                console.log(weeks);
+                //console.log(weeks);
                 return weeks;
             })
             .switchMap(weeks => this.weekService.getWeeksDetails(weeks))
@@ -170,7 +170,7 @@ export class WeekComponent implements OnChanges, OnInit {
                         startDateOfNextWeek.setDate(startDateOfNextWeek.getDate() + 7);
                         //week.startDate = new Date(startDateOfThisWeek.getTime());
                         week.endDate = new Date(startDateOfNextWeek.getTime());
-                        console.log(startDateOfThisWeek,startDateOfNextWeek);
+                        //console.log(startDateOfThisWeek,startDateOfNextWeek);
                         let currentDate: Date = new Date();
                         if(currentDate >= startDateOfThisWeek) {
                             if(currentDate <= startDateOfNextWeek) {
@@ -253,7 +253,7 @@ export class WeekComponent implements OnChanges, OnInit {
         if (speed >= 15) speed = 15;
         var step = Math.round(distance / 25);
         var leapY = stopY > startY ? startY + step : startY - step;
-        var timer = 0;
+        var timer = 20;
         if (stopY > startY) {
             for ( var i=startY; i<stopY; i+=step ) {
                 setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);

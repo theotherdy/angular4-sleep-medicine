@@ -42,7 +42,7 @@ export class ForumComponent implements OnInit {
             .map(topics => {
                 topics.sort(this.compareByTopicDates);
                 this.forum.topics = topics;
-                console.log(this.forum.topics);
+                //console.log(this.forum.topics);
                 return this.forum;
             });
             /*.switchMap(week => this.weekService.getLectureLearningOutcomes(this.week))
