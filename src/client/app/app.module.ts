@@ -39,6 +39,8 @@ import { AssessmentService }     from './assessment.service';
 import { LectureTypePipe } from './lecture-type.pipe';
 import { DescriptionFormatterPipe } from './description-formatter.pipe';
 
+import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -76,7 +78,8 @@ import { DescriptionFormatterPipe } from './description-formatter.pipe';
         CollapseModule,
         //Ng2PageScrollModule
 
-        ResponsiveModule
+        ResponsiveModule,
+        Ng2PageScrollModule
     ],
     providers: [
         AssessmentService,

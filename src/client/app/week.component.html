@@ -32,7 +32,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
                         <li *ngFor="let weekDropDown of (weeksObservable | async)">
-                            <a href="#{{weekDropDown.name}}" class="btn btn-link dropdown-item" type="button" (click)="weekClicked($event)">{{weekDropDown.name}}</a>
+                            <a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="50" href="#{{weekDropDown.name}}" class="btn btn-link dropdown-item" type="button" (click)="weekClicked($event)">{{weekDropDown.name}}</a>
                             <!--modyule-detail-component [modyule]="modyule"></modyule-detail-component-->
                         </li>
                     </ul>

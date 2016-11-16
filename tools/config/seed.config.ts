@@ -321,7 +321,8 @@ export class SeedConfig {
       '@angular/http': `node_modules/@angular/http/bundles/http.umd.js`,
       '@angular/platform-browser': `node_modules/@angular/platform-browser/bundles/platform-browser.umd.js`,
       '@angular/platform-browser-dynamic': `node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js`,
-      '@angular/router': `node_modules/@angular/router/index.js`,
+      '@angular/router': `node_modules/@angular/router/bundles/router.umd.js`,
+      'ng2-page-scroll/ng2-page-scroll': `node_modules/ng2-page-scroll/bundles/ng2-page-scroll.umd.js`,
       'rxjs/*': `node_modules/rxjs/*`,
       'app/*': `/app/*`,
       '*': `node_modules/*`

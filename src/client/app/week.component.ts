@@ -133,7 +133,7 @@ export class WeekComponent implements OnChanges, OnInit {
         }
     }
 
-    weekClicked(event:any) {
+    /*weekClicked(event:any) {
         event.preventDefault();
         let target = event.target || event.srcElement || event.currentTarget;
         let hrefFull = target.attributes.href.nodeValue;
@@ -141,7 +141,7 @@ export class WeekComponent implements OnChanges, OnInit {
         //let el = document.getElementById(href);
         //let rect = el.getBoundingClientRect();
         this.smoothScroll(href, 60);
-    }
+    }*/
 
     private updateWeek = (newModyule: Modyule) => {
         //go and get week data for this modyule
@@ -220,7 +220,7 @@ export class WeekComponent implements OnChanges, OnInit {
     * Note smooth scrolling handler below same as in app.component.ts - combine
     */
 
-    private currentYPosition() {
+    /*private currentYPosition() {
         // Firefox, Chrome, Opera, Safari
         if (self.pageYOffset) return self.pageYOffset;
         // Internet Explorer 6 - standards mode
@@ -266,6 +266,6 @@ export class WeekComponent implements OnChanges, OnInit {
             leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
         }
         return false;
-    }
+    }*/
 
 }

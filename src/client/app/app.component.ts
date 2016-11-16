@@ -217,7 +217,7 @@ export class AppComponent implements OnInit {
     * Note smooth scrolling handler below same as in week.component.ts - combine
     */
 
-    navClicked(event:any) {
+    /*navClicked(event:any) {
         event.preventDefault();
         this.isCollapsed=true;
         let target = event.target || event.srcElement || event.currentTarget;
@@ -274,5 +274,5 @@ export class AppComponent implements OnInit {
             leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
         }
         return false;
-    }
+    }*/
 }
