@@ -11,19 +11,19 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed">
             <ul class="nav navbar-nav">
-                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-learning" (click)="navClicked($event)" >Learning</a></li>
-                <li *ngIf="user?.isMSc"><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-research" (click)="navClicked($event)">Research</a></li>
-                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-announcements" (click)="navClicked($event)">Announcements</a></li>
-                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-assessment" (click)="navClicked($event)">Assessment</a></li>
-                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-info" (click)="navClicked($event)">Info</a></li>
+                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-learning" (click)="isCollapsed=true;" >Learning</a></li>
+                <li *ngIf="user?.isMSc"><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-research" (click)="isCollapsed=true;">Research</a></li>
+                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-announcements" (click)="isCollapsed=true;">Announcements</a></li>
+                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-assessment" (click)="isCollapsed=true;">Assessment</a></li>
+                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-info" (click)="isCollapsed=true;">Info</a></li>
                 <li>
-                    <a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-forum" (click)="navClicked($event)">
+                    <a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-forum" (click)="isCollapsed=true;">
                         Forum
-                        <span *ngIf="forumCompRef?.forum?.unreadMessages > 0" class="label label-warning label-as-badge">{{forumCompRef?.forum?.unreadMessages}}</span>
+                        <span *ngIf="forumCompRef?.forum?.unreadMessages > 0" class="label label-warning label-as-badge" (click)="isCollapsed=true;">{{forumCompRef?.forum?.unreadMessages}}</span>
                     </a>
                 </li>
-                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-about" (click)="navClicked($event)">About</a></li>
-                <li><a target="_blank" href="https://weblearn.ox.ac.uk/access/content/group/d1506490-a468-46ca-a915-417d9d11be2f/Course%20Information/Important%20Dates/Timetable/Year%20One%20Timetable.pdf"><i class="fa fa-calendar"></i></a></li>
+                <li><a pageScroll [pageScrollDuration]="1000" [pageScrollOffset]="55" href="#section-about" (click)="isCollapsed=true;">About</a></li>
+                <li><a target="_blank" href="https://weblearn.ox.ac.uk/access/content/group/d1506490-a468-46ca-a915-417d9d11be2f/Course%20Information/Important%20Dates/Timetable/Year%20One%20Timetable.pdf" (click)="isCollapsed=true;"><i class="fa fa-calendar"></i></a></li>
                 <!--li><a pageScroll href="#section-learning" (click)="navClicked($event)" >Learning</a></li>
                 <li *ngIf="user?.isMSc"><a href="#section-research" (click)="navClicked($event)">Research</a></li>
                 <li><a pageScroll href="#section-announcements" (click)="navClicked($event)">Announcements</a></li>
@@ -61,7 +61,7 @@
         </nav>
     </section-->
     <div class = "row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <section class="">
                 <a id="section-announcements" name="section-announcements" href="#"></a>
                 <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
@@ -75,7 +75,7 @@
             </section>
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <section class="">
                 <a id="section-forum" name="section-forum" href="#"></a>
                 <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
@@ -86,6 +86,20 @@
                     </div>
                 </nav>
                 <forum-component #forumCompRef [siteId] = "siteId"></forum-component>
+            </section>
+            <div class="row"><div class="col-md-12">&nbsp;</div></div>
+        </div>
+        <div class="col-md-4">
+            <section class="">
+                <a id="section-forum" name="section-forum" href="#"></a>
+                <nav class="navbar navbar-default navbar-sleep-medicine-knocked-back">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <span class="navbar-brand">Polls</span>
+                        </div>
+                    </div>
+                </nav>
+                <polls-component [siteId] = "siteId"></polls-component>
             </section>
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
         </div>

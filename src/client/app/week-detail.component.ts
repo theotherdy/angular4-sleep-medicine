@@ -12,7 +12,7 @@ import { Week } from './week';
 //import { DescriptionFormatterPipe } from './description-formatter.pipe';
 import { WeekService } from './week.service';
 
-//import { ModyuleResourceComponent } from './modyule-resource.component';
+//import { PollComponent } from './poll.component';
 //import { ResourceComponent } from './resource.component';
 
 @Component({

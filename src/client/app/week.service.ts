@@ -71,8 +71,11 @@ export class WeekService {
                 let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
                     return folder.name.toLowerCase() === 'start date';
                 });
-                foundWeek.startDate = new Date(startFolder.description);
-
+                if(startFolder) {
+                    foundWeek.startDate = new Date(startFolder.description);
+                } else {
+                    foundWeek.startDate = new Date();
+                }
                 //foundWeek.siteUrl = bodyAsJson.content_collection[0].url;
                 //foundWeek.siteId = bodyAsJson.content_collection[0].resourceId;
                 }
@@ -170,7 +173,27 @@ export class WeekService {
                         let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl;
                         resourceUrl = resourceUrl  + trimmedResourceId + '.json';
                         lecture.resourcesUrl = resourceUrl;
-                    }
+                    } /*else if (lectureDetail.type === 'org.sakaiproject.content.types.folder'
+                        && lectureDetail.name.toLowerCase()==='polls') {
+                        let pollIds = lectureDetail.description;
+                        let pollsToReturn:Poll[] = [];
+                        if(pollIds.indexOf('&amp;') !== -1) {
+                            let pollsList = pollIds.split('&amp;');
+                            for (let poll of pollsList) {
+                                let pollId = poll.trim();
+                                let pollToReturn: Poll = new Poll;
+                                pollToReturn.id = pollId;
+                                pollsToReturn.push(pollToReturn);
+                            }
+                        } else {
+                            let pollId = pollIds.trim();
+                            let pollToReturn: Poll = new Poll;
+                            pollToReturn = new Poll;
+                            pollToReturn.id = pollId;
+                            pollsToReturn.push(pollToReturn);
+                        }
+                        lecture.polls = pollsToReturn;
+                    }*/
                 }
             //description: string;
             weekToReturn.lectures.push(lecture);

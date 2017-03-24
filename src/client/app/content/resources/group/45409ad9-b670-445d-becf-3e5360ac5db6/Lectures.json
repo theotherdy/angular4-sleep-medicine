@@ -32,6 +32,26 @@
       "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/",
       "resourceChildren": [
         {
+        "created": 1485187478457,
+        "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+        "description": "982 &amp; 983",
+        "hidden": false,
+        "mimeType": null,
+        "modified": 1485251648735,
+        "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+        "name": "Polls",
+        "priority": "6",
+        "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+        },
+        "reference": "/content/group/45409ad9-b670-445d-becf-3e5360ac5db6/Lectures/Sleep stages 1/Polls/",
+        "resourceChildren": [ ],
+        "resourceId": "/group/45409ad9-b670-445d-becf-3e5360ac5db6/Lectures/Sleep stages 1/Polls/",
+        "size": null,
+        "type": "org.sakaiproject.content.types.folder",
+        "url": "https://weblearn.ox.ac.uk/access/content/group/45409ad9-b670-445d-becf-3e5360ac5db6/Lectures/Sleep%20stages%201/Polls/"
+        },{
           "created": 1474023038785,
           "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
           "description": "",

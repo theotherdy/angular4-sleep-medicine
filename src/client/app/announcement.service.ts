@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { Announcement } from './announcement';
+import { Attachment } from './attachment';
 import { Observable }     from 'rxjs/Observable';
 
 import './rxjs-operators';  // Add the RxJS Observable operators we need in this app.
@@ -21,13 +22,24 @@ export class AnnouncementService {
         let body = res.json();
         let announcementsToReturn = new Array<Announcement>();  //exepecting observable so can't return Resource
         for(let announcement of body.announcement_collection) {
-            let tempAnnouncement: Announcement = new Announcement;
+            let tempAnnouncement: Announcement = new Announcement();
             tempAnnouncement.id = announcement.id;
             tempAnnouncement.name = announcement.title;
             tempAnnouncement.description = announcement.body;
             tempAnnouncement.createdBy = announcement.createdByDisplayName;
             tempAnnouncement.expanded = false;
             tempAnnouncement.createdOn = new Date(announcement.createdOn);
+            if(announcement.attachments.length>0) {
+                tempAnnouncement.attachments = new Array<Attachment>();
+                for(let attachment of announcement.attachments) {
+                    let tempAttachment: Attachment = new Attachment();
+                    tempAttachment.id = attachment.id;
+                    tempAttachment.name = attachment.name;
+                    tempAttachment.type = attachment.type;
+                    tempAttachment.url = attachment.url;
+                    tempAnnouncement.attachments.push(tempAttachment);
+                }
+            }
             announcementsToReturn.push(tempAnnouncement);
         }
         return announcementsToReturn;

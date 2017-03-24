@@ -71,7 +71,11 @@ export class ModyuleService {
                     let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
                         return folder.name.toLowerCase() === 'start date';
                     });
-                    foundModyule.startDate = new Date(startFolder.description);
+                    if (startFolder) {
+                        foundModyule.startDate = new Date(startFolder.description);
+                    } else {
+                        foundModyule.startDate = new Date();
+                    }
                     foundModyule.name = bodyAsJson.content_collection[0].name;
                 //}
             }
@@ -164,30 +168,38 @@ export class ModyuleService {
         let mcqFolder = body.content_collection[0].resourceChildren.find((folder:any)=> {
             return folder.name.toLowerCase() === 'mcqs' && folder.type === 'org.sakaiproject.content.types.folder';
         });
-        modyuleToReturn.mcqsDescription = mcqFolder.description;
-        for(let mcqData of mcqFolder.resourceChildren) {
-            if (mcqData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
-                mcq = new Mcq;
-                mcq.name = mcqData.name;
-                mcq.id = mcqData.resourceId;
-                mcq.description = mcqData.description;
-                mcq.url = mcqData.url;
+        if (mcqFolder) {
+            modyuleToReturn.mcqsDescription = mcqFolder.description;
+            for(let mcqData of mcqFolder.resourceChildren) {
+                if (mcqData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
+                    mcq = new Mcq;
+                    mcq.name = mcqData.name;
+                    mcq.id = mcqData.resourceId;
+                    mcq.description = mcqData.description;
+                    mcq.url = mcqData.url;
+                }
+                modyuleToReturn.mcqs.push(mcq);
             }
-            modyuleToReturn.mcqs.push(mcq);
+        } else {
+            modyuleToReturn.mcqsDescription = 'No name';
         }
         //let feedback: Feedback;
         let feedbackFolder = body.content_collection[0].resourceChildren.find((folder:any)=> {
             return folder.name.toLowerCase() === 'feedback' && folder.type === 'org.sakaiproject.content.types.folder';
         });
-        modyuleToReturn.feedbackDescription = feedbackFolder.description;
-        for(let feedbackData of feedbackFolder.resourceChildren) {
-            if (feedbackData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
-                modyuleToReturn.feedback = new Feedback;
-                modyuleToReturn.feedback.name = feedbackData.name;
-                modyuleToReturn.feedback.id = feedbackData.resourceId;
-                modyuleToReturn.feedback.description = feedbackData.description;
-                modyuleToReturn.feedback.url = feedbackData.url;
+        if (feedbackFolder) {
+            modyuleToReturn.feedbackDescription = feedbackFolder.description;
+            for(let feedbackData of feedbackFolder.resourceChildren) {
+                if (feedbackData.type === 'org.sakaiproject.content.types.urlResource') { //it's a url
+                    modyuleToReturn.feedback = new Feedback;
+                    modyuleToReturn.feedback.name = feedbackData.name;
+                    modyuleToReturn.feedback.id = feedbackData.resourceId;
+                    modyuleToReturn.feedback.description = feedbackData.description;
+                    modyuleToReturn.feedback.url = feedbackData.url;
+                }
             }
+        } else {
+            modyuleToReturn.feedbackDescription = 'No name';
         }
         return modyuleToReturn;
     }

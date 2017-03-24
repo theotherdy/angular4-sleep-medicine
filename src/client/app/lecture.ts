@@ -1,6 +1,7 @@
 import { Tutor } from './tutor';
 import { Resource } from './resource';
 import { Feedback } from './feedback';
+//import { Poll } from './poll';
 
 export class Lecture {
     id: string;
@@ -18,4 +19,5 @@ export class Lecture {
     feedback: Feedback;
     resources: Resource[];
     tutor: Tutor;
+    //polls: Poll[];
 }

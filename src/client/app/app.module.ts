@@ -13,6 +13,8 @@ import { ModyuleResourceComponent } from './modyule-resource.component';
 import { TreeViewComponent } from './tree-view.component';
 import { WeekDetailComponent } from './week-detail.component';
 import { WeekComponent } from './week.component';
+import { PollComponent } from './poll.component';
+import { PollsComponent } from './polls.component';
 import { HtmlResourceComponent } from './html-resource.component';
 import { AnnouncementComponent } from './announcement.component';
 import { ForumComponent } from './forum.component';
@@ -53,6 +55,8 @@ import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
         TreeViewComponent,
         WeekDetailComponent,
         WeekComponent,
+        PollComponent,
+        PollsComponent,
         HtmlResourceComponent,
         AnnouncementComponent,
         ForumComponent,
