@@ -172,13 +172,17 @@ export class AppComponent implements OnInit {
                         }
                         //now work out iframe height for access users
                         if (parentIFrame) {
-                            newIFrameHeight = (newIFrameHeight-mrphsMainHeader.clientHeight);
+                            if(mrphsMainHeader) {
+                                newIFrameHeight = (newIFrameHeight-mrphsMainHeader.clientHeight);
+                            }
                         }
                     } else {
                         //now work out iframe height for maintain users
                         if (parentIFrame) {
-                            newIFrameHeight = newIFrameHeight-mrphsMainHeader.clientHeight-mrphsSiteHierarchy.clientHeight;
-                            newIFrameHeight = newIFrameHeight-mrphsToolTitleNav.clientHeight;
+                            if(mrphsMainHeader && mrphsToolTitleNav) {
+                                newIFrameHeight = newIFrameHeight-mrphsMainHeader.clientHeight-mrphsSiteHierarchy.clientHeight;
+                                newIFrameHeight = newIFrameHeight-mrphsToolTitleNav.clientHeight;
+                            }
                         }
                     }
                     //size iFrame
