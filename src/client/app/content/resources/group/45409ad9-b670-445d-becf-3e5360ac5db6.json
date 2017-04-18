@@ -46,6 +46,24 @@
           "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/",
           "resourceChildren": [
             {
+              "created": 1485187478457,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "982 &amp; 983",
+              "hidden": false,
+              "mimeType": null,
+              "modified": 1485251648735,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "Polls",
+              "priority": "6",
+              "properties": "MAX level reached (7):{SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Polls\/",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep stages 1\/Polls\/",
+              "size": null,
+              "type": "org.sakaiproject.content.types.folder",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Lectures\/Sleep%20stages%201\/Polls\/"
+            },
+            {
               "created": 1474023038785,
               "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
               "description": "",
@@ -344,6 +362,24 @@
               "size": "57",
               "type": "org.sakaiproject.content.types.urlResource",
               "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/https%3A__ox.webex.c20160916125136-1-1.URL"
+            },
+            {
+              "created": 1492522658343,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": "text\/html",
+              "modified": 1492522658349,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "assignment.html",
+              "priority": "268435464",
+              "properties": "MAX level reached (7):{CHEF:copyrightchoice=Please select, encoding=UTF-8, SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/assignment.html",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/assignment.html",
+              "size": "355",
+              "type": "org.sakaiproject.content.types.HtmlDocumentType",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/assignment.html"
             },
             {
               "created": 1474633350094,

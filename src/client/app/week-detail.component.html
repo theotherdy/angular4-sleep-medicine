@@ -100,6 +100,12 @@
                                     </div>
                                     <resource-component [resourcesUrl] = "seminar.resourcesUrl"></resource-component>
                                 </accordion-group>
+                                <accordion-group #seminaras *ngIf="seminar.assignmentUrl">
+                                    <div accordion-heading>
+                                        Assignment <i class="fa pull-right" [ngClass]="{'fa-caret-up': seminaras?.isOpen, 'fa-caret-down': !seminaras?.isOpen}"></i>
+                                    </div>
+                                    <html-resource-component [htmlResourceUrl]="seminar.assignmentUrl"></html-resource-component>
+                                </accordion-group>
                             </accordion>
                         </div>
 

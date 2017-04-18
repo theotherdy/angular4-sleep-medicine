@@ -98,6 +98,7 @@ export let lessonUrl: string = 'lessons/lesson/'; //same in WL
 export let membershipUrl: Array<string> = ['/site/', '::site:'];
 export let contentUrl: string = 'content/resources/group/'; //same in WL
 export let announcementsUrl: string = 'announcement/site/'; //same in WL
+export let assignmentsUrl: string = 'assignment/site/'; //same in WL
 export let accessUrl: string = 'access/content/group/'; //same in WL
 export let forumDirectUrl: string = 'forums/site/'; //same in WL
 export let userCurrentUrl: string = 'user/current.json'; //same in WL

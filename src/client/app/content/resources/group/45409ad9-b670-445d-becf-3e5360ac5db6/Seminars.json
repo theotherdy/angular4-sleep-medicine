@@ -135,9 +135,9 @@
           "description": "[Sumathi Sekaran]",
           "hidden": false,
           "mimeType": "text\/url",
-          "modified": 1475246224952,
-          "modifiedBy": "010d0715-cd24-43a3-9c9d-ebd83441bd8b",
-          "name": "20 Oct 2016 13:00:00 GMT",
+          "modified": 1476443951557,
+          "modifiedBy": "e1bdf737-0490-4968-b802-107b59e93a91",
+          "name": "20 Oct 2016 12:00:00 GMT",
           "priority": "268435462",
           "properties": {
             "SAKAI:conditionalrelease": "false",
@@ -193,12 +193,35 @@
           "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/https%3A__ox.webex.c20160916125136-1-1.URL"
         },
         {
+          "created": 1492522658343,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "",
+          "hidden": false,
+          "mimeType": "text\/html",
+          "modified": 1492522658349,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "assignment.html",
+          "priority": "268435464",
+          "properties": {
+            "CHEF:copyrightchoice": "Please select",
+            "encoding": "UTF-8",
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/assignment.html",
+          "resourceChildren": [],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/assignment.html",
+          "size": "355",
+          "type": "org.sakaiproject.content.types.HtmlDocumentType",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/assignment.html"
+        },
+        {
           "created": 1474633350094,
           "creator": "010d0715-cd24-43a3-9c9d-ebd83441bd8b",
           "description": "",
           "hidden": false,
           "mimeType": "text\/url",
-          "modified": 1475517223067,
+          "modified": 1477042214679,
           "modifiedBy": "e1bdf737-0490-4968-b802-107b59e93a91",
           "name": "Feedback link",
           "priority": "268435466",
@@ -236,29 +259,6 @@
           "size": "1057",
           "type": "org.sakaiproject.content.types.HtmlDocumentType",
           "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/Learning%20outcomes.html"
-        },
-        {
-          "created": 1475522998189,
-          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "description": "",
-          "hidden": false,
-          "mimeType": "text\/html",
-          "modified": 1475522998199,
-          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
-          "name": "Sessions.html",
-          "priority": "268435467",
-          "properties": {
-            "CHEF:copyrightchoice": "Please select",
-            "encoding": "UTF-8",
-            "SAKAI:conditionalrelease": "false",
-            "SAKAI:conditionalNotificationId": ""
-          },
-          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/Sessions.html",
-          "resourceChildren": [],
-          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/Sessions.html",
-          "size": "20",
-          "type": "org.sakaiproject.content.types.HtmlDocumentType",
-          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/Sessions.html"
         }
       ],
       "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Seminars\/Seminar\/",

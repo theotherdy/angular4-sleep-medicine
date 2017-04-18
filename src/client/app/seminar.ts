@@ -1,5 +1,5 @@
 import { Tutor } from './tutor';
-import { Assignment } from './assignment';
+//import { Assignment } from './assignment';
 import { Resource } from './resource';
 import { Feedback } from './feedback';
 import { SeminarInstance } from './seminar-instance';
@@ -11,6 +11,7 @@ export class Seminar {
     description: string;
     learningOutcomes: string;
     learningOutcomesUrl: string;
+    assignmentUrl: string;
     collapsed: boolean = true; //learning objectives initially collapses
     resourcesUrl: string;  //used to point to files e.g. reading list, pdfs, etc in Resources
     linkUrl: string;
@@ -21,5 +22,5 @@ export class Seminar {
     feedback: Feedback;
     seminarInstances: SeminarInstance[];
     resources: Resource[];
-    assignments: Assignment[];
+    //assignments: Assignment[];
 }

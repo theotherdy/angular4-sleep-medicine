@@ -1,9 +1,9 @@
-import { Seminar } from './seminar';
-
 export class Assignment {
     id: string;
     title: string;
-    description: string;
+    instructions: string;
     url: string;
-    seminar: Seminar;
+    status: boolean; //o = closed, 1 = open
+    assignmentOpen: Date;
+    assignmentClose: Date;
 }

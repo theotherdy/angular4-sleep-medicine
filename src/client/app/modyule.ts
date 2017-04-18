@@ -2,6 +2,7 @@ import { Week } from './week';
 import { Lecture } from './lecture';
 import { Mcq } from './mcq';
 import { Feedback } from './feedback';
+import { Assignment } from './assignment';
 
 export class Modyule {  //'Module' is reserved keyword
     siteId: string;
@@ -21,6 +22,7 @@ export class Modyule {  //'Module' is reserved keyword
     mcqsDescription: string;  //for container for assessment links
 
     weeks: Week[];
+    assignments: Assignment[];
     supplementaryLectures: Lecture[];  //letures where type = supplementary
     mcqs: Mcq[];
     feedback: Feedback;

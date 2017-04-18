@@ -214,6 +214,8 @@ export class WeekService {
                 seminar.description = seminarData.description;
                 seminar.seminarInstances = new Array<SeminarInstance>();
                 for (let seminarDetail of seminarData.resourceChildren) {
+                    console.log(seminarDetail.name.toLowerCase().indexOf('assignment'));
+                    console.log(seminarDetail.resourceId);
                     if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource'
                         && seminarDetail.name.toLowerCase()==='feedback link') { //it's a url
                         let feedback: Feedback =  new Feedback;
@@ -234,8 +236,14 @@ export class WeekService {
                         seminar.sessionsUrl = seminarDetail.resourceId;
                     } else if((seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType'
                             || seminarDetail.type === 'org.sakaiproject.content.types.fileUpload')
-                            && seminarDetail.name.toLowerCase().indexOf('outcome') !== -1) { //it's a url
+                            && seminarDetail.name.toLowerCase().indexOf('outcome') !== -1) { //it's learning outcomes
+                        //console.log('In there');
                         seminar.learningOutcomesUrl = seminarDetail.resourceId;
+                    } else if((seminarDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType'
+                            || seminarDetail.type === 'org.sakaiproject.content.types.fileUpload')
+                            && seminarDetail.name.toLowerCase().indexOf('assignment') !== -1) { //it's an assignment
+                        seminar.assignmentUrl = seminarDetail.resourceId;
+                        //console.log('In here');
                     } else if (seminarDetail.type === 'org.sakaiproject.content.types.folder'
                                 && seminarDetail.name.toLowerCase()==='resources') {
                         let trimmedResourceId = seminarDetail.resourceId.substring(0, seminarDetail.resourceId.length - 1);
@@ -250,6 +258,7 @@ export class WeekService {
                         }
                     }
                 }
+                console.log(seminar);
             }
             weekToReturn.seminars.push(seminar);
         }

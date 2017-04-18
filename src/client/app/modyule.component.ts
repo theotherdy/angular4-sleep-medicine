@@ -54,6 +54,7 @@ export class ModyuleComponent implements OnInit {
                     return modyules;
                 })
             .switchMap(modyules => this.modyuleService.getModyulesDetails(modyules))
+            //.switchMap(modyules => this.modyuleService.getModyulesAssignments(modyules))
             .map(modyules => {
                     //console.log(modyules);
                     return modyules;

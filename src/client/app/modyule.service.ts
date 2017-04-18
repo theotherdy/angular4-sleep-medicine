@@ -7,6 +7,7 @@ import { Subject }     from 'rxjs/Subject';
 import { Lecture } from './lecture';
 import { Mcq } from './mcq';
 import { Feedback } from './feedback';
+import { Assignment } from './assignment';
 //import { Resource } from './resource';
 
 import './rxjs-operators';  // Add the RxJS Observable operators we need in this app.
@@ -84,6 +85,68 @@ export class ModyuleService {
 
         return subject;
     }
+
+    /* abandoned Assignments lookup 
+    * Couldn't get link to submission page from EB methods either for tools or for assignment
+    */
+    /*getModyulesAssignments (modyules:Modyule[]): Observable<Modyule[]> {
+        let calls: any[]  = [];
+
+        for (let modyule of modyules){
+            let urlToGet: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
+            //urlToGet = urlToGet + myGlobals.lessonsUrl + modyule.siteId + '.json'; //old lessons
+            urlToGet = urlToGet + myGlobals.assignmentsUrl + modyule.siteId + '.json';
+            calls.push(
+                this.http.get(urlToGet).cache()
+                );
+        
+        }
+
+        var subject = new Subject<Modyule[]>();       //see: http://stackoverflow.com/a/38668416/2235210 for why Subject
+
+        Observable.forkJoin(calls).subscribe((res: any) => {
+            for (let response of res){
+                //Note this is a really very awkward way of matching modyule with a siteId assigned in getModyules (above)
+                //with the correct response from forkJoin (could come back in any order), by looking at the requested url
+                //from the response object
+                let foundModyule = modyules.find(modyule=> {
+                    if(response.url) {
+                        return response.url.indexOf(modyule.siteId)!==-1;
+                    } else {
+                        return response._body.indexOf(modyule.siteId)!==-1;   //IE 11 doesn't seem to return response.url - it's null
+                    }
+                });
+                foundModyule.assignments = [];
+                let bodyAsJson = JSON.parse(response._body);
+                for (let assignmentData of bodyAsJson.assignment_collection) {
+                    let assignment: Assignment = new Assignment;
+                    assignment.id = 
+                    assignment.title: string;
+                    assignment.instructions: string;
+                    assignment.url: string;
+                    assignment.status: boolean; //o = closed, 1 = open
+                    assignment.assignmentOpen: Date;
+                    assignment.assignmentClose: Date;
+                }
+
+                //if (response.url.indexOf(myGlobals.contentUrl)!==-1) { //getting resources){
+                    //find folder caled Start date and get the date from its description
+                    let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
+                        return folder.name.toLowerCase() === 'start date';
+                    });
+                    if (startFolder) {
+                        foundModyule.startDate = new Date(startFolder.description);
+                    } else {
+                        foundModyule.startDate = new Date();
+                    }
+                    foundModyule.name = bodyAsJson.content_collection[0].name;
+                //}
+            }
+            subject.next(modyules);
+        });
+
+        return subject;
+    }*/
 
     /**
     * For modyules-resources component to get details of the supplementary lectures and any resources it contains
