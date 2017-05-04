@@ -7,7 +7,7 @@ import { Subject }     from 'rxjs/Subject';
 import { Lecture } from './lecture';
 import { Mcq } from './mcq';
 import { Feedback } from './feedback';
-import { Assignment } from './assignment';
+//import { Assignment } from './assignment';
 //import { Resource } from './resource';
 
 import './rxjs-operators';  // Add the RxJS Observable operators we need in this app.

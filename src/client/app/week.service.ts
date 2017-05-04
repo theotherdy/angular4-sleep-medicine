@@ -214,8 +214,8 @@ export class WeekService {
                 seminar.description = seminarData.description;
                 seminar.seminarInstances = new Array<SeminarInstance>();
                 for (let seminarDetail of seminarData.resourceChildren) {
-                    console.log(seminarDetail.name.toLowerCase().indexOf('assignment'));
-                    console.log(seminarDetail.resourceId);
+                    //console.log(seminarDetail.name.toLowerCase().indexOf('assignment'));
+                    //console.log(seminarDetail.resourceId);
                     if(seminarDetail.type === 'org.sakaiproject.content.types.urlResource'
                         && seminarDetail.name.toLowerCase()==='feedback link') { //it's a url
                         let feedback: Feedback =  new Feedback;
@@ -258,7 +258,7 @@ export class WeekService {
                         }
                     }
                 }
-                console.log(seminar);
+                //console.log(seminar);
             }
             weekToReturn.seminars.push(seminar);
         }
