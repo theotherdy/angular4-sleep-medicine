@@ -170,6 +170,68 @@
       "size": null,
       "type": "org.sakaiproject.content.types.folder",
       "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Start%20date\/"
+    },
+    {
+      "created": 1501238402775,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1501238402776,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Supplementary",
+      "priority": "5",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/",
+      "resourceChildren": [
+        {
+          "created": 1501238547671,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "[Prof Allan Pack]",
+          "hidden": false,
+          "mimeType": null,
+          "modified": 1501238547671,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "Sleep Deprivation & Sleep Disorders: An unmet public health need",
+          "priority": "5",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/Sleep Deprivation _ Sleep Disorders: An unmet public health need\/",
+          "resourceChildren": [
+            {
+              "created": 1501238547740,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": "text\/url",
+              "modified": 1501238547747,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "Lecture link",
+              "priority": "268435457",
+              "properties": "MAX level reached (7):{SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/Sleep Deprivation _ Sleep Disorders: An unmet public health need\/https:__www.youtub20160923132742.URL",
+              "resourceChildren": [],
+              "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/Sleep Deprivation _ Sleep Disorders: An unmet public health need\/https:__www.youtub20160923132742.URL",
+              "size": "43",
+              "type": "org.sakaiproject.content.types.urlResource",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/Sleep%20Deprivation%20_%20Sleep%20Disorders%3A%20An%20unmet%20public%20health%20need\/https%3A__www.youtub20160923132742.URL"
+            }
+          ],
+          "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/Sleep Deprivation _ Sleep Disorders: An unmet public health need\/",
+          "size": null,
+          "type": "org.sakaiproject.content.types.folder",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/Sleep%20Deprivation%20_%20Sleep%20Disorders%3A%20An%20unmet%20public%20health%20need\/"
+        }
+      ],
+      "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/Supplementary\/"
     }
   ],
   "resourceId": "\/group\/c3254610-b325-4a0c-8d1a-c817099eb5fe\/",

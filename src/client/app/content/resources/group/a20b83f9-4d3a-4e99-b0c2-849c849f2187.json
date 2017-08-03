@@ -597,6 +597,25 @@
       "size": null,
       "type": "org.sakaiproject.content.types.folder",
       "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Start%20date\/"
+    },
+    {
+      "created": 1501493238702,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": null,
+      "hidden": false,
+      "mimeType": "application\/pdf",
+      "modified": 1501493238707,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Discussion Group Schedule - Module 4.pdf",
+      "priority": "268435472",
+      "properties": {
+      },
+      "reference": "\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Discussion Group Schedule - Module 4.pdf",
+      "resourceChildren": [],
+      "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Discussion Group Schedule - Module 4.pdf",
+      "size": "382552",
+      "type": "org.sakaiproject.content.types.fileUpload",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/Discussion%20Group%20Schedule%20-%20Module%204.pdf"
     }
   ],
   "resourceId": "\/group\/a20b83f9-4d3a-4e99-b0c2-849c849f2187\/",

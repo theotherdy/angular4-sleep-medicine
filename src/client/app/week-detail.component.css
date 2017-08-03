@@ -25,3 +25,7 @@ p.learningOutcomes {
 accordion {
   text-align: left !important;
 }
+
+.discussion-group-schedule-link {
+  padding: 5px;
+}

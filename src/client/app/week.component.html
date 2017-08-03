@@ -1,4 +1,5 @@
 <!--div class="hidden-xs" (click)="$event.preventDefault()"-->
+<!-- START On bigger devices -->
 <div *showItBootstrap="['xl','lg','md','sm']"> <!--class="hidden-xs"-->
     <tabset [justified]="true" type="tabs">
         <tab *ngFor="let week of (weeksObservable | async)"
@@ -17,6 +18,8 @@
         </tab>
     </tabset>
 </div>
+<!-- END On bigger devices -->
+<!-- START On mobile devices -->
 <div *showItBootstrap="['xs']"> <!--class="visible-xs"-->
     <div *ngFor="let week of (weeksObservable | async)" class="panel panel-default">
         <a class="navbar-brand" id="{{week.name}}" name="{{week.name}}" href="#"></a>
@@ -43,7 +46,7 @@
             <week-detail-component [week]="week"></week-detail-component>
         </div>
     </div>
-    <div class="panel panel-default">
+    <!--div class="panel panel-default">
         <div class="panel-heading">
             <div class="h3 text-center h3-mobile-week">
                 Supplementary
@@ -52,5 +55,6 @@
         <div class="panel-body">
             <modyule-resource-component [modyule]="modyule"></modyule-resource-component>
         </div>
-    </div>
+    </div-->
 </div>
+<!-- END On mobile devices -->

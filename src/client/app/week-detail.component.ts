@@ -49,6 +49,11 @@ export class WeekDetailComponent implements OnInit {
             .map(week => {
                 this.week.seminars = week.seminars;
                 return this.week;
+            })
+            .switchMap(week => this.weekService.getWeekSupplementaries(this.week))
+            .map(week => {
+                this.week.supplementaries = week.supplementaries;
+                return this.week;
             });
             /*.switchMap(week => this.weekService.getLectureLearningOutcomes(this.week))
             .map(week => {

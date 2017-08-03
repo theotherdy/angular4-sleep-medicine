@@ -93,6 +93,14 @@ export class WeekService {
             .catch(this.handleError);
         }
 
+    getWeekSupplementaries(week: Week): Observable<Week> {
+        let supplementariesUrl = myGlobals.contentUrl + week.siteId + '/Supplementary.json?depth=3';
+        return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + supplementariesUrl)
+            //.cache()
+            .map(this.processSupplementaries)
+            .catch(this.handleError);
+        }
+
     getWeekSeminars(week: Week): Observable<Week> {
         let seminarsUrl = myGlobals.contentUrl + week.siteId + '/Seminars.json?depth=3';
         return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + seminarsUrl)
@@ -197,6 +205,47 @@ export class WeekService {
                 }
             //description: string;
             weekToReturn.lectures.push(lecture);
+            }
+        }
+        return weekToReturn;
+    }
+
+    private processSupplementaries(res: Response) {
+        let weekToReturn: Week = new Week;
+        let body = res.json();
+        weekToReturn.supplementaries = new Array<Lecture>();
+        let lecture: Lecture;
+        for(let lectureData of body.content_collection[0].resourceChildren) {
+            if (lectureData.type === 'org.sakaiproject.content.types.folder') { //it's a folder
+                lecture = new Lecture;
+                lecture.type = 'main'; //because it's within a week
+                lecture.name = lectureData.name;
+                lecture.id = lectureData.resourceId;
+                lecture.description = lectureData.description;
+                for (let lectureDetail of lectureData.resourceChildren) {
+                    if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource'
+                        && lectureDetail.name.toLowerCase()==='feedback link') { //it's a url
+                        let feedback: Feedback =  new Feedback;
+                        feedback.url = lectureDetail.url;
+                        feedback.name = lectureDetail.name;
+                        lecture.feedback = feedback;
+                    } else if(lectureDetail.type === 'org.sakaiproject.content.types.urlResource'
+                        && lectureDetail.name.toLowerCase()==='lecture link') { //it's a url
+                        lecture.url = lectureDetail.url;
+                    } else if((lectureDetail.type === 'org.sakaiproject.content.types.HtmlDocumentType'
+                            || lectureDetail.type === 'org.sakaiproject.content.types.fileUpload')
+                            && lectureDetail.name.toLowerCase().indexOf('outcome') !== -1) { //it's a url
+                        lecture.learningOutcomesUrl = lectureDetail.resourceId;
+                    } else if (lectureDetail.type === 'org.sakaiproject.content.types.folder'
+                        && lectureDetail.name.toLowerCase()==='resources') {
+                        let trimmedResourceId = lectureDetail.resourceId.substring(0, lectureDetail.resourceId.length - 1);
+                        trimmedResourceId = trimmedResourceId.replace(myGlobals.unneededPartOfUrlForLOCalls, '');//remove group
+                        let resourceUrl: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + myGlobals.contentUrl;
+                        resourceUrl = resourceUrl  + trimmedResourceId + '.json';
+                        lecture.resourcesUrl = resourceUrl;
+                    }
+                }
+            weekToReturn.supplementaries.push(lecture);
             }
         }
         return weekToReturn;

@@ -17,4 +17,5 @@ export class Week {
 
     lectures: Lecture[];
     seminars: Seminar[];
+    supplementaries: Lecture[];
 }

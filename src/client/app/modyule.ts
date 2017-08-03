@@ -21,6 +21,8 @@ export class Modyule {  //'Module' is reserved keyword
     feedbackDescription: string;  //for container for feedback links
     mcqsDescription: string;  //for container for assessment links
 
+    seminarSchedule: string; //url for seminar schedule
+
     weeks: Week[];
     assignments: Assignment[];
     supplementaryLectures: Lecture[];  //letures where type = supplementary

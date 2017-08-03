@@ -449,6 +449,86 @@
       "size": null,
       "type": "org.sakaiproject.content.types.folder",
       "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Start%20date\/"
+    },
+    {
+      "created": 1501238654908,
+      "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "description": "",
+      "hidden": false,
+      "mimeType": null,
+      "modified": 1501238654910,
+      "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+      "name": "Supplementary",
+      "priority": "5",
+      "properties": {
+        "SAKAI:conditionalrelease": "false",
+        "SAKAI:conditionalNotificationId": ""
+      },
+      "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/",
+      "resourceChildren": [
+        {
+          "created": 1501238715486,
+          "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "description": "[Prof Colin Espie]",
+          "hidden": false,
+          "mimeType": null,
+          "modified": 1501238715486,
+          "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+          "name": "What is Sleep",
+          "priority": "2",
+          "properties": {
+            "SAKAI:conditionalrelease": "false",
+            "SAKAI:conditionalNotificationId": ""
+          },
+          "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What is Sleep\/",
+          "resourceChildren": [
+            {
+              "created": 1501238715587,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": null,
+              "modified": 1501238715587,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "Resources",
+              "priority": "2",
+              "properties": "MAX level reached (7):{SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What is Sleep\/Resources\/",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What is Sleep\/Resources\/",
+              "size": null,
+              "type": "org.sakaiproject.content.types.folder",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What%20is%20Sleep\/Resources\/"
+            },
+            {
+              "created": 1501238715557,
+              "creator": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "description": "",
+              "hidden": false,
+              "mimeType": "text\/url",
+              "modified": 1501238715561,
+              "modifiedBy": "d00ca345-4e31-485c-00e9-0fc880da2dc0",
+              "name": "Lecture link",
+              "priority": "268435458",
+              "properties": "MAX level reached (7):{SAKAI:conditionalrelease=false, SAKAI:conditionalNotificationId=}",
+              "reference": "\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What is Sleep\/http:__Lecture lin20160914152549.URL",
+              "resourceChildren": [],
+              "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What is Sleep\/http:__Lecture lin20160914152549.URL",
+              "size": "95",
+              "type": "org.sakaiproject.content.types.urlResource",
+              "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What%20is%20Sleep\/http%3A__Lecture%20lin20160914152549.URL"
+            }
+          ],
+          "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What is Sleep\/",
+          "size": null,
+          "type": "org.sakaiproject.content.types.folder",
+          "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/What%20is%20Sleep\/"
+        }
+      ],
+      "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/",
+      "size": null,
+      "type": "org.sakaiproject.content.types.folder",
+      "url": "https:\/\/weblearn.ox.ac.uk\/access\/content\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/Supplementary\/"
     }
   ],
   "resourceId": "\/group\/45409ad9-b670-445d-becf-3e5360ac5db6\/",

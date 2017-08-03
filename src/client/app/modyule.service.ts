@@ -77,6 +77,14 @@ export class ModyuleService {
                     } else {
                         foundModyule.startDate = new Date();
                     }
+                    let seminarSchedule = bodyAsJson.content_collection[0].resourceChildren.find((pdf:any)=> {
+                        return pdf.name.toLowerCase().indexOf('discussion group schedule') !== -1;
+                    });
+                    if (seminarSchedule) {
+                        foundModyule.seminarSchedule = seminarSchedule.url;
+                    } else {
+                        foundModyule.seminarSchedule = '';
+                    }
                     foundModyule.name = bodyAsJson.content_collection[0].name;
                 //}
             }
@@ -152,7 +160,7 @@ export class ModyuleService {
     * For modyules-resources component to get details of the supplementary lectures and any resources it contains
     */
     getModyuleLectures(modyule: Modyule): Observable<Modyule> {
-            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/Lectures.json?depth=3';
+            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/Supplementary.json?depth=3';
             return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + resourceUrl)
                 //.cache()
                 .map(this.processLectures)
