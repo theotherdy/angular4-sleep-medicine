@@ -11,13 +11,25 @@ export let homeSiteId: string = 'd1506490-a468-46ca-a915-417d9d11be2f';
 
 //groupId needs to be defined like this because it has string indices for the array
 interface IDictionary {
-     [index: string]: string;
+     [index: string]: any;
 }
 export let groupId = {} as IDictionary;
 
-groupId['CPD'] = '3e67b502-154a-4949-936b-584a02864f48';
-groupId['Dip'] = 'e2504d23-7a30-4c51-a148-a9f373d5679f';
-groupId['MSc'] = '8513fad8-656f-4265-9573-f00b8a781d02';
+//groupId['CPD'] = '3e67b502-154a-4949-936b-584a02864f48';
+//groupId['Dip'] = 'e2504d23-7a30-4c51-a148-a9f373d5679f';
+//groupId['MSc'] = '8513fad8-656f-4265-9573-f00b8a781d02';
+
+//will need to add to this for 18-20 cohort
+groupId['Module_16'] = '153cbf5b-1606-4178-8205-42036665f4b4'; //all students
+groupId['ResearchOne_16'] = '251e8fd1-6043-4863-b2ee-7115247c7cd7'; //just MSc
+groupId['ResearchTwo_16'] = 'b30fe503-2991-40b2-b62a-f0e1c5d29123'; //just MSc
+groupId['Admin_16'] = '3d8e4ac8-70e9-4a64-b42f-e632361b137c'; //all students
+groupId['Module_17'] = 'b129f6a4-8d0e-453c-9f38-b8e9e83cfca1';
+groupId['ResearchOne_17'] = 'c69eee43-eded-49d9-a78f-44aa26fb675c';
+groupId['ResearchTwo_17'] = '879812ea-34ea-44ca-b61f-0742b55fef11';
+groupId['Admin_17'] = 'f9df26fc-8d3f-41b6-8008-fdfdf03bfae1';
+
+//console.log(groupId['Dip']['16-17']);
 
 export let runtimeEnvironment: number = 0;
 export let currentModyule: Modyule =  null;
@@ -33,8 +45,12 @@ unneededPartOfUrlForHierarchyCalls[1] = 'https://weblearn.ox.ac.uk/portal/site';
 export let unneededPartOfUrlForLessonCalls: string = 'https://weblearn.ox.ac.uk/direct/';
 export let unneededPartOfUrlForLOCalls: string = '/group/';
 
-export let courseInfoUrl: string = homeSiteId + '/Course%20Information';
-export let assessmentInfoUrl: string = homeSiteId + '/Assessment';
+//export let courseInfoUrl: string = homeSiteId + '/Course%20Information';
+//export let assessmentInfoUrl: string = homeSiteId + '/Assessment';
+
+export let courseInfoUrl: string = '/Course%20Information';
+export let assessmentInfoUrl: string = '/Assessment';
+
 export let baseSitePath: string = '/medsci/p_g/sleep_med'; //same in WL
 
 //export let urlToSpecifyPortal: string = 'portal-hierarchy'; //in WL = 'portal-hierarchy/site.json?portalpath='

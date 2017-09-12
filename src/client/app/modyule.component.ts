@@ -4,6 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 //import { DROPDOWN_DIRECTIVES, CollapseDirective, AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 
+import { User } from './user';
 import { Modyule } from './modyule';
 import { ModyuleService } from './modyule.service';
 //import { WeekComponent } from './week.component';
@@ -23,6 +24,7 @@ export class ModyuleComponent implements OnInit {
     //@Input() isExtraSmall:boolean;
 
     @Input() modyuleType: string;
+    @Input() user: User;
 
     modyules: Modyule[];
     selectedModyule: Modyule;
@@ -53,7 +55,7 @@ export class ModyuleComponent implements OnInit {
                     //console.log(modyules);
                     return modyules;
                 })
-            .switchMap(modyules => this.modyuleService.getModyulesDetails(modyules))
+            .switchMap(modyules => this.modyuleService.getModyulesDetails(modyules, this.user))
             //.switchMap(modyules => this.modyuleService.getModyulesAssignments(modyules))
             .map(modyules => {
                     //console.log(modyules);

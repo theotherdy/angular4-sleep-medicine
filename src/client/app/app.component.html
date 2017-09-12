@@ -44,12 +44,12 @@
 <div class="container-fluid">
     <div><a id="section-learning" name="section-learning"></a></div>
     <section>
-        <modyules-component [modyuleType]="modyuleTypeLearning" ></modyules-component>
+        <modyules-component *ngIf="userIsLoaded" [modyuleType]="modyuleTypeLearning" [user]="user"></modyules-component>
     </section>
 
     <section *ngIf="user?.isMSc">
         <a id="section-research" name="section-research"></a>
-        <modyules-component [modyuleType]="modyuleTypeResearch" ></modyules-component>
+        <modyules-component *ngIf="userIsLoaded" [modyuleType]="modyuleTypeResearch" [user]="user"></modyules-component>
     </section>
         <!--a id="section-research" name="section-research" href="#"></a>
         <nav  *ngIf="user?.isMSc" class="navbar navbar-default navbar-sleep-medicine-knocked-back">
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </nav>
-                <polls-component [siteId] = "siteId"></polls-component>
+                <polls-component *ngIf="userIsLoaded" [siteId]="siteId" [user]="user"></polls-component>
             </section>
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
         </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 </nav>
-                <assessment-component [assessmentUrl] = "assessmentUrl"></assessment-component>
+                <assessment-component  *ngIf="userIsLoaded" [assessmentUrl] = "assessmentUrl"></assessment-component>
             </section>
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
         </div>
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                 </nav>
-                <resource-component [resourcesUrl] = "resourcesUrl"></resource-component>
+                <resource-component  *ngIf="userIsLoaded" [resourcesUrl] = "resourcesUrl"></resource-component>
             </section>
             <div class="row"><div class="col-md-12">&nbsp;</div></div>
         </div>

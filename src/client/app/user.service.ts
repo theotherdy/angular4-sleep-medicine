@@ -65,15 +65,22 @@ export class UserService {
         //let isMemberOfGroup: boolean;  //exepecting observable so can't return Resource
         for (let membership of body.membership_collection) {
             if (this.user.id === membership.userId ) {
-                switch (this.groupName) {
-                    case 'CPD' :
-                        this.user.isCPD = true;
+                //get resource and cohort from group name
+                let pieces: string[] = this.groupName.split("_");
+                let resource: string = pieces[0];
+                let cohort: string = pieces[1];
+                switch (resource) {
+                    case 'Module' :
+                        this.user.moduleCohort = +cohort;  //string to number           
                         break;
-                    case 'Dip' :
-                        this.user.isDip = true;
+                    case 'ResearchOne' :
+                        this.user.researchOneCohort = +cohort;
                         break;
-                    case 'MSc' :
-                        this.user.isMSc = true;
+                    case 'ResearchTwo' :
+                        this.user.researchTwoCohort = +cohort;
+                        break;
+                    case 'Admin' :
+                        this.user.adminCohort = +cohort;
                         break;
                 }
             }

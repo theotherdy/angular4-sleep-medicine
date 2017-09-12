@@ -14,6 +14,8 @@ export class Modyule {  //'Module' is reserved keyword
     lessonUrl: string;
     resourcesUrl: string;  //could be used to point to files in Resources
     modyuleType: string; //either learning or research
+    
+    cohort: number; //cohort for this user for this module 16, 17 or 18
 
     endOfModuleTitle: string = 'End of module';
     endOfModuleTabActive: boolean = false;
@@ -21,7 +23,9 @@ export class Modyule {  //'Module' is reserved keyword
     feedbackDescription: string;  //for container for feedback links
     mcqsDescription: string;  //for container for assessment links
 
-    seminarSchedule: string; //url for seminar schedule
+    //seminarSchedule: string; //url for seminar schedule
+    seminarScheduleUrl: string; //url for seminar schedule
+    seminarScheduleName: string; //name for seminar schedule
 
     weeks: Week[];
     assignments: Assignment[];

@@ -21,9 +21,9 @@ import myGlobals = require('./globals');
 export class AppComponent implements OnInit {
     title = 'Sleep Medicine';
     ebBase = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
-    resourcesUrl = this.ebBase + myGlobals.contentUrl + myGlobals.courseInfoUrl + '.json?depth=3';
-    assessmentUrl = this.ebBase + myGlobals.contentUrl + myGlobals.assessmentInfoUrl + '.json?depth=3';
-    announcementsUrl = this.ebBase + myGlobals.announcementsUrl + myGlobals.homeSiteId + '.json?n=20&d=60';
+    resourcesUrl: string = '';
+    assessmentUrl: string = '';
+    announcementsUrl = this.ebBase + myGlobals.announcementsUrl + myGlobals.homeSiteId + '.json?n=20&d=90';
     userCurrentUrl = this.ebBase + myGlobals.userCurrentUrl;
     siteId = myGlobals.homeSiteId;
 
@@ -47,6 +47,8 @@ export class AppComponent implements OnInit {
     public isCollapsed: boolean = true;
 
     user: User;
+    
+    userIsLoaded: boolean = false;
 
     //isExtraSmall:boolean = false;
 
@@ -73,7 +75,49 @@ export class AppComponent implements OnInit {
                     this.user = user;
                     return this.user;
                 })
-            .switchMap(user => this.userService.getGroup (user, 'CPD'))
+            //todo - very ugly way of chceking which cohort - could use forkJoin?
+//but allowing myself to do it as WL may be gone before 18-20 cohort (if not will have to add Admin_18, etc)
+            .switchMap(user => this.userService.getGroup (user, 'Admin_16'))
+            .map(user => {
+                    this.user.adminCohort = user.adminCohort;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'Admin_17'))
+            .map(user => {
+                    this.user.adminCohort = user.adminCohort;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'Module_16'))
+            .map(user => {
+                    this.user.moduleCohort = user.moduleCohort;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'Module_17'))
+            .map(user => {
+                    this.user.moduleCohort = user.moduleCohort;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'ResearchOne_16'))
+            .map(user => {
+                    this.user.researchOneCohort = user.researchOneCohort;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'ResearchOne_17'))
+            .map(user => {
+                    this.user.researchOneCohort = user.researchOneCohort;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'ResearchTwo_16'))
+            .map(user => {
+                    this.user.researchTwoCohort = user.researchTwoCohort;
+                    return this.user;
+                })
+            .switchMap(user => this.userService.getGroup (user, 'ResearchTwo_17'))
+            .map(user => {
+                    this.user.researchTwoCohort = user.researchTwoCohort;
+                    return this.user;
+                })
+            /*.switchMap(user => this.userService.getGroup (user, 'CPD'))
             .map(user => {
                     this.user.isCPD = user.isCPD;
                     return this.user;
@@ -87,10 +131,14 @@ export class AppComponent implements OnInit {
             .map(user => {
                     this.user.isMSc = user.isMSc;
                     return this.user;
-                })
+                })*/
             .switchMap(user => this.userService.getRole(user))
             .map(role => {
-                    this.user.role = role;
+                console.log(this.user);  
+                this.resourcesUrl = this.ebBase + myGlobals.contentUrl + myGlobals.homeSiteId + '/' + this.user.adminCohort + myGlobals.courseInfoUrl + '.json?depth=3';
+                this.assessmentUrl = this.ebBase + myGlobals.contentUrl + myGlobals.homeSiteId + '/' + this.user.adminCohort + myGlobals.assessmentInfoUrl + '.json?depth=3';
+                this.userIsLoaded = true;
+                this.user.role = role;
 
                     //console.log(this.user);
 

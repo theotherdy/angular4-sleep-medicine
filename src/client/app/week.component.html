@@ -7,7 +7,7 @@
             [active]="week.active"
             (select)="week.active = true"
             (deselect)="week.active = false">
-            <week-detail-component [week]="week"></week-detail-component>
+            <week-detail-component [week]="week" [cohort]="week.cohort"></week-detail-component>
         </tab>
         <tab *ngIf="(weeksObservable | async)"
             [heading]="modyule.endOfModuleTitle"
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="panel-body">
-            <week-detail-component [week]="week"></week-detail-component>
+            <week-detail-component [week]="week" [cohort]="week.cohort"></week-detail-component>
         </div>
     </div>
     <!--div class="panel panel-default">

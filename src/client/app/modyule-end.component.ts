@@ -24,8 +24,8 @@ import { ModyuleService } from './modyule.service';
 })
 
 export class ModyuleEndComponent implements OnInit {
-    @Input()
-    modyule: Modyule;
+    @Input() modyule: Modyule;
+    //@Input() cohort: number;
     modyuleEndObservable: Observable<Modyule>;
 
     error: any;
@@ -38,7 +38,7 @@ export class ModyuleEndComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.modyuleEndObservable = this.modyuleService.getModyuleEnd(this.modyule)
+        this.modyuleEndObservable = this.modyuleService.getModyuleEnd(this.modyule, this.modyule.cohort)
             .map(modyule => {
                 this.modyule.mcqs = modyule.mcqs;
                 this.modyule.mcqsDescription = modyule.mcqsDescription;

@@ -25,6 +25,7 @@ import { WeekService } from './week.service';
 
 export class WeekComponent implements OnChanges, OnInit {
     @Input() modyule: Modyule;
+    //@Input() user: User;
     //@Input() isExtraSmall: boolean;
 
     error: any;
@@ -184,6 +185,7 @@ export class WeekComponent implements OnChanges, OnInit {
                             }
                         }
                         //startDateOfThisWeek = startDateOfNextWeek;
+                        week.cohort = this.modyule.cohort;
                         week.modyule = this.modyule;
                     }
                     if(!activeWeekSet) {

@@ -14,6 +14,8 @@ export class Week {
     resourcesUrl: string;  //could be used to point to files in Resources
 
     modyule: Modyule;
+    
+    cohort: number; //which cohort is the students in for this week in this module 16, 16 or 18
 
     lectures: Lecture[];
     seminars: Seminar[];

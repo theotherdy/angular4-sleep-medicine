@@ -7,6 +7,7 @@ import { Subject }     from 'rxjs/Subject';
 import { Lecture } from './lecture';
 import { Mcq } from './mcq';
 import { Feedback } from './feedback';
+import { User } from './user';
 //import { Assignment } from './assignment';
 //import { Resource } from './resource';
 
@@ -35,7 +36,7 @@ export class ModyuleService {
             .catch(this.handleError);
     }
 
-    getModyulesDetails (modyules:Modyule[]): Observable<Modyule[]> {
+    getModyulesDetails (modyules:Modyule[], user: User): Observable<Modyule[]> {
         let calls: any[]  = [];
 
         for (let modyule of modyules){
@@ -67,26 +68,52 @@ export class ModyuleService {
                     }
                 });
                 let bodyAsJson = JSON.parse(response._body);
-                //if (response.url.indexOf(myGlobals.contentUrl)!==-1) { //getting resources){
-                    //find folder caled Start date and get the date from its description
-                    let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
+                
+                foundModyule.name = bodyAsJson.content_collection[0].name;
+                
+                //appropriate cohort for this module
+                if(foundModyule.modyuleType=='learning'){
+                    foundModyule.cohort = user.moduleCohort;
+                } else if (foundModyule.modyuleType=='research') {
+                    if(foundModyule.name.indexOf('1')!==-1) {
+                        //research skills 1
+                        foundModyule.cohort = user.researchOneCohort;
+                    } else {
+                        //research skills 2
+                        foundModyule.cohort = user.researchTwoCohort;
+                    }
+                }
+                //find folder named after cohort date
+                let cohortFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
+                    return folder.name.toLowerCase() === String(foundModyule.cohort);
+                });
+                //find folder caled Start date and get the date from its description
+                let startFolder: any; 
+                let seminarSchedule: any;
+                if (cohortFolder) {
+                    startFolder = cohortFolder.resourceChildren.find((folder:any)=> {
                         return folder.name.toLowerCase() === 'start date';
                     });
-                    if (startFolder) {
-                        foundModyule.startDate = new Date(startFolder.description);
-                    } else {
-                        foundModyule.startDate = new Date();
-                    }
-                    let seminarSchedule = bodyAsJson.content_collection[0].resourceChildren.find((pdf:any)=> {
+                    seminarSchedule = cohortFolder.resourceChildren.find((pdf:any)=> {
                         return pdf.name.toLowerCase().indexOf('discussion group schedule') !== -1;
                     });
-                    if (seminarSchedule) {
-                        foundModyule.seminarSchedule = seminarSchedule.url;
-                    } else {
-                        foundModyule.seminarSchedule = '';
-                    }
-                    foundModyule.name = bodyAsJson.content_collection[0].name;
+                }
+                if (startFolder) {
+                    foundModyule.startDate = new Date(startFolder.description);
+                } else {
+                    foundModyule.startDate = new Date();
+                }
+                if (seminarSchedule) {
+                    foundModyule.seminarScheduleUrl = seminarSchedule.url;
+                    let tempNameArray = seminarSchedule.name.split('.');
+                    foundModyule.seminarScheduleName = tempNameArray[0];
+                } else {
+                    foundModyule.seminarScheduleUrl = null;
+                    foundModyule.seminarScheduleName = null;
+                }
+                
                 //}
+                //console.log(foundModyule);
             }
             subject.next(modyules);
         });
@@ -94,73 +121,11 @@ export class ModyuleService {
         return subject;
     }
 
-    /* abandoned Assignments lookup 
-    * Couldn't get link to submission page from EB methods either for tools or for assignment
-    */
-    /*getModyulesAssignments (modyules:Modyule[]): Observable<Modyule[]> {
-        let calls: any[]  = [];
-
-        for (let modyule of modyules){
-            let urlToGet: string = myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment];
-            //urlToGet = urlToGet + myGlobals.lessonsUrl + modyule.siteId + '.json'; //old lessons
-            urlToGet = urlToGet + myGlobals.assignmentsUrl + modyule.siteId + '.json';
-            calls.push(
-                this.http.get(urlToGet).cache()
-                );
-        
-        }
-
-        var subject = new Subject<Modyule[]>();       //see: http://stackoverflow.com/a/38668416/2235210 for why Subject
-
-        Observable.forkJoin(calls).subscribe((res: any) => {
-            for (let response of res){
-                //Note this is a really very awkward way of matching modyule with a siteId assigned in getModyules (above)
-                //with the correct response from forkJoin (could come back in any order), by looking at the requested url
-                //from the response object
-                let foundModyule = modyules.find(modyule=> {
-                    if(response.url) {
-                        return response.url.indexOf(modyule.siteId)!==-1;
-                    } else {
-                        return response._body.indexOf(modyule.siteId)!==-1;   //IE 11 doesn't seem to return response.url - it's null
-                    }
-                });
-                foundModyule.assignments = [];
-                let bodyAsJson = JSON.parse(response._body);
-                for (let assignmentData of bodyAsJson.assignment_collection) {
-                    let assignment: Assignment = new Assignment;
-                    assignment.id = 
-                    assignment.title: string;
-                    assignment.instructions: string;
-                    assignment.url: string;
-                    assignment.status: boolean; //o = closed, 1 = open
-                    assignment.assignmentOpen: Date;
-                    assignment.assignmentClose: Date;
-                }
-
-                //if (response.url.indexOf(myGlobals.contentUrl)!==-1) { //getting resources){
-                    //find folder caled Start date and get the date from its description
-                    let startFolder = bodyAsJson.content_collection[0].resourceChildren.find((folder:any)=> {
-                        return folder.name.toLowerCase() === 'start date';
-                    });
-                    if (startFolder) {
-                        foundModyule.startDate = new Date(startFolder.description);
-                    } else {
-                        foundModyule.startDate = new Date();
-                    }
-                    foundModyule.name = bodyAsJson.content_collection[0].name;
-                //}
-            }
-            subject.next(modyules);
-        });
-
-        return subject;
-    }*/
-
     /**
     * For modyules-resources component to get details of the supplementary lectures and any resources it contains
     */
-    getModyuleLectures(modyule: Modyule): Observable<Modyule> {
-            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/Supplementary.json?depth=3';
+    getModyuleLectures(modyule: Modyule, moduleCohort: number): Observable<Modyule> {
+            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/' + String(moduleCohort) + '/Supplementary.json?depth=3';
             return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + resourceUrl)
                 //.cache()
                 .map(this.processLectures)
@@ -169,9 +134,9 @@ export class ModyuleService {
     /**
     * For modyules-resources component to get details of End of module assessments and feedback
     */
-    getModyuleEnd(modyule: Modyule): Observable<Modyule> {
+    getModyuleEnd(modyule: Modyule, moduleCohort: number): Observable<Modyule> {
             //let lessonUrl = modyule.lessonUrl.replace(myGlobals.unneededPartOfUrlForLessonCalls, '');
-            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/End%20of%20module.json?depth=3';
+            let resourceUrl = myGlobals.contentUrl + modyule.siteId + '/' + String(moduleCohort) + '/End%20of%20module.json?depth=3';
             //urlToGet = urlToGet + myGlobals.contentUrl + modyule.siteId + '/Lectures.json?depth=3';
             return this.http.get(myGlobals.entityBrokerBaseUrl[myGlobals.runtimeEnvironment] + resourceUrl)
                 //.cache()

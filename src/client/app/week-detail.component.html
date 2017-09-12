@@ -49,8 +49,8 @@
             <div class="caption">
                 <div>
                     <h3>DISCUSSION GROUP</h3>
-                    <a *ngIf="week.modyule?.seminarSchedule" href="{{week.modyule?.seminarSchedule}}" target="_blank" class="discussion-group-schedule-link">
-                        <i class="fa fa-calendar-o"></i> Discussion Group Schedule
+                    <a *ngIf="week.modyule?.seminarScheduleUrl" href="{{week.modyule?.seminarScheduleUrl}}" target="_blank" class="discussion-group-schedule-link">
+                        <i class="fa fa-calendar-o"></i> {{week.modyule?.seminarScheduleName}}
                     </a>
                     <div class="list-group">
                         <div *ngFor="let seminar of ((lecturesObservable | async)?.seminars)" class="list-group-item">

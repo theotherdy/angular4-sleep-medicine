@@ -25,6 +25,7 @@ import { ModyuleService } from './modyule.service';
 export class ModyuleResourceComponent implements OnInit {
     @Input()
     modyule: Modyule;
+    //@Input() user: User;
     modyuleResourcesObservable: Observable<Modyule>;
 
     error: any;
@@ -37,7 +38,8 @@ export class ModyuleResourceComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.modyuleResourcesObservable = this.modyuleService.getModyuleLectures(this.modyule)
+        //console.log(this.user);
+        this.modyuleResourcesObservable = this.modyuleService.getModyuleLectures(this.modyule, this.modyule.cohort)
             .map(modyule => {
                 this.modyule.supplementaryLectures = modyule.supplementaryLectures;
                 //console.log(modyule);

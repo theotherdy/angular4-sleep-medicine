@@ -26,8 +26,8 @@ import { WeekService } from './week.service';
 })
 
 export class WeekDetailComponent implements OnInit {
-    @Input()
-    week: Week;
+    @Input() week: Week;
+    @Input() cohort: number;
     lecturesObservable: Observable<Week>;
 
     error: any;
